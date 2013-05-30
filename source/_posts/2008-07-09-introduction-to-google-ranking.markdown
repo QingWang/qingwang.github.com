@@ -1,0 +1,26 @@
+---
+layout: post
+title: Google排名简介 | 来自Google排名负责人
+categories:
+- 业界新闻
+tags:
+- google
+- google排名
+published: true
+comments: true
+---
+Google排名(当然指的是搜索排名)是众多站长非常看重的一项指标。今天Google排名的核心小组(the Core Ranking team)负责人Amit Singhal在Google的官方blog上发表了一篇文章，简要介绍了Google排名的一些指导思想，并承诺将在另一篇文章中深入讨论Google排名所使用的技术。
+
+Amit Singhal的个人简介想来大家兴趣不大，从略。据Amit所言，Google排名的定义为：一套算法，用来寻找与用户查询最相关的文档(Google ranking is a collection of algorithms used to find the most relevant documents for a user query)。Google提供的其它相关搜索服务，包括图片，新闻，视频，博客，地图，商品，书籍的搜索等，都以这套算法为基础，稍加修改而套用的。
+
+Amit在此文中对具体的技术问题避而不谈，仅承诺在下一篇文章中会深入探讨一些技术方面的话题。本文中他提出了Google排名的三个指导思想，分别为:
+
+- 搜索结果排名与地区挂钩
+- 保持简明
+- 不做人工干预
+
+其中，Amit用最长的篇幅讨论了第3点。他强调Google排名小组的所有智慧都只用在算法上，而让算法去自动决定网页排名。因为Google认为任何人都有主观性，而算法则没有这个问题。另外纯粹使用算法也有助于算法本身的提高。但他同时也特别说明，Google会对少量违反其政策的网站采取行动，这类网站包括违反法律、儿童色情、病毒站、恶意软件站等等。Amit并未说明判断这类网站由人工还是算法完成。
+
+在第三次让读者期待他的下一篇讨论Google排名技术的文章之后，Amit满意地说，作为一个搜索研究者，他的工作是世界上最好的。
+
+想看Amit Singhal原文的话，请访问[Introduction to google ranking](ttp://googleblog.blogspot.com/2008/07/introduction-to-google-ranking.html) 。说实话我还是更期待他的下一篇文章。

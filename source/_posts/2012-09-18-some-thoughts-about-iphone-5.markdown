@@ -1,0 +1,128 @@
+---
+layout: post
+title: "关于 iPhone 5 的一些想法"
+date: 2012-09-18 18:37
+comments: true
+categories:
+- 互联网乱弹
+tags:
+- iPhone
+- Apple
+- Android
+- iOS
+
+published: true
+---
+感谢科技的进步，让贫富差距变小。近五年来，无论一个英国人是领着政府救济的贫困户，还是普通中产阶级，抑或是腰缠万贯的富豪，他能买到的最好的手机都是 £500 左右一台 iPhone . Apple 自从 2007 年发布第一代 iPhone 以来，一直保持着每年一次，不多也不少的更新频率。 今年九月十二号， Apple 按例在旧金山芳草地艺术中心发布了最新一代 - [iPhone 5](http://www.apple.com/iphone/) .
+
+只是， iPhone 5 现在还能算最好的手机么？
+
+![iPhone 5](http://images.apple.com/iphone/home/images/wireless_hero.jpg "iPhone 5")
+
+<!-- more -->
+
+## 令人失望的 iPhone 5
+这个问题并非那么容易回答，以前 Steve Jobs , 现在的 Tim Cook 在每次 iPhone 发布会上都会说：「这是我们造出的有史以来最好的一台 iPhone .」明眼人都能看出这是废话：如果一年后新发布的消费数码产品连前一代都比不上，这公司好该关门大吉了。 iPhone 5 比前几代都好是毫无争议的，问题是，它的进步幅度够大么？
+
+用户的反应说明了很多问题， Apple 开发布会的同时， Twitter 等社交网络上循例热闹非凡，然而跟以前 iPhone 发布会全民欢腾场景不一样，这次发布会大家主要在冷嘲热讽。「我的 4S 又可以多陪我一年了。」「 Apple 完蛋了。」「好失望，一点诚意都没有。」「看了 iPhone 5 发布会，更坚定了我买 Galaxy S3 的决心。」「可以留着我的肾了，好高兴。」在 [HotUKDeals](http://www.hotukdeals.com/) 上，iPhone 5 的 deal 全部被 downvote ，[预订贴一度接近 -1100 度](http://pic.webabie.com/webabie.com/iPhone-5-cold.jpg) ，创下网站最冷记录。我本人也不例外，预期了这一代 iPhone 将无法达到分析师预测的销量， $AAPL 将会重挫。
+
+
+
+## 心口不一的用户
+然而事实证明，用户们在 Twitter 上的抱怨仅仅停留在口头上。九月十四号， [iPhone 5 开始接受预订的一个小时内，第一批产品就被一扫而空](http://www.macrumors.com/2012/09/14/iphone-5-pre-order-shipping-estimates-slip-to-two-weeks/) 。 Apple 发言人对用户的反应表示「[震惊](http://allthingsd.com/20120914/apple-on-iphone-5-pre-orders-weve-been-completely-blown-away/)」。 $AAPL 则青云直上历史第一次捅破 $700 大关。[预订开始的24小时之内，订单数超二百万，是 iPhone 4S 记录的两倍，平均每秒售出 23 台](http://9to5mac.com/2012/09/17/apple-announces-iphone-5-preorders-hit-two-million-in-24-hours)。
+
+用户们实在太不像话了。
+
+## iPhone 5 真的很烂？
+为什么用户对 iPhone 5 态度前后反差如此之大？这里面的因素很多，只能猜测一下。
+
+### 期望与现实的差距
+第一代 iPhone 翻天覆地地改变了手机产业，此后每一代 iPhone 推出，都伴随着惊喜。 Steve Jobs 每年上台一次，像一位腼腆又骄傲的魔术师，把新一代 iPhone 最神奇的一面展示给世界。用户们已经习惯了看魔术表演，如果连续看了五次精彩演出，第六场忽然变得平平无奇，喝倒彩是正常的。
+
+iPhone 5 的情况比这更糟糕，魔术师的表演看上去平平无奇倒还罢了，表演开始之前已经有人在你耳边东一句西一句，剧透了个底朝天，甚至连魔术原理都揭开了，再好的表演也只能味同嚼蜡。然而用户们有心理惯性：「既然每次都有惊喜，这次虽然已经[剧透到了这个程度](http://reviews.cnet.com/8301-19512_7-20073431-233/iphone-5-rumor-roundup/)，但也还应该有什么我们不知道的东西吧？」结果自然大失所望。
+
+然而 iPhone 5 在发布会两天后才开始接受订单。这两天时间足以让失望的情绪平复，进而理性地审视这台新手机，考虑是否值得购买。从结果来看，尽管经济大环境恶劣， iPhone 定价也绝不算便宜，但人群依然趋之若骛，为何如此呢？
+
+### iPhone 5 的改良
+是的， iPhone 5 已经没有创新，只有改良了。但改良如果足够好，也能吸引用户。
+
+- iPhone 5 采用了[据猜测是由 Apple 定制并参与设计 ARM 芯片](http://www.anandtech.com/show/6292/iphone-5-a6-not-a15-custom-core)，而且内存也加了一倍到 1GB . 在 Geekbench 测试中 [iPhone 5](http://browser.primatelabs.com/geekbench2/1030202) 跑分性能与 [HTC One X](http://browser.primatelabs.com/geekbench2/989732) 和 [Samsung Galaxy S3](http://browser.primatelabs.com/geekbench2/1026099) 相当，纯运算部分较弱，但内存性能和带宽都大大强于后两者（credit to [est](http://blog.est.im/post/31703069009)）， iOS 设备一般能以一半的分数达到安卓设备的同等性能，在同分的情况下可想而知。
+
+- 屏幕加长到 4 英寸，这个改良应是妥协的产物。在其它品牌手机屏幕动辄 4.6, 5.3 的压力下， iPhone 无法死守 3.5 不放，又要兼顾单手握持控制的便利性，再加上考虑开发者修改应用以适应新分辨率的工作量，只好只加长，不加宽。我使用 4.65 英寸屏幕的 [Galaxy Nexus](http://www.google.com/nexus/#/galaxy) 确实不如 iPhone 4S 顺手，但屏幕宽度没有增加的情况下，浏览网页等应用场景并不能有效利用加大的空间，跟竞争对手相比 4 英寸也还是太小，妥协的产物很难达到良好的效果。这一点改良我觉得意义不大，还平白增加了开发者的工作量。
+
+- 新技术让显示饱和度增加了 44% . 业界色彩最精确的显示屏。这在 [The New iPad 那块 99% sRGB 色域的神屏](http://www.displaymate.com/iPad_ShootOut_1.htm)上已经见识过了，并非什么新东西，只是确保不会被竞争对手比下去而已。
+
+- 4G LTE ， UK 的 LTE 刚刚起步，我暂时无法体验，这一点改良也是跟随竞争者的脚步作出的，并非业界先锋。但，在美加澳等发达地区非常非常实用，相信很多人是冲着这一点下的订单。
+
+- 前置摄像头换成高清，这也是早就该有的升级。后置摄像头的参数没有变化。
+
+- 三麦克风设计，提升语音质量。
+
+- Lightening 接口和 Nano Sim ，都是为了节省机内空间。 Lightening 接口看在不分正反这个大优点上我没什么意见， Nano Sim 就有点不能理解：真的差那么小一点点的地方，值得为此换个 Sim 卡标准？虽然这事情运营商能解决，但旧 Sim 卡无法使用会对一部分用户造成不便。
+
+- 铝制后盖，整机更轻薄。技术男们对这种改进一般不怎么关注，但我觉得这才是 iPhone 5 最大的改良。后面一块玻璃改成铝壳，前面采用了[新的触摸屏技术](http://news.cnet.com/8301-13579_3-57492629-37/apple-patent-could-lead-to-thinner-lighter-iphone-screens/)，让整机厚度减少到 7.6mm ，重量只剩下 112g . 这种「摸过才知道」的改进对 Geek 们没什么吸引力，对普通用户特别是女性用户的影响却不可小视。
+
+![iPhone 5 side view](http://pic.webabie.com/webabie.com/precision_side.png "iPhone 5 side view")
+
+Apple 从 iPhone 4 开始摈弃了工程塑料，只用金属和玻璃制做机身，牺牲了一些重量和厚度，换来用户不一样的手感和心理感觉。这实际上是一种错觉，高端的工程塑料完全可以做出不输给铝壳的耐用度，但无意识积累的日常生活经验已经在大部分人潜意识里把塑料和廉价低端产品联系在一起（塑料确实也较为便宜）。金属，玻璃，陶瓷这些材料给人的感觉更精致高级些。尤其在这个时代，[手机和人几乎一体 (you and your phone are one thing; a single organism. )](https://github.com/harryf/thoughts/blob/master/mobile-killed-the-login.md)，这种无法量化的感觉也是用户体验中重要的一环。话说回来，当我拿到 The New iPad 的时候，还是很希望能换个塑料背壳让整机重量轻一些的。 iPhone 5 能兼顾材料，厚度，重量和电池寿命，确是工业设计的巅峰之作。
+
+当我列完以上几点后，回头看看，心情有些复杂。 iPhone 5 把 iPhone 4S 身上的缺陷一一补足，可以说是一台没有明显短板的手机，无论从哪个方面去看都非常优秀。但无可否认，这是一个防御型产品，只有改良，没有创新， iPhone 4 带来了当时无与伦比的 Retina Display ； iPhone 4S 的 Siri 虽然不算成功，好歹也是创新。 而在 iPhone 5 身上我们只看到修修补补 - 当然修补得很好 - 看不到真正领先于竞争对手的地方了。
+
+
+## Apple 为什么停止了创新？
+首先 Apple 未必真的已经停下创新的步伐，但这一代的 iPhone 确实没有新意。因素应该不止一个。
+
+- 很大一部分人把这个问题归咎于 Steve Jobs 的离开。 他重新接手 Apple 的时候，[传说公司的现金流已经不足以支持三个月](http://pocketnow.com/2012/08/20/apple-most-valuable-company-in-history/)， 15 年后的今天， Apple 市值六千五百亿美元，早已创下历史最高记录。 Steve Jobs 血液里流淌着创新的基因，他一手建立了整个 iDevice 产品线，并亲自为每一代产品把关，他的英年早逝，使得 iPhone 失去了方向。
+
+- 也有人认为经过前五代产品， iPhone 已经是趋近成熟，产品已经定型，留给创新的空间不多了。于此相辅相成的另一观点认为某一时间点上能应用到生产中的科技有其极限，现在的 iPhone 和其它高端智能手机已经很接近这个极限，想要继续创新，必须等待科技的发展。比如新材料的问世，电池技术的突破等。
+
+
+
+
+
+## 生态系统
+能够单纯对比手机本身的时代已经过去了，现在竞争已经上升到生态系统层面。 iPhone 的竞争对手们都对此很了解，在比较的时候，总会刻意避开这一点，因为现阶段 iOS 下的生态系统依然大幅领先，但优势能保持多久，很难说。
+
+Apple 是如何打造出良好的生态系统的呢？
+
+- Apple 给开发者提供了完善，便利的全套开发环境；
+
+- 不仅如此， Apple 还提供了方便的销售渠道 iTunes App Store ；
+
+- iOS 产品线短小统一，对开发者有利；
+
+- iOS 设备一般在新品发布后很长时间才会有越狱方案出现，而且一直伴随各种问题，使得越狱率不高，盗版不会对开发者的收入冲击太严重；
+
+- 由手机本身的创新吸引用户，足够的用户数量产生可观的购买力，这种购买力被导向到手机应用消费上，利益驱使开发者做出优秀应用，又吸引更多的用户，打造出生态系统的良性循环。
+
+总结起来其实就两点，1. 方便；2. 有利可图。这样开发者蜂拥而至，为 iOS 平台创造出大批高质量的应用，平台用户体验也水涨船高。
+
+Google 收购并开源 Android 系统是一步伟大的战略，若非如此，今天的智能机市场格局将完全不同。 Android 系统进化到 [4.1 版本](http://developer.android.com/about/versions/jelly-bean.html)，[细节上依然问题很多](http://www.androidpolice.com/2012/09/18/ux-things-i-hate-about-android/)，但整体已经趋近于完善。撇开良莠不齐的安卓手机，鱼龙混杂的 Play Store ，光看系统的话，即使站在果粉的立场上，也必须承认 Android 系统更先进，更有趣。比如真实多任务系统；又比如分享中心。但一直以来， Android 的生态系统都不尽人意。
+
+![Jelly Bean](http://pic.webabie.com/webabie.com/jelly-bean.jpg "Jelly bean")
+
+今年六月底 Google 发布了自己贴牌的第一台 Android 平板 [Nexus 7](http://www.google.com/nexus/#/7) . 高配低价，硬件上来说是难得的好产品。当天我就订了一台，爱不释手。但是几周前，我毫无留恋地将其卖掉了。机器本身是很好的，可惜找不到什么好应用来跑。
+
+其实也不是一个都找不出来， Google 本家的一套应用都很好，也有几个 iOS 移植过来的优秀应用，比如 [Flipboard](https://play.google.com/store/apps/details?id=flipboard.app) 等，但还是太少了。 iOS 下 [Tweetbot](http://tapbots.com/software/tweetbot/) ， [OmniFocus](http://www.omnigroup.com/products/omnifocus-iphone/) 这种等级的应用，欠奉。更令人吃惊的是， Nexus 7 的四核心 CPU 十二核心 GPU 听着吓人，实际跑起应用来居然还是卡，这没法责备硬件机能不足，只能是应用的优化没有做到家的问题。
+
+操作系统再先进，硬件性能再强，最终还是要着落在应用上，因为应用是最上一层，是用户直接交流的一层。 Google 对此很清楚，也下了很大功夫。鉴于 Android 系统发布于 [Apache 许可证](http://en.wikipedia.org/wiki/Apache_License)下， Google 无法直接控制各手机生产商的系统代码。与 Apple 的 “Absolute Control” 方针不一样。 iOS 由于软硬件一体化，所有用户体验细节都能详尽控制， Android 则软硬分开，一套软件核心要适应成千上万种硬件搭配，只能采取 “Loose Control” 的方针，成立[开放手机联盟](http://en.wikipedia.org/wiki/Open_Handset_Alliance)，大家都遵循一些指导方针。 
+
+虽然现阶段 Android 的生态系统落后一些，但经历了最初几年的浑沌期，整个系统正在向好的方面发展，与 iOS 的差距逐渐缩小，表现在：
+
+- 开发环境的日益完善，以及开发社区的壮大，使得 Android 开发门槛越来越低。 Android 开发优势在于不用去学习一门语法奇特的新语言 (是的我觉得 Obj-C 好奇特)，也不用购买 Mac 机器以及缴纳每年 $99 作为初期投资；
+
+- Google 终于整合出一个靠谱的 [Play Store](https://play.google.com/store) . 而且它[表明了维护整个系统生态的决心](http://www.theverge.com/2012/9/14/3335204/google-statement-acer-smartphone-launch-aliyun-android)。
+
+- Google 早就是互联网巨头了，在网络整合方面 Apple 是追赶者。在 Mountain Lion 和 iOS 6 这两个最新操作系统中表现犹多。 iCloud 刚出的时候就像一个笑话，现在的可用性已经相当强，不算完美，但非常便利，真正的无形整合。相比之下， Android 系统的云整合没有那么紧密方便，但这一块是 Android 的传统优势，很容易能做好。
+
+- Android 设备价格覆盖 $50 - $600 全区间，加上优秀的操作系统，[市占率提升得很快](http://www.washingtonpost.com/business/technology/worldwide-market-share-for-smartphones-a-market-dominated-by-apple-and-android/2012/09/18/fa3f8f56-019b-11e2-bbf0-e33b4ee2f0e8_story.html)。由于用户基数庞大，开发者逐渐被吸引，越来越多的 iOS 应用会同时或者稍晚推出 Android 的版本，生态系统的良性循环正在逐渐成型。
+
+照这样的发展速度，我预测两三年内 Android 的生态系统会赶上 iOS . 顶级 Android 手机的用户体验也会达到同期 iPhone 的水平。其实，在 iPhone 5 发布会那天晚上，我担心 iOS 生态会变成一种恶性循环，即手机缺乏创新，导致用户数量减少，开发者利润下降，离开或者不再专注于 iOS 平台，使得应用数量和质量都下滑，又进一步从负面影响用户购买决策。从第一天的订单数目来看，至少这个现象不会发生在这一代 iPhone 身上， Apple 还有时间。
+
+![Apple vs Google](http://pic.webabie.com/webabie.com/Apple-vs-Google.jpg "Apple vs Google")
+
+
+## Apple 还处于领先位置么？
+从用户体验来说确实如此，但领先的距离不大了。 iPhone 的先发优势保持了这么多年，已经难能可贵，指望竞争对手一直落后是不现实的。 iPhone 5 依然会大卖，只是以前笑傲江湖，一览众山小的感觉已经消失，想要继续获得用户认可， Apple 必须使出吃奶的力气才行了。
+
+这对果粉和普通消费者来说，都应当是好事。
