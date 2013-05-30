@@ -1,10 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
-        <loc>http://webabie.com/overclock/</loc>
-        <lastmod>2013-05-30T15:58:49+01:00</lastmod>
-    </url>
-    <url>
         <loc>http://webabie.com/shenyou/</loc>
         <lastmod>2013-05-30T15:58:49+01:00</lastmod>
     </url>
@@ -207,10 +203,6 @@
         <lastmod>2013-05-30T15:58:49+01:00</lastmod>
     </url>
     <url>
-        <loc>http://webabie.com/how-to-install-custom-kernel-on-ovh-kimsufi-servers/</loc>
-        <lastmod>2013-05-30T15:58:49+01:00</lastmod>
-    </url>
-    <url>
         <loc>http://webabie.com/the-foundation-of-western-civilization-8-of-47/</loc>
         <lastmod>2013-05-30T15:58:49+01:00</lastmod>
     </url>
@@ -227,15 +219,7 @@
         <lastmod>2013-05-30T15:58:49+01:00</lastmod>
     </url>
     <url>
-        <loc>http://webabie.com/octopress-for-absolute-beginners/</loc>
-        <lastmod>2013-05-30T15:58:49+01:00</lastmod>
-    </url>
-    <url>
         <loc>http://webabie.com/behind-jeremy-lin/</loc>
-        <lastmod>2013-05-30T15:58:49+01:00</lastmod>
-    </url>
-    <url>
-        <loc>http://webabie.com/rails-on-ubuntu-vps/</loc>
         <lastmod>2013-05-30T15:58:49+01:00</lastmod>
     </url>
     <url>
@@ -251,24 +235,16 @@
         <lastmod>2013-05-30T15:58:49+01:00</lastmod>
     </url>
     <url>
-        <loc>http://webabie.com/why-do-i-uninstall-chinese-ime-on-my-mac/</loc>
-        <lastmod>2013-05-30T15:58:49+01:00</lastmod>
-    </url>
-    <url>
         <loc>http://webabie.com/linode-being-hacked-behind-the-scenes/</loc>
         <lastmod>2013-05-30T15:58:49+01:00</lastmod>
     </url>
     <url>
-        <loc>http://webabie.com/so-i-build-a-pc-again/</loc>
-        <lastmod>2013-05-30T15:58:49+01:00</lastmod>
-    </url>
-    <url>
         <loc>http://webabie.com/blog/archives/</loc>
-        <lastmod>2013-05-30T15:58:49+01:00</lastmod>
+        <lastmod>2013-05-30T22:47:22+01:00</lastmod>
     </url>
     <url>
         <loc>http://webabie.com/</loc>
-        <lastmod>2013-05-30T15:58:49+01:00</lastmod>
+        <lastmod>2013-05-30T22:47:13+01:00</lastmod>
     </url>
     <url>
         <loc>http://webabie.com/robots.txt</loc>

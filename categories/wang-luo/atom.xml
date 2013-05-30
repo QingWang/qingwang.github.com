@@ -4,7 +4,7 @@
   <title><![CDATA[Category: 网络 | blacktulip]]></title>
   <link href="http://webabie.com/categories/wang-luo/atom.xml" rel="self"/>
   <link href="http://webabie.com/"/>
-  <updated>2013-05-30T22:43:58+01:00</updated>
+  <updated>2013-05-30T22:57:12+01:00</updated>
   <id>http://webabie.com/</id>
   <author>
     <name><![CDATA[Qing Wang]]></name>
@@ -117,70 +117,6 @@
 <p>&mdash; Franc<s> </s><s>e </s>is   Bacon</p></blockquote>
 
 <p>强烈建议懂基本英语的筒子们去看 <a href="http://www.reddit.com/tb/dxskm">原贴</a> 。感谢 <a href="http://twitter.com/#!/fyer">大师</a> 的指引。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[How to install custom kernel on OVH / Kimsufi servers]]></title>
-    <link href="http://webabie.com/how-to-install-custom-kernel-on-ovh-kimsufi-servers/"/>
-    <updated>2011-04-10T00:00:00+01:00</updated>
-    <id>http://webabie.com/how-to-install-custom-kernel-on-ovh-kimsufi-servers</id>
-    <content type="html"><![CDATA[<p>OVH servers are shipped with their specially tailored kernels. They are not bad but sometimes the applications (for example VirtualBox) do not agree with them. And they are also too old. Here is how to install custom kernels on these servers. Everything based on Ubuntu Server 10.10.</p>
-
-<p>Most credits go to <a href="http://forums.ovh.co.uk/showpost.php?p=15454&amp;amp;postcount=4">this post</a>. I updated some details and added the grub part.</p>
-
-<p>So let&rsquo;s say you are going to compile and install kernel 2.6.38.2 (latest kernel by now) on a kimsufi server.</p>
-
-<p>First of all, install Ubuntu server 10.10 in the managerv3, login with root.</p>
-
-<!-- more -->
-
-
-<p>Then:</p>
-
-<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>apt-get install lzma
-</span><span class='line'><span class="nb">cd</span> /usr/src
-</span><span class='line'>wget &lt;a <span class="nv">href</span><span class="o">=</span><span class="s2">&quot;http://www.kernel.org/pub/linux/kernel/v2.6/linux-2.6.38.2.tar.bz2&quot;</span>&gt;http://www.kernel.org/pub/linux/kernel/v2.6/linux-2.6.38.2.tar.bz2&lt;/a&gt;
-</span><span class='line'>tar xf linux-2.6.38.2.tar.bz2
-</span><span class='line'><span class="nb">cd </span>linux-2.6.38.2
-</span><span class='line'>make mrproper
-</span><span class='line'>wget &lt;a <span class="nv">href</span><span class="o">=</span><span class="s2">&quot;ftp://ftp.ovh.net/made-in-ovh/bzImage/2.6.34.6-3/2.6-config-xxxx-std-ipv6-32&quot;</span>&gt;ftp://ftp.ovh.net/made-in-ovh/bzImage/2.6.34.6-3/2.6-config-xxxx-std-ipv6-32&lt;/a&gt;
-</span><span class='line'>cp 2.6-config-xxxx-std-ipv6-32 .config
-</span><span class='line'>make menuconfig
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
-
-<p>At this step, you need to scroll to the end of the options and select &ldquo;Load an Alternate Configuration File&rdquo;, load file .config, then go up and make sure &ldquo;Enable loadable module support&rdquo; is checked. Then go in &ldquo;General setup&rdquo;, Clear whatever in the &ldquo;Local version &ndash; append to kernel release&rdquo;. Now you can exit and save the config file.</p>
-
-<p>Go on do the make. if you are on a multi-core server you can use the -j stuff. If not, drop that option.</p>
-
-<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>make -j5 <span class="nv">CONFIG_DEBUG_SECTION_MISMATCH</span><span class="o">=</span>y
-</span><span class='line'>make modules
-</span><span class='line'>make modules_install
-</span><span class='line'>cp arch/i386/boot/bzImage /boot/bzImage-2.6.38.2
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
-
-<p>Now here is different from the original post. OVH replaced lilo with grub. So the modifying lilo.conf method in the original post is no longer suitable. Instead, you need to alter the grub config file which is:</p>
-
-<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>vim /boot/grub/grub.cfg
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
-
-<p>Search for &ldquo;OVHkernel&rdquo; and change the bzImage file name in this block accordingly. Then save and exit.</p>
-
-<p>Alright, you are good to go. Pray and type &ldquo;reboot&rdquo;. Good luck.</p>
 ]]></content>
   </entry>
   
