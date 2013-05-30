@@ -1,1 +1,405 @@
-My Octopress Page is coming soon &hellip;
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Qing Wang</title>
+	<meta name="author" content="Qing Wang">
+
+	
+	<meta name="description" content="So I Built a PC Again Building a PC is not that big a deal in 2013. And admittedly, it is much easier than any other type of DIY. Assembling LEGO &hellip;">
+	
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="http://feeds.feedburner.com/blacktulipcn" rel="alternate" title="Qing Wang" type="application/atom+xml">
+	
+	<link rel="canonical" href="http://webabie.com/">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>
+	<!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+</head>
+
+
+<body>
+	<div class="container">
+		<div class="left-col">
+			<div class="intrude-less">
+			<header id="header" class="inner"><nav id="main-nav"><ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+</nav>
+<!-- <nav id="sub-nav">
+	<div class="social">
+		
+		
+		
+		<a class="twitter" href="http://twitter.com/blacktulip" title="Twitter">Twitter</a>
+		
+		
+		
+		
+		
+		
+		
+		
+		<a class="rss" href="http://feeds.feedburner.com/blacktulipcn" title="RSS">RSS</a>
+		
+	</div>
+</nav> -->
+<div class="profile-container">
+  <div class="profilepic">
+    <script src="/javascripts/md5.js"></script>
+    <script type="text/javascript">
+$(function(){
+  $('.profilepic').append("<img src='http://www.gravatar.com/avatar/" + MD5("blacktulip@gmail.com") + "?s=160' alt='Profile Picture' style='width: 160px;' />");
+});
+    </script>
+  </div>
+  <hgroup>
+  <h1 class="site-title"><a href="/">Qing Wang</a></h1>
+  
+  <p class="site-subtitle">Programming Learner | Dad | Urgent in need of losing weight | Canterbury, Kent, UK | webabie.com</p>
+  
+  </hgroup>
+  
+</div>
+</header>
+			</div>
+		</div>
+		<div class="mid-col">
+			
+				
+			
+			<div class="mid-col-container">
+				<div id="content" class="article-inner">
+<div itemscope itemtype="http://schema.org/Blog">
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<h1 class="title" itemprop="name"><a href="/so-i-build-a-pc-again/" itemprop="url">So I Built a PC Again</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<p>Building a PC is not that big a deal in 2013. And admittedly, it is much easier than any other type of DIY. Assembling LEGO blocks arguably has more fun, too. The reason for building a PC today, ultimately, breaks down to squeezing horse power out of a (usually limited) budget.</p>
+
+<p>Now the <a href="http://en.wikipedia.org/wiki/Windows_System_Assessment_Tool" title="Windows System Assessment Tool">WinSAT</a> is not really the most accurate benchmark in the world. But I do not know which one is anyway and this one is right there. So please put up with me.</p>
+
+<p><img src="http://farm9.staticflickr.com/8131/8747262751_c0f00eddab_o.jpg" alt="WinSAT result" /></p>
+
+<p>Doesn&rsquo;t look too shabby, does it?</p>
+
+<p>However I am going to show a fuller picture (pun intended) here.</p>
+
+
+		
+		<a href="/so-i-build-a-pc-again/" class="more-link">Read on &rarr;</a>
+	</div>
+
+</article>
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<h1 class="title" itemprop="name"><a href="/linode-being-hacked-behind-the-scenes/" itemprop="url">Linode 信用卡信息泄露的幕后故事</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<p>上个月 <a href="https://blog.linode.com/2013/04/16/security-incident-update/">Linode 被骇客入侵</a>导致所有信用卡信息泄露，我也未能幸免地中招去换了卡。今天在 HN 看到<a href="http://straylig.ht/zines/HTP5/0x02_Linode.txt">侵入者所发布的幕后故事</a>，觉得挺有意思，就转过来跟大家分享一下。</p>
+
+<p>我对骇客界的术语完全不懂，以下转译基于 <a href="http://straylig.ht/zines/HTP5/0x02_Linode.txt">HN 上的一条评论</a>，掺杂一些我自己的理解。</p>
+
+<p>HTP (&ldquo;Hack The Planet&rdquo;) 是一个骇客组织，某不知名的团体装成另一个叫 (&ldquo;ac1db1tch3z&rdquo;) 的组织对 HTP 进行了一些调查活动，主要是想寻找 HTP 使用的 <a href="http://en.wikipedia.org/wiki/Botnet">Botnet (僵尸网络)</a>。而这行为被 HTP 察觉到了，于是打算进行报复。</p>
+
+
+		
+		<a href="/linode-being-hacked-behind-the-scenes/" class="more-link">Read on &rarr;</a>
+	</div>
+
+</article>
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<h1 class="title" itemprop="name"><a href="/why-do-i-uninstall-chinese-ime-on-my-mac/" itemprop="url">Why Do I Uninstall Chinese IME on My Mac</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<p>I uninstalled all Chinese IMEs on my Mac a few days ago for the following reasons:</p>
+
+<ol>
+<li><p>Having multiple IMEs was annoying &ndash; especially when I was coding. Countless times I typed a few commands in the console only to find they were some meaningless Chinese words. Then I had to switch to English IME and type them in again.</p></li>
+<li><p>Without the ability of typing Chinese I have to use English more. My Chinese is basically flawless and does not require any more practise (if I don&rsquo;t want to become a writer). On the other hand, my English isn&rsquo;t. (You can probably tell from this post :p)</p></li>
+<li><p>This is the most important point: to write in English require much more focus and energy for me. Thus, I tend to write only when absolutely necessary, and write as little as possible. I spent a lot of time on different forums (and on twitter of course) arguing with people who really do not worth my precious seconds. Now I am not able to do it anymore (well&hellip; not actually <em>unable</em> but I probably wouldn&rsquo;t bother) even if I want to. How wonderful is that?</p></li>
+</ol>
+
+
+<p>Hope I can keep make wise decisions like this one :D</p>
+
+		
+		
+	</div>
+
+</article>
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<h1 class="title" itemprop="name"><a href="/understanding-ruby-closures/" itemprop="url">理解 Ruby 的闭包</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<p>非直译，原文： <a href="http://www.robertsosinski.com/2008/12/21/understanding-ruby-blocks-procs-and-lambdas/">Understanding Ruby Blocks, Procs and Lambdas</a></p>
+
+<p>Ruby 处理 <a href="http://en.wikipedia.org/wiki/Closure_%28computer_science%29">closures</a> (闭包) 的方式很独特。闭包在 Ruby 里面有 4 种不同的方式，每种方式跟其余几种都有那么一点点的区别，下面就来看看……</p>
+
+<h2>首先， Blocks</h2>
+
+<p>最常见的，最简单的，而且被大多人认为是最具有 Ruby 风格的闭包使用方式是 blocks . 像这样：</p>
+
+<div><script src='https://gist.github.com/4120210.js?file=Ruby_blocks_example_1.rb'></script>
+<noscript><pre><code>array = [1, 2, 3, 4]
+  
+array.collect! do |n|
+  n ** 2
+end
+
+
+puts array.inspect
+
+# =&gt; [1, 4, 9, 16]</code></pre></noscript></div>
+
+
+<p>这段程序做了什么呢？</p>
+
+<ol>
+<li>定义了一个数组 <code>array</code> .</li>
+<li>把 <code>collect!</code> 这个方法连同它后面的代码块传入这个数组 .</li>
+<li>这个代码块找到 <code>collect!</code> 这个方法用的变量 (也就是 <code>n</code> )，然后对其进行操作 (在这里是平方)。</li>
+<li>每个 <code>n</code> 都操作一遍，得到最后的结果。</li>
+</ol>
+
+
+<p>跟 <code>collect!</code> 使用一个 block 看起来很容易，只需想像成 <code>collect!</code> 这个方法把代码块在数组里面每个元素上都过了一遍。但是如果我们要自己写这个方法呢？假设这个方法名字叫 <code>iterate!</code> 的话，写出来是这样的：</p>
+
+
+		
+		<a href="/understanding-ruby-closures/" class="more-link">Read on &rarr;</a>
+	</div>
+
+</article>
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<h1 class="title" itemprop="name"><a href="/some-thoughts-about-iphone-5/" itemprop="url">关于 iPhone 5 的一些想法</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<p>感谢科技的进步，让贫富差距变小。近五年来，无论一个英国人是领着政府救济的贫困户，还是普通中产阶级，抑或是腰缠万贯的富豪，他能买到的最好的手机都是 £500 左右一台 iPhone . Apple 自从 2007 年发布第一代 iPhone 以来，一直保持着每年一次，不多也不少的更新频率。 今年九月十二号， Apple 按例在旧金山芳草地艺术中心发布了最新一代 &ndash; <a href="http://www.apple.com/iphone/">iPhone 5</a> .</p>
+
+<p>只是， iPhone 5 现在还能算最好的手机么？</p>
+
+<p><img src="http://images.apple.com/iphone/home/images/wireless_hero.jpg" title="iPhone 5" alt="iPhone 5" /></p>
+
+
+		
+		<a href="/some-thoughts-about-iphone-5/" class="more-link">Read on &rarr;</a>
+	</div>
+
+</article>
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<h1 class="title" itemprop="name"><a href="/the-foundation-of-western-civilization-10-of-47/" itemprop="url">西方文明之根(10/47) — 古希腊建筑与戏剧</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<p>上两期(aka 一年多以前，sorry ;&ndash;( )我们访问了 <a href="http://webabie.com/the-foundation-of-western-civilization-8-of-47/">斯巴达</a> 和 <a href="http://webabie.com/the-foundation-of-western-civilization-9-of-47/">雅典</a> 这两座最负盛名的伟大希腊城邦，从社会和政治两方面进行了一些分析。接下来不妨看看在这些古希腊城邦里面产生了什么样的文化。概括而言，所有城邦的文化都有一些共同点，但每个城邦也都具备自己的特色。</p>
+
+<p>鉴于如今对古希腊城邦的了解大部分都建立在雅典城邦上，这次还是以她为例。来到公元前五世纪，雅典城邦正值她在古典时代的黄金时期。让我们从最为公开的艺术形式 建筑 和 戏剧 开始。</p>
+
+<p>建筑是文化标志中最公开，最公共的一种。巨大的建筑物矗立在城邦中，城邦居民每天都要看到它们。无论他们对这些建筑是喜是恶，是赞美还是批判，也动摇不了这些建筑分毫。这些建筑可以告诉我们很多信息，关于它们的城市，关于它们的建筑者。</p>
+
+
+		
+		<a href="/the-foundation-of-western-civilization-10-of-47/" class="more-link">Read on &rarr;</a>
+	</div>
+
+</article>
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<h1 class="title" itemprop="name"><a href="/rails-on-ubuntu-vps/" itemprop="url">Rails on Ubuntu VPS</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<p>So now I have a KVM VPS running Ubuntu. How do I setup a rails development environment? The Linux/OSX users are no as lucky as the Windows users at this &mdash; There is no simple stupid all-in-one script/binary for us. Most of us need to go through a try-and-error process to accomplish the task. In this post I am going to do it again and try to record it so that other people (or the future me) can playback.</p>
+
+<h3>Prepare</h3>
+
+<p>That&rsquo;s the routine commands:</p>
+
+<figure class='code'><figcaption><span>update system </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>sudo apt-get update
+</span><span class='line'>sudo apt-get upgrade
+</span><span class='line'>sudo apt-get install git curl build-essential vim libcurl4-openssl-dev bison openssl libreadline6 libreadline6-dev zlib1g zlib1g-dev libssl-dev libyaml-dev libsqlite3-0 libsqlite3-dev sqlite3 libxml2-dev libxslt-dev autoconf
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>ZSH</h3>
+
+<p>This step is optional. Bash is good enough. However I like the fancy zsh for its flexible custom prompt.</p>
+
+<figure class='code'><figcaption><span>install oh-my-zsh </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>sudo apt-get install zsh
+</span><span class='line'>git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+</span><span class='line'>cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
+</span><span class='line'>chsh -s /bin/zsh
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Personally, I will change the zsh theme to &ldquo;gnzh&rdquo;. You can leave it as is or use any theme you prefer. To do this, open ~/.zshrc and alter &ldquo;ZSH_THEME&rdquo;.</p>
+
+
+		
+		<a href="/rails-on-ubuntu-vps/" class="more-link">Read on &rarr;</a>
+	</div>
+
+</article>
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<h1 class="title" itemprop="name"><a href="/behind-jeremy-lin/" itemprop="url">所有的一切都是阴谋（微小说）</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<p>注：本故事纯属虚构。如有雷同，乃是巧合；本文纯属原创。如有雷同，实属抄我。</p>
+
+<p>2011 年圣诞节前夕，美国纽约市第五大道 645 号 Olympic Tower 的某办公室内，两人隔桌相对而坐。</p>
+
+<p>大班椅中的老者显得有些心不在焉。即使坐着的时候，也能看出他身材不高，约莫六十来岁的样子，虽然未见谢顶，但头发已经根根银白。此刻他一只手无意识地拨弄着桌上的钢笔，眼神似乎看着办公桌对面的人，又似乎透过了那人而望向远方不知何处。他脸上表情严肃，嘴角略微下垂，两条还没有完全变成银色的眉毛锁向中间。</p>
+
+<p>老者对面的中年男子是一名黑人，虽然身着西服，也能从外形上看出他身材十分粗壮，他的嘴唇很厚，双目坚定有神，而头上则是光溜溜的，此刻他身体略微前倾，一双大手按在桌面上，目光直视着老者，似乎正在等待对方发话。</p>
+
+<p>短暂的沉默后，黑人男子开口说道：</p>
+
+<p>「我说大卫，我们不是早就谈完了么？事情都已经解决了，名字全都签下了，咱俩还有啥可谈的啊？」</p>
+
+<p>黑人男子那洪亮的声音似乎让老者一下子回过神来，他的脸上瞬间幻化出一个和蔼而略带职业性的微笑，眉头也舒展开来，答道：</p>
+
+
+		
+		<a href="/behind-jeremy-lin/" class="more-link">Read on &rarr;</a>
+	</div>
+
+</article>
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<h1 class="title" itemprop="name"><a href="/octopress-for-absolute-beginners/" itemprop="url">Octopress for Absolute Beginners</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<h3>What is Octopress</h3>
+
+<p><a href="http://octopress.org/">Octopress</a> is a &ldquo;blogging framework&rdquo; according to its author. I&rsquo;d rather call it a webpage publishing system. For its main function is to publish webpages.</p>
+
+<h3>Why use Octopress</h3>
+
+<p>For blogging, most people use blogger, wordpress.com, livejournal, etc. Some build independent blogs with their own domain, own hosting and WordPress source code. Those are all very good solutions and one doesn&rsquo;t need to switch unless has really good reasons.</p>
+
+<p>However if you, like myself, are already bored with all those popular platforms; or, again like myself, are planning to learn <a href="http://www.ruby-lang.org/en/">Ruby</a>, <a href="http://git-scm.com/">Git</a> and are trying to work your way out of <a href="http://github.com/">GitHub</a>. Then Octopress may be for you.</p>
+
+<p>By using Octopress you will get:</p>
+
+<ul>
+<li>to learn how to build a Ruby programming environment.</li>
+<li>some basic command of Git.</li>
+<li>to write blog posts and pages completely with <a href="http://en.wikipedia.org/wiki/Command-line_interface">CLI</a>. That&rsquo;s right. You can write articles with VIM.</li>
+<li>to use <a href="http://daringfireball.net/projects/markdown/basics">markdown syntax</a> in blog posts. Or to learn it if you don&rsquo;t already know.</li>
+<li>to host your blog on GitHub. Free.</li>
+<li>very nice code highlighting.</li>
+</ul>
+
+
+<p>&hellip;and, on top of all, it is fun.</p>
+
+
+		
+		<a href="/octopress-for-absolute-beginners/" class="more-link">Read on &rarr;</a>
+	</div>
+
+</article>
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<h1 class="title" itemprop="name"><a href="/diy-nas-for-home-use/" itemprop="url">DIY 家用 NAS</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<h3>1. 为什么需要 NAS</h3>
+
+<p>随着科技进步，普通家庭中的智能设备越来越多，包括传统的台式机，笔记本电脑以及新潮的平板电脑，智能手机甚至媒体播放器(把 iPod touch 归为媒体播放器有点怪异，但人家确实是 iPod 家族成员&hellip;)。而便捷地在这些设备之间共享文件的需求也日益增加，于是原本属于专业设备的 <a href="http://en.wikipedia.org/wiki/Network-attached_storage">NAS (Network-Attached Storage)</a> 逐渐进入普通家庭中。</p>
+
+<p>NAS 相当于大大扩充了家庭中每一台智能设备的存储容量，同时也让它们都能随时独立访问任何文件。简而言之，就是“扩容”和“共享”两大功能。如何利用这功能，则看用户需求了。有些人把 NAS 当作多媒体库使用，存放大量的影视音乐文件；有些人则将其作为备份仓库，存放数码照片原片以及视频原始脚本等。总而言之，可以将其看做一块无线连接在所有智能设备上的大硬盘，随便如何使用。</p>
+
+
+		
+		<a href="/diy-nas-for-home-use/" class="more-link">Read on &rarr;</a>
+	</div>
+
+</article>
+
+</div>
+<nav id="pagenavi">
+    
+    
+        <a href="/blog/page/2/" class="next">Next</a>
+    
+    <div class="center"><a href="/blog/archives">Blog Archives</a></div>
+</nav></div>
+			</div>
+			<footer id="footer" class="inner"><p>
+  Copyright &copy; 2013 - Qing Wang -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+<p>Theme: <a href="https://github.com/qingwang/octopress-theme-yinyang">YinYang</a></p>
+</footer>
+			<script src="/javascripts/slash.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'webabiecom';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-267274-12']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+
+
+
+
+		</div>
+	</div>
+</body>
+</html>

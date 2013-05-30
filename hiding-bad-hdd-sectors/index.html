@@ -1,0 +1,181 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>屏蔽硬盘坏道的一次经历 - Qing Wang</title>
+	<meta name="author" content="Qing Wang">
+
+	
+	<meta name="description" content="屏蔽硬盘坏道的一次经历 偶们牧师的一块40G硬盘坏了，他是在给别人装机，blabla把所有东西都装好以后才发现的，可怜啊，功夫白费了。我去看了一下发现只有一点点坏道，而且相当集中，觉得可以设法屏蔽掉。 说起来容易，我是第一次干这个活儿，据完成过程来看，虽然不艰巨，倒也算得上曲折了。 &hellip;">
+	
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="http://feeds.feedburner.com/blacktulipcn" rel="alternate" title="Qing Wang" type="application/atom+xml">
+	
+	<link rel="canonical" href="http://webabie.com/hiding-bad-hdd-sectors/">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>
+	<!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+</head>
+
+
+<body>
+	<div class="container">
+		<div class="left-col">
+			<div class="intrude-less">
+			<header id="header" class="inner"><nav id="main-nav"><ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+</nav>
+<!-- <nav id="sub-nav">
+	<div class="social">
+		
+		
+		
+		<a class="twitter" href="http://twitter.com/blacktulip" title="Twitter">Twitter</a>
+		
+		
+		
+		
+		
+		
+		
+		
+		<a class="rss" href="http://feeds.feedburner.com/blacktulipcn" title="RSS">RSS</a>
+		
+	</div>
+</nav> -->
+<div class="profile-container">
+  <div class="profilepic">
+    <script src="/javascripts/md5.js"></script>
+    <script type="text/javascript">
+$(function(){
+  $('.profilepic').append("<img src='http://www.gravatar.com/avatar/" + MD5("blacktulip@gmail.com") + "?s=160' alt='Profile Picture' style='width: 160px;' />");
+});
+    </script>
+  </div>
+  <hgroup>
+  <h1 class="site-title"><a href="/">Qing Wang</a></h1>
+  
+  <p class="site-subtitle">Programming Learner | Dad | Urgent in need of losing weight | Canterbury, Kent, UK | webabie.com</p>
+  
+  </hgroup>
+  
+</div>
+</header>
+			</div>
+		</div>
+		<div class="mid-col">
+			
+				
+			
+			<div class="mid-col-container">
+				<div id="content" class="article-inner"><article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+	<h1 class="title" itemprop="name">屏蔽硬盘坏道的一次经历</h1>
+	<div class="entry-content" itemprop="articleBody"><p>偶们牧师的一块40G硬盘坏了，他是在给别人装机，blabla把所有东西都装好以后才发现的，可怜啊，功夫白费了。我去看了一下发现只有一点点坏道，而且相当集中，觉得可以设法屏蔽掉。</p>
+
+<p>说起来容易，我是第一次干这个活儿，据完成过程来看，虽然不艰巨，倒也算得上曲折了。</p>
+
+<p>首先要选定一个工具，论坛+放狗，发现在我的windows 2003下能用的分区软件不但屈指可数，而且屈一只手的指就可数。找了个acronis的partition expert试了试，发现没法扫盘，没法按柱面分区，一边儿凉快去吧。看来实在没办法只能设法进DOS用diskgen搞了。</p>
+
+<p>我这从Dos 3.x时代过来的人却对进DOS相当的不感冒，为啥呢，因为以前我没有软驱，现在倒是捡了一个，问题变成了没软盘&hellip;好不容易翻出两张来，经检测全是坏的&hellip;总之软盘启动这条路算是完了。</p>
+
+<p>然后试验光盘启动，找了张cd-rw，装了个easyboot (btw, 这玩意儿我还有正版)。然后按照说明做做做，把菜单项一改成run diskgen.exe，死活就是运行不了，期间重启n次，焦头烂额&hellip;</p>
+
+<p>实在没办法，只好试验最后一招&mdash;U盘启动，这对我也是新鲜事物。搜了一下发现好像不算太难，下载了个usboot 1.7，先用FDD模式做了一次，启动倒是很顺利，一运行diskgen立马出错。换HDD模式又做一次，症状依旧，看来diskgen本身有问题。</p>
+
+<p>基本上我要打算放弃了，突然间想到：diskgen启动出错，多半是在检测硬盘的时候出现了问题。为啥会出问题呢？难道有什么硬盘它不认识么？我的主盘是两块SATA做的RAID 0，多半问题出在这儿了。想到这里立即把两块硬盘电源拔掉，这回终于进去了。</p>
+
+<p>以后就好办了，diskgen扫盘，type文件记下柱面位置，重新进diskgen按柱面分区，前后给它留了100个柱面的位置，估计一时半会扩散不过来吧。第一次还忘了hide分区，又重复操作了一次才算完&hellip;&hellip;</p>
+
+<p>总结：电脑这些毛病解决起来一般原理都很简单，真正操作起来总会有这样那样的小问题困扰，最重要的就是经验，只要亲手成功解决一两次，以后就方便了，嘿嘿。</p>
+</div>
+
+</article>
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	<a class="addthis_button_tweet"></a>
+	
+	
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+
+
+<section id="comment">
+    <h1 class="title">Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
+</div>
+			</div>
+			<footer id="footer" class="inner"><p>
+  Copyright &copy; 2013 - Qing Wang -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+<p>Theme: <a href="https://github.com/qingwang/octopress-theme-yinyang">YinYang</a></p>
+</footer>
+			<script src="/javascripts/slash.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'webabiecom';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://webabie.com/hiding-bad-hdd-sectors/';
+        var disqus_url = 'http://webabie.com/hiding-bad-hdd-sectors/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-267274-12']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+
+
+
+
+		</div>
+	</div>
+</body>
+</html>

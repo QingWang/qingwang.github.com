@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: 网络 | Qing Wang]]></title>
+  <link href="http://webabie.com/categories/wang-luo/atom.xml" rel="self"/>
+  <link href="http://webabie.com/"/>
+  <updated>2013-05-30T14:33:50+01:00</updated>
+  <id>http://webabie.com/</id>
+  <author>
+    <name><![CDATA[Qing Wang]]></name>
+    <email><![CDATA[blacktulip@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[DIY 家用 NAS]]></title>
+    <link href="http://webabie.com/diy-nas-for-home-use/"/>
+    <updated>2011-08-20T00:00:00+01:00</updated>
+    <id>http://webabie.com/diy-nas-for-home-use</id>
+    <content type="html"><![CDATA[<h3>1. 为什么需要 NAS</h3>
+
+<p>随着科技进步，普通家庭中的智能设备越来越多，包括传统的台式机，笔记本电脑以及新潮的平板电脑，智能手机甚至媒体播放器(把 iPod touch 归为媒体播放器有点怪异，但人家确实是 iPod 家族成员&hellip;)。而便捷地在这些设备之间共享文件的需求也日益增加，于是原本属于专业设备的 <a href="http://en.wikipedia.org/wiki/Network-attached_storage">NAS (Network-Attached Storage)</a> 逐渐进入普通家庭中。</p>
+
+<p>NAS 相当于大大扩充了家庭中每一台智能设备的存储容量，同时也让它们都能随时独立访问任何文件。简而言之，就是“扩容”和“共享”两大功能。如何利用这功能，则看用户需求了。有些人把 NAS 当作多媒体库使用，存放大量的影视音乐文件；有些人则将其作为备份仓库，存放数码照片原片以及视频原始脚本等。总而言之，可以将其看做一块无线连接在所有智能设备上的大硬盘，随便如何使用。</p>
+
+<!-- more -->
+
+
+<h3>2. 家用 NAS 方案</h3>
+
+<p>在专业的 NAS 使用场合，为了数据安全和连接可靠，一般使用昂贵的专业解决方案。而作为家用计划，不可能负担动辄上万美刀的专业设备。摆在家庭用户面前有两条路：直接购买家用 NAS 成品设备，或者 DIY 一台 NAS 。</p>
+
+<p>这两个选择各有利弊，没有什么绝对的优劣之分。不过作为一个手头拮据而且对外观毫无要求的男性资深电脑爱好者，本人的选择应当是一目了然的了。唯一的问题是我生活在折合人民币两块六一度电的神奇国家， DIY 的 NAS 耗电量令人头疼。这点上不可能达到成品设备水平，只能设法尽量接近了。</p>
+
+<p>综合许多意见之后，最终配件清单如下：</p>
+
+<ul>
+<li>£104 <a href="http://www.amazon.co.uk/gp/product/B004KX216E/">Asus E35M1-M Pro</a></li>
+<li>£42 <a href="http://www.amazon.co.uk/gp/product/B003ZDJ42O/">Corsair CMX4GX3M1A1333C9 XMS3 Desktop Memory 4GB</a> * 2</li>
+<li>£32 <a href="http://www.amazon.co.uk/gp/product/B003OEMH28/">Cooler Master RC-370-KKN1 Elite 370 Midi Tower PC Case</a></li>
+<li>£47 <a href="http://www.amazon.co.uk/gp/product/B001KN8CVA/">Be Quiet! Pure Power 350W PSU</a></li>
+<li>£219 <a href="http://www.ebuyer.com/254429-hitachi-2tb-3-5-deskstar-coolspin-sata-iii-6gb-s-hard-drive-5900rpm-32mb-0f12117">Hitachi 2TB 3.5" Deskstar Coolspin HDS5C3020ALA632</a> * 4</li>
+</ul>
+
+
+<p>逐个解释：</p>
+
+<p>主板和处理器选择 AMD 新出的 APU 方案，一大半是由于其功耗上的优势；此平台实际运行功耗25W左右，是带 T 后缀的 Intel i3 系列的一半。虽然性能上无法与 Intel i3 相提并论，但作为一个 NAS 的处理器是超标的，至少比市面上任何成品家用 NAS 盒子都强得多。</p>
+
+<p>选择平台时还遇上了一个问题，就是对比 Asus E35M1-M Pro 和 <a href="http://www.amazon.co.uk/Gigabyte-GA-E350N-USB3-E350N-USB3-Mini-ITX-Motherboard/dp/B004NW0KY2">Gigabyte GA-E350V-USB3</a> 。华硕和技嘉在品牌上不相上下，这两块板价格相当，主要参数也相当接近，应当如何取舍？最终我选择了华硕这块板，基于两点理由：</p>
+
+<ul>
+<li>华硕这块板自带5个 SATA 槽，比技嘉的多出一个，换句话说，不加卡的前提下，华硕这块板能多挂一个硬盘，作为 NAS 这是个大优势。</li>
+<li>华硕这块板的处理器是被动散热，无风扇噪音低，长期开机这也是个优点。</li>
+</ul>
+
+
+<p>至于技嘉板优势在于主频高，板子面积小，装 HTPC 这块板更好一些，但这次还是不选它了。</p>
+
+<p>内存方面，现在 DDR3 内存正是论斤卖的时候，不过初始我只预计了 4GB 的配额。后来由于要使用 ZFS 文件系统，[需要至少 6GB 安装内存才能达到最佳性能]<a href="http://doc.freenas.org/index.php/Hardware_Requirements#RAM%EF%BC%8C%E5%8F%AA%E5%A5%BD%E5%A4%9A%E6%8F%92%E4%B8%80%E6%9D%A1%E3%80%82%E5%A6%82%E6%9E%9C%E4%BD%BF%E7%94%A8%E5%88%AB%E7%9A%84%E7%B3%BB%E7%BB%9F%EF%BC%8C%E6%AF%94%E6%96%B9">http://doc.freenas.org/index.php/Hardware_Requirements#RAM%EF%BC%8C%E5%8F%AA%E5%A5%BD%E5%A4%9A%E6%8F%92%E4%B8%80%E6%9D%A1%E3%80%82%E5%A6%82%E6%9E%9C%E4%BD%BF%E7%94%A8%E5%88%AB%E7%9A%84%E7%B3%BB%E7%BB%9F%EF%BC%8C%E6%AF%94%E6%96%B9</a> Windows ， 4GB 就足够了。须知那些成品家用 NAS 恐怕连 1GB 的都很少。</p>
+
+<p>机箱没什么好说的，看个人爱好。我买了个比较大的，方便日后增加硬盘。电源不需要买太大功率，因为整机功率不高。我的标准是大厂，安静。有这两点就差不多了。</p>
+
+<p>NAS 的核心部分自然是硬盘了。现在大容量硬盘的故障率有多高大家都清楚，买硬盘就是拼人品。但故障率跟品牌还是有联系的，根据<a href="http://blog.backblaze.com/2011/07/20/petabytes-on-a-budget-v2-0revealing-more-secrets/">这篇文章</a>，故障率最低的大容量硬盘品牌既不是希捷，也不是西数，而是日立。这一次我入了4块 2TB 的日立盘，如果对容量要求更高，可以一次到位买8块 3TB 的日立盘，组 RAID 6 或者 RAIDz2 还能达到 18TB 的容量， RAID 10 都能有 12TB ，不过需要额外买一块 PCI 转 SATA 的卡。</p>
+
+<h3>3. 系统的选择</h3>
+
+<p>大家应该意识到这其实是一台电脑，所以&hellip;跟那些成品 NAS 有很大的区别，可以安装任何操作系统，甚至可以在操作系统里面安装虚拟机再装另一个操作系统。从 Flexibility 上考虑，我推荐直接安装 Windows 7 或者 Windows Server 2008 。有以下两点好处：</p>
+
+<ul>
+<li>不但可以做 NAS ，而且直接变身一台备机，可以用来做超多事情，甚至直接当主力机器用。这个平台跟 Atom 不同，性能强很多，大部分日常工作胜任有余。</li>
+<li>软件丰富，配置简单，要 stream 什么的都有解决方案，毕竟是 Windows 。而且没有学习曲线，立即就能用。</li>
+</ul>
+
+
+<p>这个方案不大好的地方包括：</p>
+
+<ul>
+<li>理论上， Windows 是要买的，尽管大部分中文区用户不会真的花钱，但这其实是不对的&hellip;</li>
+<li>上面一节忘了说明， APU 平台现在的主板都不带 RAID 。也就是说只能用软 RAID 。而 Windows 7 下软 RAID 方式有限，只能做 stripe 和 mirror 。Windows Server 2008 倒是可以做软 RAID 5 ，但是性能臭名远扬。四盘 stripe 的风险有多高就不必说了， Mirror 损失一半空间，我实在接受不了。 Windows 7 还可以用类似 JBOD 的技术把四块硬盘合成一个卷使用，经查证也是类似 stripe ，一块盘完蛋就全完蛋，不敢用。</li>
+<li>Windows 支持的文件系统数量较少， FAT 家族，NTFS &hellip; 不支持 ZFS 等高级文件系统，这个问题单独看倒不是特别严重，但是跟上一个放一起看就很别扭，总之，如果有四块硬盘，装 Windows 的话最佳方案是完全分开使用，设置四个盘符，四个共享。如果不嫌麻烦，其实也不算太大的问题&hellip;</li>
+</ul>
+
+
+<p>其实后两点有个很简单的 workaround ，就是前面说的， Windows 系统中安装虚拟机，虚拟机里面使用 FreeBSD 或者 Linux 来管理硬盘。不过其一会遇到性能上的问题，其二嘛&hellip;这未免太折腾了。</p>
+
+<p>假如出于种种原因，不想装 Windows ，还有什么选择呢？ 爱折腾的人可以装个 Linux 随便整，如果你有信心这样做那么自然是高手，我就不多说了。否则，个人推荐使用 FreeNAS 这个完全基于 FreeBSD 的系统。</p>
+
+<p>这个系统的好处只有三个字母: <a href="http://en.wikipedia.org/wiki/ZFS">ZFS</a> . 太强大的文件系统了，天生是 NAS 的绝配。(Well&hellip; 任何系统的绝配&hellip; ) 由于我也刚接触，不敢说太多，以后有什么心得再分享。现在主要是使用它的 RAIDz 功能，把四块硬盘合成一个带冗余的 6TB 卷，通过 FreeNAS 的共享功能可以方便地在 Mac OSX 和 Windows 里面访问，也可以直接作为 Mac 上 Time Machine 的备份盘。可以定时做 Snapshot ，可以定时 做 S.M.A.R.T 检查，出现问题的话自动发邮件通知等。真正的高手也可以摈弃 FreeNAS ，直接在 原装 FreeBSD 上自行完成这些功能，我是做不到的&hellip;</p>
+
+<p>update: 忘了说一点。系统盘和数据盘应当严格分开。</p>
+
+<h3>4. 总结</h3>
+
+<p>折腾的过程也是学习的过程。在 DIY 这个 NAS 硬件的过程中我总算 catch up 了一些最新的硬件知识，这方面好久没有关注了。安装配置 FreeNAS 的过程中学习了 ZFS 这个文件系统的一些知识。当然最重要的收获还是以相对低廉的价格 (约450镑，在中国购买配件的话恐怕低于四千块人民币，仅仅是一个品牌四盘位 NAS 的空壳价格) 得到了一台配置强劲系统灵活，拥有 6TB 容量 (拜可恶的1024问题所赐，实际可用空间显示为 5.3TB T_T) 的NAS 。在此鸣谢在 twitter ，论坛和 irc 给了我大量帮助和指导的朋友们，Love you &lt;3 :&ndash;)</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[知识就是力量......法国就是熏肉]]></title>
+    <link href="http://webabie.com/knowledge-is-power-france-is-bacon/"/>
+    <updated>2011-05-05T00:00:00+01:00</updated>
+    <id>http://webabie.com/knowledge-is-power-france-is-bacon</id>
+    <content type="html"><![CDATA[<p>小时候，父亲教导我：「知识就是力量，法国就是熏肉。」</p>
+
+<p>前一半我懂，可后一半是神马意思？为什么这两句看起来毫无关联的话会放在一起？我为此疑惑了十多年。</p>
+
+<p>有时跟别人聊天，我会引用这句话：「知识就是力量，法国就是熏肉。」听者都会点头。而有时听到有人引用前半句「知识就是力量」，我会给他们补上后半句「法国就是熏肉」。他们也表示同意，并不觉得惊异。</p>
+
+<p>我有一次真的去找老师问这个问题：「知识就是力量，法国就是熏肉。」到底是什麼意思？这位老师花了整整10分钟时间给我解释「知识就是力量」，却完全没有涉及后半句。最后我用疑问的语气问道：「法国就是熏肉？」希望能得到一些讲解，但是只得到了一个字「对」。当时我才12岁，就没有勇气继续追问了，只好接受这个事实 &mdash; 我永远也没法搞懂这句话。</p>
+
+<p>数年前，我看到了写在纸上的这句话，终于恍然大悟&hellip;&hellip;</p>
+
+<blockquote><p>Knowledge is power.</p>
+
+<p>&mdash; Franc<s> </s><s>e </s>is   Bacon</p></blockquote>
+
+<p>强烈建议懂基本英语的筒子们去看 <a href="http://www.reddit.com/tb/dxskm">原贴</a> 。感谢 <a href="http://twitter.com/#!/fyer">大师</a> 的指引。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[How to install custom kernel on OVH / Kimsufi servers]]></title>
+    <link href="http://webabie.com/how-to-install-custom-kernel-on-ovh-kimsufi-servers/"/>
+    <updated>2011-04-10T00:00:00+01:00</updated>
+    <id>http://webabie.com/how-to-install-custom-kernel-on-ovh-kimsufi-servers</id>
+    <content type="html"><![CDATA[<p>OVH servers are shipped with their specially tailored kernels. They are not bad but sometimes the applications (for example VirtualBox) do not agree with them. And they are also too old. Here is how to install custom kernels on these servers. Everything based on Ubuntu Server 10.10.</p>
+
+<p>Most credits go to <a href="http://forums.ovh.co.uk/showpost.php?p=15454&amp;amp;postcount=4">this post</a>. I updated some details and added the grub part.</p>
+
+<p>So let&rsquo;s say you are going to compile and install kernel 2.6.38.2 (latest kernel by now) on a kimsufi server.</p>
+
+<p>First of all, install Ubuntu server 10.10 in the managerv3, login with root.</p>
+
+<!-- more -->
+
+
+<p>Then:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>apt-get install lzma
+</span><span class='line'><span class="nb">cd</span> /usr/src
+</span><span class='line'>wget &lt;a <span class="nv">href</span><span class="o">=</span><span class="s2">&quot;http://www.kernel.org/pub/linux/kernel/v2.6/linux-2.6.38.2.tar.bz2&quot;</span>&gt;http://www.kernel.org/pub/linux/kernel/v2.6/linux-2.6.38.2.tar.bz2&lt;/a&gt;
+</span><span class='line'>tar xf linux-2.6.38.2.tar.bz2
+</span><span class='line'><span class="nb">cd </span>linux-2.6.38.2
+</span><span class='line'>make mrproper
+</span><span class='line'>wget &lt;a <span class="nv">href</span><span class="o">=</span><span class="s2">&quot;ftp://ftp.ovh.net/made-in-ovh/bzImage/2.6.34.6-3/2.6-config-xxxx-std-ipv6-32&quot;</span>&gt;ftp://ftp.ovh.net/made-in-ovh/bzImage/2.6.34.6-3/2.6-config-xxxx-std-ipv6-32&lt;/a&gt;
+</span><span class='line'>cp 2.6-config-xxxx-std-ipv6-32 .config
+</span><span class='line'>make menuconfig
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>At this step, you need to scroll to the end of the options and select &ldquo;Load an Alternate Configuration File&rdquo;, load file .config, then go up and make sure &ldquo;Enable loadable module support&rdquo; is checked. Then go in &ldquo;General setup&rdquo;, Clear whatever in the &ldquo;Local version &ndash; append to kernel release&rdquo;. Now you can exit and save the config file.</p>
+
+<p>Go on do the make. if you are on a multi-core server you can use the -j stuff. If not, drop that option.</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>make -j5 <span class="nv">CONFIG_DEBUG_SECTION_MISMATCH</span><span class="o">=</span>y
+</span><span class='line'>make modules
+</span><span class='line'>make modules_install
+</span><span class='line'>cp arch/i386/boot/bzImage /boot/bzImage-2.6.38.2
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Now here is different from the original post. OVH replaced lilo with grub. So the modifying lilo.conf method in the original post is no longer suitable. Instead, you need to alter the grub config file which is:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>vim /boot/grub/grub.cfg
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Search for &ldquo;OVHkernel&rdquo; and change the bzImage file name in this block accordingly. Then save and exit.</p>
+
+<p>Alright, you are good to go. Pray and type &ldquo;reboot&rdquo;. Good luck.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[还需要VPS么？]]></title>
+    <link href="http://webabie.com/amazon-ec2-micro-instances/"/>
+    <updated>2010-09-09T00:00:00+01:00</updated>
+    <id>http://webabie.com/amazon-ec2-micro-instances</id>
+    <content type="html"><![CDATA[<p>话说Shared hosting的时代俨然逐渐离去中，这年头爱折腾的都上VPS，贪着它有root，抗折腾，性能好等等。当然最重要的因素还是价格。Linode算是最流行的一各供应商，其VPS质量也确实过硬，是值得推崇的品牌。</p>
+
+<p>不过呢，毕竟“云”才是大势所趋，互联网大鳄amazon的EC2已经推出很久了，当其时我便觉得很有取代VPS的可能性，EC2跟传统VPS相较基本全是优势，除了一点：价格。这一点足够要命了。</p>
+
+<p>amazon近期强力推出aws micro instances也许能补上这方面的问题。与standard instances相比，micro instances没有reserved cpu time，内存为613MB (好奇怪的数字)，适合那些平时用cpu很少，有时候要burst一下的应用&hellip;我们常用的大部分应用都是这样的吧？似乎连burst都不多。</p>
+
+<p>标价请参见<a href="http://aws.amazon.com/ec2/">aws页面</a>。照这个算价格，跟Linode比，假设你开一个micro instances，那么对应的是Linode 512。如果你每月流量10GB，则：</p>
+
+<p>Linode: 怎么都是20刀/月</p>
+
+<p>amazon: 按加州机房价格算，reserved instance 54刀/年，加上1p/hour，就是0.01<em>24</em>365=87.6刀/年；再加上流量的10<em>12</em>0.15/GB=18刀/年，总共是54+87.6+18=159.6/年，也就是13.3刀/月，ooops，便宜了1/3。</p>
+
+<p>简单计算可知，你的月流量要达到54.67GB的时候，两者价格相等。而Linode提供200GB的月流量，就是说如果你的流量在55GB-200GB/月之间的时候，Linode便宜，否则amazon EC2便宜。</p>
+
+<p>EC2还有几个优势：第一你可以用Windows系统，稍贵些；第二你不用的时候可以关掉，就不算你钱，当然如果你放网站就不能关了；第三换ip方便，会心一笑；第四EC2现在有新加坡机房可选，我没测试过，按常理推论从中国访问起来应该比美国机房快。</p>
+]]></content>
+  </entry>
+  
+</feed>

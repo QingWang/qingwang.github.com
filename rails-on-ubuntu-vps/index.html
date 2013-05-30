@@ -1,0 +1,404 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Rails on Ubuntu VPS - Qing Wang</title>
+	<meta name="author" content="Qing Wang">
+
+	
+	<meta name="description" content="Rails on Ubuntu VPS So now I have a KVM VPS running Ubuntu. How do I setup a rails development environment? The Linux/OSX users are no as lucky as &hellip;">
+	
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="http://feeds.feedburner.com/blacktulipcn" rel="alternate" title="Qing Wang" type="application/atom+xml">
+	
+	<link rel="canonical" href="http://webabie.com/rails-on-ubuntu-vps/">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>
+	<!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+</head>
+
+
+<body>
+	<div class="container">
+		<div class="left-col">
+			<div class="intrude-less">
+			<header id="header" class="inner"><nav id="main-nav"><ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+</nav>
+<!-- <nav id="sub-nav">
+	<div class="social">
+		
+		
+		
+		<a class="twitter" href="http://twitter.com/blacktulip" title="Twitter">Twitter</a>
+		
+		
+		
+		
+		
+		
+		
+		
+		<a class="rss" href="http://feeds.feedburner.com/blacktulipcn" title="RSS">RSS</a>
+		
+	</div>
+</nav> -->
+<div class="profile-container">
+  <div class="profilepic">
+    <script src="/javascripts/md5.js"></script>
+    <script type="text/javascript">
+$(function(){
+  $('.profilepic').append("<img src='http://www.gravatar.com/avatar/" + MD5("blacktulip@gmail.com") + "?s=160' alt='Profile Picture' style='width: 160px;' />");
+});
+    </script>
+  </div>
+  <hgroup>
+  <h1 class="site-title"><a href="/">Qing Wang</a></h1>
+  
+  <p class="site-subtitle">Programming Learner | Dad | Urgent in need of losing weight | Canterbury, Kent, UK | webabie.com</p>
+  
+  </hgroup>
+  
+</div>
+</header>
+			</div>
+		</div>
+		<div class="mid-col">
+			
+				
+			
+			<div class="mid-col-container">
+				<div id="content" class="article-inner"><article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+	<h1 class="title" itemprop="name">Rails on Ubuntu VPS</h1>
+	<div class="entry-content" itemprop="articleBody"><p>So now I have a KVM VPS running Ubuntu. How do I setup a rails development environment? The Linux/OSX users are no as lucky as the Windows users at this &mdash; There is no simple stupid all-in-one script/binary for us. Most of us need to go through a try-and-error process to accomplish the task. In this post I am going to do it again and try to record it so that other people (or the future me) can playback.</p>
+
+<h3>Prepare</h3>
+
+<p>That&rsquo;s the routine commands:</p>
+
+<figure class='code'><figcaption><span>update system </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>sudo apt-get update
+</span><span class='line'>sudo apt-get upgrade
+</span><span class='line'>sudo apt-get install git curl build-essential vim libcurl4-openssl-dev bison openssl libreadline6 libreadline6-dev zlib1g zlib1g-dev libssl-dev libyaml-dev libsqlite3-0 libsqlite3-dev sqlite3 libxml2-dev libxslt-dev autoconf
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>ZSH</h3>
+
+<p>This step is optional. Bash is good enough. However I like the fancy zsh for its flexible custom prompt.</p>
+
+<figure class='code'><figcaption><span>install oh-my-zsh </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>sudo apt-get install zsh
+</span><span class='line'>git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+</span><span class='line'>cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
+</span><span class='line'>chsh -s /bin/zsh
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Personally, I will change the zsh theme to &ldquo;gnzh&rdquo;. You can leave it as is or use any theme you prefer. To do this, open ~/.zshrc and alter &ldquo;ZSH_THEME&rdquo;.</p>
+
+<!-- more -->
+
+
+<h3>Install Ruby Version Manager (RVM)</h3>
+
+<figure class='code'><figcaption><span>install rvm </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>bash -s stable &lt; &lt;<span class="o">(</span>curl -s https://raw.github.com/wayneeseguin/rvm/master/binscripts/rvm-installer<span class="o">)</span>
+</span><span class='line'><span class="nb">source</span> ~/.rvm/scripts/rvm
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Then open ~/.zshrc (or ~/.bashrc if you use bash) and add the following line <strong>before</strong> the line of &ldquo;ZSH_THEME&rdquo;:</p>
+
+<figure class='code'><figcaption><span>add rvm to path </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:<span class="nv">$HOME</span>/.rvm/bin
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Then add this line to the end of the file:</p>
+
+<figure class='code'><figcaption><span>startup env </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="o">[[</span> -s <span class="s2">&quot;$HOME/.rvm/scripts/rvm&quot;</span> <span class="o">]]</span> <span class="o">&amp;&amp;</span> . <span class="s2">&quot;$HOME/.rvm/scripts/rvm&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Install Ruby</h3>
+
+<figure class='code'><figcaption><span>install ruby 1.9.3 </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>rvm install 1.9.3
+</span><span class='line'>rvm --default use 1.9.3
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Install Rails</h3>
+
+<figure class='code'><figcaption><span>install rails </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>sudo apt-get install install libbuilder-ruby
+</span><span class='line'>gem install rails
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Install Passenger with Nginx</h3>
+
+<figure class='code'><figcaption><span>install passenger and nginx </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>gem install passenger
+</span><span class='line'>sudo -s
+</span><span class='line'>passenger-install-nginx-module
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Enter to continue; choose 1 (Yes: download, compile and install Nginx for me. (recommended))
+Here the installation script thrown an error at me. It could not find &ldquo;pcre-8.12&rdquo;. Turns out this version is too old and has already been removed from the source server. I have to install it manually.
+Goto <a href="ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/">ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/</a> and download the latest version from there. At this moment it is pcre-8.30</p>
+
+<figure class='code'><figcaption><span>install pcre </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>wget ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/pcre-8.30.tar.gz
+</span><span class='line'>tar zxvf pcre-8.30.tar.gz
+</span><span class='line'><span class="nb">cd </span>pcre-8.30
+</span><span class='line'>./configure
+</span><span class='line'>make
+</span><span class='line'>sudo make install
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Now try &ldquo;sudo -s ; passenger-install-nginx-module&rdquo; again. It should work this time.</p>
+
+<p>Specify prefix directory of nginx. The default /opt/nginx is fine. Some prefer /usr/local/nginx . Not much difference.</p>
+
+<p>Note: if passenger-install-nginx-module can not be found, use the full path.</p>
+
+<p>(/home/<em>username</em>/.rvm/gems/ruby-<em>(version)</em>/gems/passenger-<em>(version)</em>/bin/passenger-install-nginx-module)</p>
+
+<h3>Nginx startup script</h3>
+
+<figure class='code'><figcaption><span>install and test nginx startup script </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>sudo mkdir /opt/nginx/init.d
+</span><span class='line'>sudo wget --no-check-certificate http://github.com/ascarter/nginx-ubuntu-rvm/raw/master/nginx -O /opt/nginx/init.d/nginx
+</span><span class='line'>sudo chmod +x /opt/nginx/init.d/nginx
+</span><span class='line'>sudo ln -s /opt/nginx/init.d/nginx /etc/init.d/nginx
+</span><span class='line'>sudo ln -s /usr/local/lib/libpcre.so.1 /usr/lib/libpcre.so.1
+</span><span class='line'>sudo /etc/init.d/nginx start
+</span><span class='line'>sudo /etc/init.d/nginx status
+</span><span class='line'>sudo  /etc/init.d/nginx stop
+</span><span class='line'>sudo /usr/sbin/update-rc.d -f nginx defaults
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Note: if you installed nginx in a place other than /opt/nginx, open the script file and change the path of <em>DAEMON</em>, <em>PIDSPATH</em>, <em>NGINX_CONF_FILE</em>.</p>
+
+<h3>Install rmagick</h3>
+
+<figure class='code'><figcaption><span>install imagemagick and rmagick </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>sudo apt-get remove imagemagick
+</span><span class='line'>sudo apt-get install libperl-dev gcc libjpeg62-dev libbz2-dev libtiff4-dev libwmf-dev libz-dev libpng12-dev libx11-dev libxt-dev libxext-dev libxml2-dev libfreetype6-dev liblcms1-dev libexif-dev perl libjasper-dev libltdl3-dev graphviz gs-gpl pkg-config
+</span><span class='line'>wget ftp://ftp.imagemagick.org/pub/ImageMagick/ImageMagick.tar.gz
+</span><span class='line'>tar zxvf ImageMagick.tar.gz
+</span><span class='line'><span class="nb">cd </span>ImageMagick-*<span class="o">(</span>version<span class="o">)</span>*
+</span><span class='line'>./configure
+</span><span class='line'>make
+</span><span class='line'>sudo make install
+</span><span class='line'>gem install rmagick
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Test</h3>
+
+<figure class='code'><figcaption><span>create a new rails app for env test </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>rails new testapp
+</span><span class='line'><span class="nb">cd </span>testapp
+</span><span class='line'>git init
+</span><span class='line'>git add .
+</span><span class='line'>git commit -a -m <span class="s2">&quot;Initial import&quot;</span>
+</span><span class='line'>bundle install
+</span><span class='line'>git add .gitignore
+</span><span class='line'>git commit -a -m <span class="s2">&quot;Add .gitignore&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Edit /opt/nginx/conf/nginx.conf (or your specified path to nginx.conf)</p>
+
+<figure class='code'><figcaption><span>virtual host config that needs to be added to nginx.conf </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>   server <span class="o">{</span>
+</span><span class='line'>      listen 80;
+</span><span class='line'>      server_name www.yourhost.com;
+</span><span class='line'>      root /somewhere/public;   <span class="c"># &lt;--- be sure to point to &#39;public&#39;!</span>
+</span><span class='line'>      passenger_enabled on;
+</span><span class='line'>   <span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Then restart nginx, try visit the server from browser.</p>
+
+<h3>Databases</h3>
+
+<p>MySQL:</p>
+
+<figure class='code'><figcaption><span>install mysql </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>sudo apt-get install mysql-client mysql-server
+</span><span class='line'>gem install mysql
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>PostgreSQL:</p>
+
+<figure class='code'><figcaption><span>install postgresql </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>sudo add-apt-repository ppa:pitti/postgresql
+</span><span class='line'>sudo apt-get update
+</span><span class='line'>sudo apt-get install postgresql libpq-dev
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+</div>
+
+</article>
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	<a class="addthis_button_tweet"></a>
+	
+	
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+
+
+<section id="comment">
+    <h1 class="title">Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
+</div>
+			</div>
+			<footer id="footer" class="inner"><p>
+  Copyright &copy; 2013 - Qing Wang -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+<p>Theme: <a href="https://github.com/qingwang/octopress-theme-yinyang">YinYang</a></p>
+</footer>
+			<script src="/javascripts/slash.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'webabiecom';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://webabie.com/rails-on-ubuntu-vps/';
+        var disqus_url = 'http://webabie.com/rails-on-ubuntu-vps/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-267274-12']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+
+
+
+
+		</div>
+	</div>
+</body>
+</html>

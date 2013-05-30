@@ -1,0 +1,182 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>用irc脚本自动化Seedbox - Qing Wang</title>
+	<meta name="author" content="Qing Wang">
+
+	
+	<meta name="description" content="用irc脚本自动化Seedbox 前文再续是书接上一回，rtorrent跑起来了就该自动化了。什么？你觉得手动也行？那你一定很闲很闲吧&hellip;&hellip;废话少说。用rss自动的方法就不提了，一是因为它太简单，二是因为它效果不好，跑TL之类的用rss还勉强，跑ScT就完蛋大吉了。 &hellip;">
+	
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="http://feeds.feedburner.com/blacktulipcn" rel="alternate" title="Qing Wang" type="application/atom+xml">
+	
+	<link rel="canonical" href="http://webabie.com/seedbox-autodownload-using-irc/">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>
+	<!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+</head>
+
+
+<body>
+	<div class="container">
+		<div class="left-col">
+			<div class="intrude-less">
+			<header id="header" class="inner"><nav id="main-nav"><ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+</nav>
+<!-- <nav id="sub-nav">
+	<div class="social">
+		
+		
+		
+		<a class="twitter" href="http://twitter.com/blacktulip" title="Twitter">Twitter</a>
+		
+		
+		
+		
+		
+		
+		
+		
+		<a class="rss" href="http://feeds.feedburner.com/blacktulipcn" title="RSS">RSS</a>
+		
+	</div>
+</nav> -->
+<div class="profile-container">
+  <div class="profilepic">
+    <script src="/javascripts/md5.js"></script>
+    <script type="text/javascript">
+$(function(){
+  $('.profilepic').append("<img src='http://www.gravatar.com/avatar/" + MD5("blacktulip@gmail.com") + "?s=160' alt='Profile Picture' style='width: 160px;' />");
+});
+    </script>
+  </div>
+  <hgroup>
+  <h1 class="site-title"><a href="/">Qing Wang</a></h1>
+  
+  <p class="site-subtitle">Programming Learner | Dad | Urgent in need of losing weight | Canterbury, Kent, UK | webabie.com</p>
+  
+  </hgroup>
+  
+</div>
+</header>
+			</div>
+		</div>
+		<div class="mid-col">
+			
+				
+			
+			<div class="mid-col-container">
+				<div id="content" class="article-inner"><article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+	<h1 class="title" itemprop="name">用irc脚本自动化Seedbox</h1>
+	<div class="entry-content" itemprop="articleBody"><p>前文再续是书接上一回，rtorrent跑起来了就该自动化了。什么？你觉得手动也行？那你一定很闲很闲吧&hellip;&hellip;废话少说。用rss自动的方法就不提了，一是因为它太简单，二是因为它效果不好，跑TL之类的用rss还勉强，跑ScT就完蛋大吉了。BTW：ScT号俺已经搞到了，多谢那位朋友。</p>
+
+<p>其实用irc脚本自动下载是很简单的事情，首先装个irssi:</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>sudo apt-get install irssi
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>然后输入screen，进入另一个终端，输入irssi进去，连服务器，进入频道这些就不用说了吧。</p>
+
+<p>下一步是找脚本，以TL的为例，在<a href="http://forums.torrentleech.org/showthread.php?t=60151">这个帖子</a>里就有。所有tracker的脚本修改方法都大同小异。TL比较麻烦要cookie，刚才装的vnc就用上了吧？嘿嘿，到vnc里面打开firefox登录TL，然后把cookie给找出来填进脚本里面即可。ScT和What.CD的脚本没那么麻烦，一个填passkey一个填密码即可。最重要的修改点在torrent存放位置，一定要确认指向rtorrent的监控目录，否则就是鸡同鸭讲。</p>
+
+<p>然后就是修改filter了，想刷全站自然也可以，不过疯狂了点，还是挑热门为上。每个站的脚本里头filter的写法都不大一样，照着样例改就是了，我的原则是宁缺勿滥，所以filter比较保守，大家根据自己实际情况定即可。</p>
+
+<p>改好后保存，然后在irssi里头输入/load /path/to/the/script 即可</p>
+
+<p>这些都做完了，就可以按 Ctrl+a, d 从screen里面退出来，然后logout了。以后想回到irssi的话，可以用screen -r切回去。</p>
+</div>
+
+</article>
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	<a class="addthis_button_tweet"></a>
+	
+	
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+
+
+<section id="comment">
+    <h1 class="title">Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
+</div>
+			</div>
+			<footer id="footer" class="inner"><p>
+  Copyright &copy; 2013 - Qing Wang -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+<p>Theme: <a href="https://github.com/qingwang/octopress-theme-yinyang">YinYang</a></p>
+</footer>
+			<script src="/javascripts/slash.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'webabiecom';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://webabie.com/seedbox-autodownload-using-irc/';
+        var disqus_url = 'http://webabie.com/seedbox-autodownload-using-irc/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-267274-12']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+
+
+
+
+		</div>
+	</div>
+</body>
+</html>

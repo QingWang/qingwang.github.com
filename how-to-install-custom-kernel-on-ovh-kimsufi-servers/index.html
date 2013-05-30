@@ -1,0 +1,223 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>How to install custom kernel on OVH / Kimsufi servers - Qing Wang</title>
+	<meta name="author" content="Qing Wang">
+
+	
+	<meta name="description" content="How to Install Custom Kernel on OVH / Kimsufi Servers OVH servers are shipped with their specially tailored kernels. They are not bad but sometimes &hellip;">
+	
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="http://feeds.feedburner.com/blacktulipcn" rel="alternate" title="Qing Wang" type="application/atom+xml">
+	
+	<link rel="canonical" href="http://webabie.com/how-to-install-custom-kernel-on-ovh-kimsufi-servers/">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>
+	<!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+</head>
+
+
+<body>
+	<div class="container">
+		<div class="left-col">
+			<div class="intrude-less">
+			<header id="header" class="inner"><nav id="main-nav"><ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+</nav>
+<!-- <nav id="sub-nav">
+	<div class="social">
+		
+		
+		
+		<a class="twitter" href="http://twitter.com/blacktulip" title="Twitter">Twitter</a>
+		
+		
+		
+		
+		
+		
+		
+		
+		<a class="rss" href="http://feeds.feedburner.com/blacktulipcn" title="RSS">RSS</a>
+		
+	</div>
+</nav> -->
+<div class="profile-container">
+  <div class="profilepic">
+    <script src="/javascripts/md5.js"></script>
+    <script type="text/javascript">
+$(function(){
+  $('.profilepic').append("<img src='http://www.gravatar.com/avatar/" + MD5("blacktulip@gmail.com") + "?s=160' alt='Profile Picture' style='width: 160px;' />");
+});
+    </script>
+  </div>
+  <hgroup>
+  <h1 class="site-title"><a href="/">Qing Wang</a></h1>
+  
+  <p class="site-subtitle">Programming Learner | Dad | Urgent in need of losing weight | Canterbury, Kent, UK | webabie.com</p>
+  
+  </hgroup>
+  
+</div>
+</header>
+			</div>
+		</div>
+		<div class="mid-col">
+			
+				
+			
+			<div class="mid-col-container">
+				<div id="content" class="article-inner"><article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+	<h1 class="title" itemprop="name">How to Install Custom Kernel on OVH / Kimsufi Servers</h1>
+	<div class="entry-content" itemprop="articleBody"><p>OVH servers are shipped with their specially tailored kernels. They are not bad but sometimes the applications (for example VirtualBox) do not agree with them. And they are also too old. Here is how to install custom kernels on these servers. Everything based on Ubuntu Server 10.10.</p>
+
+<p>Most credits go to <a href="http://forums.ovh.co.uk/showpost.php?p=15454&amp;amp;postcount=4">this post</a>. I updated some details and added the grub part.</p>
+
+<p>So let&rsquo;s say you are going to compile and install kernel 2.6.38.2 (latest kernel by now) on a kimsufi server.</p>
+
+<p>First of all, install Ubuntu server 10.10 in the managerv3, login with root.</p>
+
+<!-- more -->
+
+
+<p>Then:</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>apt-get install lzma
+</span><span class='line'><span class="nb">cd</span> /usr/src
+</span><span class='line'>wget http://www.kernel.org/pub/linux/kernel/v2.6/linux-2.6.38.2.tar.bz2
+</span><span class='line'>tar xf linux-2.6.38.2.tar.bz2
+</span><span class='line'><span class="nb">cd </span>linux-2.6.38.2
+</span><span class='line'>make mrproper
+</span><span class='line'>wget ftp://ftp.ovh.net/made-in-ovh/bzImage/2.6.34.6-3/2.6-config-xxxx-std-ipv6-32
+</span><span class='line'>cp 2.6-config-xxxx-std-ipv6-32 .config
+</span><span class='line'>make menuconfig
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>At this step, you need to scroll to the end of the options and select &ldquo;Load an Alternate Configuration File&rdquo;, load file .config, then go up and make sure &ldquo;Enable loadable module support&rdquo; is checked. Then go in &ldquo;General setup&rdquo;, Clear whatever in the &ldquo;Local version &ndash; append to kernel release&rdquo;. Now you can exit and save the config file.</p>
+
+<p>Go on do the make. if you are on a multi-core server you can use the -j stuff. If not, drop that option.</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>make -j5 <span class="nv">CONFIG_DEBUG_SECTION_MISMATCH</span><span class="o">=</span>y
+</span><span class='line'>make modules
+</span><span class='line'>make modules_install
+</span><span class='line'>cp arch/i386/boot/bzImage /boot/bzImage-2.6.38.2
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Now here is different from the original post. OVH replaced lilo with grub. So the modifying lilo.conf method in the original post is no longer suitable. Instead, you need to alter the grub config file which is:</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>vim /boot/grub/grub.cfg
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Search for &ldquo;OVHkernel&rdquo; and change the bzImage file name in this block accordingly. Then save and exit.</p>
+
+<p>Alright, you are good to go. Pray and type &ldquo;reboot&rdquo;. Good luck.</p>
+</div>
+
+</article>
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	<a class="addthis_button_tweet"></a>
+	
+	
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+
+
+<section id="comment">
+    <h1 class="title">Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
+</div>
+			</div>
+			<footer id="footer" class="inner"><p>
+  Copyright &copy; 2013 - Qing Wang -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+<p>Theme: <a href="https://github.com/qingwang/octopress-theme-yinyang">YinYang</a></p>
+</footer>
+			<script src="/javascripts/slash.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'webabiecom';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://webabie.com/how-to-install-custom-kernel-on-ovh-kimsufi-servers/';
+        var disqus_url = 'http://webabie.com/how-to-install-custom-kernel-on-ovh-kimsufi-servers/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-267274-12']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+
+
+
+
+		</div>
+	</div>
+</body>
+</html>

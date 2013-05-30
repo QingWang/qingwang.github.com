@@ -1,0 +1,381 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Octopress for Absolute Beginners - Qing Wang</title>
+	<meta name="author" content="Qing Wang">
+
+	
+	<meta name="description" content="Octopress for Absolute Beginners What is Octopress Octopress is a &ldquo;blogging framework&rdquo; according to its author. I&rsquo;d rather call it &hellip;">
+	
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="http://feeds.feedburner.com/blacktulipcn" rel="alternate" title="Qing Wang" type="application/atom+xml">
+	
+	<link rel="canonical" href="http://webabie.com/octopress-for-absolute-beginners/">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>
+	<!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+</head>
+
+
+<body>
+	<div class="container">
+		<div class="left-col">
+			<div class="intrude-less">
+			<header id="header" class="inner"><nav id="main-nav"><ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+</nav>
+<!-- <nav id="sub-nav">
+	<div class="social">
+		
+		
+		
+		<a class="twitter" href="http://twitter.com/blacktulip" title="Twitter">Twitter</a>
+		
+		
+		
+		
+		
+		
+		
+		
+		<a class="rss" href="http://feeds.feedburner.com/blacktulipcn" title="RSS">RSS</a>
+		
+	</div>
+</nav> -->
+<div class="profile-container">
+  <div class="profilepic">
+    <script src="/javascripts/md5.js"></script>
+    <script type="text/javascript">
+$(function(){
+  $('.profilepic').append("<img src='http://www.gravatar.com/avatar/" + MD5("blacktulip@gmail.com") + "?s=160' alt='Profile Picture' style='width: 160px;' />");
+});
+    </script>
+  </div>
+  <hgroup>
+  <h1 class="site-title"><a href="/">Qing Wang</a></h1>
+  
+  <p class="site-subtitle">Programming Learner | Dad | Urgent in need of losing weight | Canterbury, Kent, UK | webabie.com</p>
+  
+  </hgroup>
+  
+</div>
+</header>
+			</div>
+		</div>
+		<div class="mid-col">
+			
+				
+			
+			<div class="mid-col-container">
+				<div id="content" class="article-inner"><article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+	<h1 class="title" itemprop="name">Octopress for Absolute Beginners</h1>
+	<div class="entry-content" itemprop="articleBody"><h3>What is Octopress</h3>
+
+<p><a href="http://octopress.org/">Octopress</a> is a &ldquo;blogging framework&rdquo; according to its author. I&rsquo;d rather call it a webpage publishing system. For its main function is to publish webpages.</p>
+
+<h3>Why use Octopress</h3>
+
+<p>For blogging, most people use blogger, wordpress.com, livejournal, etc. Some build independent blogs with their own domain, own hosting and WordPress source code. Those are all very good solutions and one doesn&rsquo;t need to switch unless has really good reasons.</p>
+
+<p>However if you, like myself, are already bored with all those popular platforms; or, again like myself, are planning to learn <a href="http://www.ruby-lang.org/en/">Ruby</a>, <a href="http://git-scm.com/">Git</a> and are trying to work your way out of <a href="http://github.com/">GitHub</a>. Then Octopress may be for you.</p>
+
+<p>By using Octopress you will get:</p>
+
+<ul>
+<li>to learn how to build a Ruby programming environment.</li>
+<li>some basic command of Git.</li>
+<li>to write blog posts and pages completely with <a href="http://en.wikipedia.org/wiki/Command-line_interface">CLI</a>. That&rsquo;s right. You can write articles with VIM.</li>
+<li>to use <a href="http://daringfireball.net/projects/markdown/basics">markdown syntax</a> in blog posts. Or to learn it if you don&rsquo;t already know.</li>
+<li>to host your blog on GitHub. Free.</li>
+<li>very nice code highlighting.</li>
+</ul>
+
+
+<p>&hellip;and, on top of all, it is fun.</p>
+
+<!--more-->
+
+
+<h3>I am convinced, how do I start?</h3>
+
+<p>It is not that difficult to setup Octopress even for absolute beginners. Although you will spend some time on try-and-error &mdash; story of a coder&rsquo;s life.</p>
+
+<p>I assume that you are working with a Mac. If you are not, go get one.</p>
+
+<p>First you will need to set up a Ruby environment and, of course, to install git. Octopress can only be run on Ruby 1.9.2 or later. OS X Lion&rsquo;s pre-installed Ruby is 1.8.7 and is not suitable for Octopress.</p>
+
+<p>Installing Ruby 1.9.2 is very simple but I&rsquo;d rather set up a complete Ruby on Rails development environment instead since I will soon need it anyway. As an absolute beginner myself, I followed <a href="http://wp.xdite.net/?p=2063">this walkthrough</a>. However there are a couple of mistakes in it. So I will just list all the commands again for future reference.</p>
+
+<ul>
+<li>Software update</li>
+<li>Install Xcode</li>
+<li>Install <a href="http://github.com/mxcl/homebrew">Homebrew</a>, Git and Imagemagick / MySQL / Sphinx</li>
+</ul>
+
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>ruby -e <span class="s2">&quot;$(curl -fsS https://raw.github.com/gist/323731/install_homebrew.rb)&quot;</span> <span class="c"># The link in the origin post didn&#39;t work. I figured this is the right one.</span>
+</span><span class='line'>brew install git
+</span><span class='line'>brew update
+</span><span class='line'>brew install imagemagick
+</span><span class='line'>brew install mysql
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Notice the version of MySQL. Then:</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nb">unset </span>TMPDIR
+</span><span class='line'>mysql_install_db <span class="c"># This line is not right. Check the install log after the command &quot;brew install mysql&quot;. The right command is in there. I forget what it is.</span>
+</span><span class='line'>cp /usr/local/Cellar/mysql/5.1.54/com.mysql.mysqld.plist ~/Library/LaunchAgents <span class="c"># Replace the &quot;5.1.54&quot; with the MySQL version you installed just now.</span>
+</span><span class='line'>launchctl load -w ~/Library/LaunchAgents/com.mysql.mysqld.plist
+</span><span class='line'>/usr/local/Cellar/mysql/5.1.54/bin/mysql_secure_installation <span class="c"># Again replace the version number.</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Now you need to initialise MySQL. Just answer Yes for all yes/no questions and give a password when asked.</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>brew install sphinx
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>Install RVM and Ruby 1.9.2</li>
+</ul>
+
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>bash &lt; &lt;<span class="o">(</span> curl https://raw.github.com/wayneeseguin/rvm/master/binscripts/rvm-installer <span class="o">)</span> <span class="c"># This one freaked me out a bit. It took me some time to find out the issue at http://bit.ly/tte5Iq</span>
+</span><span class='line'><span class="nb">echo</span> <span class="s2">&quot;[[ -s $HOME/.rvm/scripts/rvm ]] &amp;&amp; source $HOME/.rvm/scripts/rvm&quot;</span> &gt;&gt; ~/.profile <span class="o">&amp;&amp;</span> . ~/.profile
+</span><span class='line'><span class="nb">source</span> ~/.profile
+</span><span class='line'>
+</span><span class='line'>rvm install 1.9.2 <span class="c"># Or 1.9.3 or later. If rvm doesn&#39;t work, try use the full path at ~/.rvm/bin/rvm</span>
+</span><span class='line'>rvm use 1.9.2 --default
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>Install necessary gems</li>
+</ul>
+
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>gem install rails
+</span><span class='line'>gem install mysql2
+</span><span class='line'>gem install mysql
+</span><span class='line'>gem install passenger
+</span><span class='line'>gem install nokogiri
+</span><span class='line'>gem install capistrano
+</span><span class='line'>gem install capistrano-ext
+</span><span class='line'>gem install delayed_job
+</span><span class='line'>gem install hoptoad_notifier
+</span><span class='line'>gem install facebooker2
+</span><span class='line'>gem install factory_girl
+</span><span class='line'>gem install sphinx
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Now the RoR environment is established. Next up: get Octopress work.</p>
+
+<p>Actually, to this step you can just follow the <a href="http://octopress.org/docs/setup/">official Octopress document</a> to finish the setup process provide that you are familiar with GitHub. If not, here is what you need to do:</p>
+
+<ul>
+<li><p>Register a GitHub account and log in. Please use <strong>all lower-case letters</strong> in your account name. Otherwise there may be problems when Octopress tries to connect to the repository the first time.</p></li>
+<li><p><a href="https://github.com/repositories/new">Create a new GitHub repository</a>. Fill &ldquo;Project Name&rdquo; with your username. Again no capital letter. Description and Homepage URL can be left blank.</p></li>
+<li><p>Get your repository URL. This one is a little tricky. If you have not used GitHub before, you may go for the URL in the browser&rsquo;s address bar, which is wrong. The correct one can be find on the repository&rsquo;s page with the form &ldquo;git@github.com:<em>repositoryname</em>/<em>username</em>.github.com.git&rdquo;.</p></li>
+<li><p>Now install Octopress.</p></li>
+</ul>
+
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>ruby --version <span class="c"># Make sure you have Ruby 1.9.2 or later in use.</span>
+</span><span class='line'>git clone git://github.com/imathis/octopress.git octopress
+</span><span class='line'><span class="nb">cd </span>octopress
+</span><span class='line'>
+</span><span class='line'>gem install bundler
+</span><span class='line'>bundle install
+</span><span class='line'>rake install
+</span><span class='line'>
+</span><span class='line'>rake setup_github_pages
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Now you will be asked for the GitHub Pages repository URL. Enter the one from last step. (Start with <em>git@</em>)</p>
+
+<p>Open file <em>_config.yml</em> and fill the configs of <em>url</em>, <em>title</em>, <em>subtitle</em> and <em>author</em> as you see fit. Save and exit.</p>
+
+<p>Then run:</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>rake generate
+</span><span class='line'>rake deploy
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Go grab a coffee and wait for the email from GitHub telling you the commit succeeded. The go on:</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>git add .
+</span><span class='line'>git commit -m <span class="s1">&#39;some message&#39;</span>
+</span><span class='line'>git push origin <span class="nb">source</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>This should be it. Visit <a href="http://*username*.github.com/">http://*username*.github.com/</a> to see whether it works. If it doesn&rsquo;t, try run generate and deploy again.</p>
+
+<h3>Awesome! But how do I write posts?</h3>
+
+<p>Very simple:</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>rake new_post<span class="o">[</span><span class="s2">&quot;your_post_title_here&quot;</span><span class="o">]</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>This command will generate a file with the name you specified under <em>source/_posts</em> . Just open it and write away. When finished, save and exit, then:</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>rake generate
+</span><span class='line'>rake deploy
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>What else should I know?</h3>
+
+<p>Congratulations. Now you know as much as I do. (That is to say, maybe 1% of Octopress.) Now go to the <a href="http://octopress.org/docs/">official documentation of Octopress</a> and read the whole thing. At least learn how to put a custom domain on your blog. That&rsquo;s essential. Of course so is other stuff, such as creating a page and changing the favicon.</p>
+
+<p>You should also learn <a href="http://daringfireball.net/projects/markdown/syntax">markdown syntax</a>. It&rsquo;s not hard and very useful.</p>
+
+<p>Since I myself is also in beginner&rsquo;s stage I can not give more advices. I am sure you will know how to proceed after mastered the basis.</p>
+
+<p>So that&rsquo;s it. Good luck and happy blogging on GitHub with Octopress.</p>
+</div>
+
+</article>
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	<a class="addthis_button_tweet"></a>
+	
+	
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+
+
+<section id="comment">
+    <h1 class="title">Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
+</div>
+			</div>
+			<footer id="footer" class="inner"><p>
+  Copyright &copy; 2013 - Qing Wang -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+<p>Theme: <a href="https://github.com/qingwang/octopress-theme-yinyang">YinYang</a></p>
+</footer>
+			<script src="/javascripts/slash.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'webabiecom';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://webabie.com/octopress-for-absolute-beginners/';
+        var disqus_url = 'http://webabie.com/octopress-for-absolute-beginners/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-267274-12']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+
+
+
+
+		</div>
+	</div>
+</body>
+</html>

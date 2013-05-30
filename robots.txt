@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: 
+
+Sitemap: http://webabie.com/sitemap.xml 

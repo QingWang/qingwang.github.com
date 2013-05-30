@@ -1,0 +1,1938 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Qing Wang]]></title>
+  <link href="http://webabie.com/atom.xml" rel="self"/>
+  <link href="http://webabie.com/"/>
+  <updated>2013-05-30T14:33:50+01:00</updated>
+  <id>http://webabie.com/</id>
+  <author>
+    <name><![CDATA[Qing Wang]]></name>
+    <email><![CDATA[blacktulip@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[So I built a PC again]]></title>
+    <link href="http://webabie.com/so-i-build-a-pc-again/"/>
+    <updated>2013-05-18T10:10:00+01:00</updated>
+    <id>http://webabie.com/so-i-build-a-pc-again</id>
+    <content type="html"><![CDATA[<p>Building a PC is not that big a deal in 2013. And admittedly, it is much easier than any other type of DIY. Assembling LEGO blocks arguably has more fun, too. The reason for building a PC today, ultimately, breaks down to squeezing horse power out of a (usually limited) budget.</p>
+
+<p>Now the <a href="http://en.wikipedia.org/wiki/Windows_System_Assessment_Tool" title="Windows System Assessment Tool">WinSAT</a> is not really the most accurate benchmark in the world. But I do not know which one is anyway and this one is right there. So please put up with me.</p>
+
+<p><img src="http://farm9.staticflickr.com/8131/8747262751_c0f00eddab_o.jpg" alt="WinSAT result" /></p>
+
+<p>Doesn&rsquo;t look too shabby, does it?</p>
+
+<p>However I am going to show a fuller picture (pun intended) here.</p>
+
+<!-- more -->
+
+
+<p><img src="http://farm8.staticflickr.com/7314/8747262771_2cb373f543_c.jpg" alt="Full screenshot of the WinSAT result" /></p>
+
+<p>Well it certainly surprised me. I would not expect a virtual machine produce a result like this. The latest <a href="http://www.parallels.com/products/desktop/" title="Parallels Desktop 8">Parallels Desktop</a> probably contributed a large portion. But I was still impressed by the raw power it shown, considering the relatively small amount of money spent on it.</p>
+
+<h3>Principles</h3>
+
+<p>PC-building is all about requirements and balance. Here are a few principles I follow:</p>
+
+<ul>
+<li>Before any purchasing, think it through and list all the needs.</li>
+<li>Order the components that <em>just</em> or <em>a little bit overly</em> meet the needs. For anything better, the infamous <a href="http://en.wikipedia.org/wiki/Marginal_utility" title="Marginal Utility">marginal utility theory</a> will kick in right away.</li>
+<li>Interaction before power. (If you can have either a more powerful processor or a more comfortable keyboard, go for the keyboard.)</li>
+<li>Do not consider &ldquo;later upgrade&rdquo;. It is extremely rare. Most of the time you will just build or buy a new one.</li>
+</ul>
+
+
+<h3>My requirements</h3>
+
+<p>2 years ago I bought a Macbook Air. Needless to say, It has given me the best experience. And it still does. However, while the processor is still good enough, the 4GB on-chip memory begins to be in the way. I hesitated to migrate to <a href="http://www.vagrantup.com/" title="Vagrate">Vagrant</a> for this very reason. <a href="http://www.jetbrains.com/ruby/" title="RubyMine">RubyMine</a> is not acting its best on this nice little laptop either.</p>
+
+<p>Another major drawback is, of course, the 128GB SSD. My iTunes library and Aperture library are both larger than this number by a magnitude. Heck even my Calibre library alone will easily fill half of it. Freeing up space now becomes a weekly job which I hate.</p>
+
+<p>Lack of real graphics card is also a minor problem. I seldom play games nowadays but may still want to try out some interesting new games from time to time. FPS and RTS are not for me but at least the machine should be able to run the latest <a href="http://www.civilization.com/" title="Sid Meier's Civilization">Civilization</a> smoothly.</p>
+
+<p>So basically, my needs are outlined as such:</p>
+
+<ul>
+<li>Usage: app/web developing, casual to mid-core gaming, photo/video processing.</li>
+<li>Reasonable computing speed. General development tasks do not require a very powerful processor. But I do not want the IDEs (RubyMine, Xcode etc.) lag. Plus photo and video processing relies heavily on the processor.</li>
+<li>As large memory as it can be. Memory is crucial for a lot of things. It is certainly more important to a developer than the processor is</li>
+<li>A mid-core graphics card.</li>
+<li>OS X compatible. Obviously&hellip;</li>
+</ul>
+
+
+<p>The last need eliminated a lot of choices, which is a good thing. Many people said to me that a &ldquo;Hackintosh&rdquo; or a &ldquo;CustoMac&rdquo; can not deliver a perfect user experience like a real Mac can do. Well, I can not argue with that if the physical appearance of the machine is counted in. But other than that. I do not find any meaningful difference, really. The crucial point here is choosing the right components so that no extra effects are needed to make it work.</p>
+
+<h3>The processor</h3>
+
+<p><img src="http://farm8.staticflickr.com/7306/8747589959_7d62c4e59e_c.jpg" alt="Intel Xeon E3-1240 v2" /></p>
+
+<p>That&rsquo;s right, a Xeon. <a href="http://ark.intel.com/products/65730/">E3-1240 v2</a> is the equivalent Xeon processor to <a href="http://ark.intel.com/products/65719/">Core i7-3770</a> but does not have the integrated HD 4000 graphics processor. It is the logical choice since a separated graphics card will be used. And it is cooler (in both ways).</p>
+
+<p>I bought it from Taobao for about £145 and have someone send it to me along with many other groceries. In the UK the price will be much higher.</p>
+
+<h3>The motherboard</h3>
+
+<p><img src="http://farm9.staticflickr.com/8539/8747697439_6199951dea_c.jpg" alt="Gigabyte GA-Z77-DS3H" /></p>
+
+<p>This is the tricky component. For first time CustoMac builders, do not be clever, only choose from <a href="http://www.tonymacx86.com/351-building-customac-buyer-s-guide-may-2013.html#motherboards">this list</a>.</p>
+
+<p>My choice was the GA-Z77-DS3H because it is cheap and has 4 memory slots.</p>
+
+<h3>The memory</h3>
+
+<p>Not much to tell. In 2011 I bought some extra memory when <a href="http://webabie.com/diy-nas-for-home-use/">building the NAS</a>. Now it is of use. 4GB * 4 == 16GB</p>
+
+<p>If a Xeon processor is used, there is no point to buy 1600 memory since Xeon can not be overclocked.</p>
+
+<h3>The graphics card</h3>
+
+<p><img src="http://farm8.staticflickr.com/7284/8748878926_fc51d3d4d5_c.jpg" alt="Gigabyte NVIDIA GTX650Ti" /></p>
+
+<p>Again there were not many choices. A native support graphics card was necessary. I could not install the operating system with the integrated graphics processor first, then install the driver of the real graphics card. Because there was no integrated graphics processor.</p>
+
+<p>I followed <a href="http://www.tonymacx86.com/351-building-customac-buyer-s-guide-may-2013.html#gfx_cards">the instruction</a> and picked a GTX 650 Ti. It is a 6xx, it is quiet and power efficient, it also has a vga port. That&rsquo;s right. I have a monitor with vga port only. I do plan to retire it later. Now it is being used as a secondary monitor in my set up.</p>
+
+<h3>The HDD</h3>
+
+<p>I have 2TB * 4 Hitachi HDDs but apparently another system HDD is needed. I went for the Samsung 840 500GB. I knew the 840 Pro series is generally considered faster and of better quality. But capacity is more important to me. It came with 3 years guarantee anyway.</p>
+
+<p>I chose Samsung because they are doing a <a href="http://www.samsung.com/uk/ssdcashback/">cash back scheme</a>. It is still going on and will expire on 28th May, 2013.</p>
+
+<h3>The case and the PSU</h3>
+
+<p>Just an old normal Cooler Master case. A <a href="http://www.coolermaster-usa.com/product.php?product_id=3096">Cooler Master Silent Pro M2 620</a> was bought for the machine. It was a rushed decision. You can (and probably should) get a better PSU.</p>
+
+<h3>The monitors, keyboards, mice etc</h3>
+
+<p><img src="http://farm9.staticflickr.com/8533/8747970701_8da84a05f0_c.jpg" alt="Input devices" /></p>
+
+<p>All old stuff. Two monitors and a few input devices.</p>
+
+<h3>The bill</h3>
+
+<p>Always the most exciting part, hah.</p>
+
+<p>Paid this time:</p>
+
+<p>Processor £145 + Motherboard £70 + Graphics card £105 + Processor cooler £20 + HDD £220 + PSU £80 == £640</p>
+
+<p>Alternatively, this money can buy a <a href="http://store.apple.com/uk/browse/home/shop_mac/family/mac_mini">nice little Mac mini with Core i7, integrated HD 4000 graphics processor, 4GB memory and 1TB Winchester HDD</a>. The closest Mac mini setup (fastest processor, 16GB memory, 256GB SSD, etc.) costs a whopping £1239 and does not have a proper graphics card.</p>
+
+<p>I am quite satisfied with this outcome.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Linode 信用卡信息泄露的幕后故事]]></title>
+    <link href="http://webabie.com/linode-being-hacked-behind-the-scenes/"/>
+    <updated>2013-05-07T13:40:00+01:00</updated>
+    <id>http://webabie.com/linode-being-hacked-behind-the-scenes</id>
+    <content type="html"><![CDATA[<p>上个月 <a href="https://blog.linode.com/2013/04/16/security-incident-update/">Linode 被骇客入侵</a>导致所有信用卡信息泄露，我也未能幸免地中招去换了卡。今天在 HN 看到<a href="http://straylig.ht/zines/HTP5/0x02_Linode.txt">侵入者所发布的幕后故事</a>，觉得挺有意思，就转过来跟大家分享一下。</p>
+
+<p>我对骇客界的术语完全不懂，以下转译基于 <a href="http://straylig.ht/zines/HTP5/0x02_Linode.txt">HN 上的一条评论</a>，掺杂一些我自己的理解。</p>
+
+<p>HTP (&ldquo;Hack The Planet&rdquo;) 是一个骇客组织，某不知名的团体装成另一个叫 (&ldquo;ac1db1tch3z&rdquo;) 的组织对 HTP 进行了一些调查活动，主要是想寻找 HTP 使用的 <a href="http://en.wikipedia.org/wiki/Botnet">Botnet (僵尸网络)</a>。而这行为被 HTP 察觉到了，于是打算进行报复。</p>
+
+<!-- more -->
+
+
+<p>HTP 发现这个不知名的团体在 <a href="http://www.swiftirc.net/">SwiftIRC</a> 上交流 (不懂什么是 IRC 的就想像成 QQ 群吧)。如果 HTP 可以控制 SwiftIRC ，就可以监听控制这个团体的交流；而 SwiftIRC 使用的服务器恰好是 Linode 提供的，所以 HTP 决定黑进 Linode ，取得底层服务器的根权限后，想干什么自然是轻而易举了。</p>
+
+<p>然而不知基于什么原因，也许是没有找到 Linode 的破绽， HTP 一开始并未直接对 Linode 下手，而是从 Linode 的域名注册商 <a href="http://www.name.com/">Name.com</a> 开刀，黑进了 Name.com 的后台取得了 Linode 域名的控制权限。所以说 HTP 一路找上游，路径看起来像这样：</p>
+
+<p>Name.com &ndash;> Linode &ndash;> SwiftIRC &ndash;> 不知名团体</p>
+
+<p>(顺带一提， HTP 原文中说到很多域名注册商，包括 Name.com , 新网 等等都在他们的控制之中。)</p>
+
+<p>控制了域名以后， HTP 的原计划是把 Linode 用户导向他们自己的网站，在跳转到 Linode 前截下用户密码。这计划看上去是个很大的动作，想不被人发现似乎可能性很小。</p>
+
+<p>不过在 HTP 实施这个计划之前，他们的一位成员发现了 Linode 使用的一个名叫 ColdFusion 软件的一个漏洞，利用这个漏洞， HTP 直接侵入了 Linode 的服务器，域名劫持计划最终并没有实施，因为已经不需要了。 HTP 顺利取得了 SwiftIRC (以及所有放在 Linode 上的网站，包括知名安全网站 nmap.org) 的控制权。</p>
+
+<p>然而！ FBI 卧底遍天下之名岂是空谈？就在 HTP 小组中，FBI 早就安插了眼线。此卧底发现 HTP 居然控制了 nmap ，觉得事态严重，于是暗中提醒 Linode ，「大哥醒醒你被黑掉啦」。</p>
+
+<p>这样一来 HTP 就面临一个问题，原本他们想神不知鬼不觉地控制这个不知名团体，但是现在 Linode 已经了解事态，肯定要公开通告用户，这样一来那个团体必然有所警觉，一旦他们挪窝，岂不是白忙活了？</p>
+
+<p>HTP 于是直接跟 Linode 谈判，他们要求 Linode 保持沉默到五月一号，交换条件是 HTP 会把从 Linode 得到的信用卡信息全部删除，否则就把信用卡信息公开。</p>
+
+<p>Linode 方面也许想过妥协，但是这根本由不得 Linode 做主，FBI 强制 Linode 必须立刻通告用户。 HTP 对此也没有办法，于是改为要求 Linode 在通告中说明这事情是 HTP 干的 (我咋听起来这么像栽赃…) ，然后 (据他们自己说) 删掉了信用卡信息。</p>
+
+<p>至于 HTP 后来有没有监控到那个不知名团体，就不清楚了。HTP 事后对小组成员进行了调查整肃，据说他们黑进了那个 FBI 卧底的电脑，打开了他的摄像头，看到他身后的 FBI 探员，于是把他踢出了 HTP .</p>
+
+<p>好吧，这是一个来自 HTP 单方面的故事，能相信多少我也不知道，就当是一点娱乐吧。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Why do I uninstall Chinese IME on my Mac]]></title>
+    <link href="http://webabie.com/why-do-i-uninstall-chinese-ime-on-my-mac/"/>
+    <updated>2013-01-26T15:53:00+00:00</updated>
+    <id>http://webabie.com/why-do-i-uninstall-chinese-ime-on-my-mac</id>
+    <content type="html"><![CDATA[<p>I uninstalled all Chinese IMEs on my Mac a few days ago for the following reasons:</p>
+
+<ol>
+<li><p>Having multiple IMEs was annoying &ndash; especially when I was coding. Countless times I typed a few commands in the console only to find they were some meaningless Chinese words. Then I had to switch to English IME and type them in again.</p></li>
+<li><p>Without the ability of typing Chinese I have to use English more. My Chinese is basically flawless and does not require any more practise (if I don&rsquo;t want to become a writer). On the other hand, my English isn&rsquo;t. (You can probably tell from this post :p)</p></li>
+<li><p>This is the most important point: to write in English require much more focus and energy for me. Thus, I tend to write only when absolutely necessary, and write as little as possible. I spent a lot of time on different forums (and on twitter of course) arguing with people who really do not worth my precious seconds. Now I am not able to do it anymore (well&hellip; not actually <em>unable</em> but I probably wouldn&rsquo;t bother) even if I want to. How wonderful is that?</p></li>
+</ol>
+
+
+<p>Hope I can keep make wise decisions like this one :D</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[理解 Ruby 的闭包]]></title>
+    <link href="http://webabie.com/understanding-ruby-closures/"/>
+    <updated>2012-11-20T22:32:00+00:00</updated>
+    <id>http://webabie.com/understanding-ruby-closures</id>
+    <content type="html"><![CDATA[<p>非直译，原文： <a href="http://www.robertsosinski.com/2008/12/21/understanding-ruby-blocks-procs-and-lambdas/">Understanding Ruby Blocks, Procs and Lambdas</a></p>
+
+<p>Ruby 处理 <a href="http://en.wikipedia.org/wiki/Closure_%28computer_science%29">closures</a> (闭包) 的方式很独特。闭包在 Ruby 里面有 4 种不同的方式，每种方式跟其余几种都有那么一点点的区别，下面就来看看……</p>
+
+<h2>首先， Blocks</h2>
+
+<p>最常见的，最简单的，而且被大多人认为是最具有 Ruby 风格的闭包使用方式是 blocks . 像这样：</p>
+
+<div><script src='https://gist.github.com/4120210.js?file=Ruby_blocks_example_1.rb'></script>
+<noscript><pre><code>array = [1, 2, 3, 4]
+  
+array.collect! do |n|
+  n ** 2
+end
+
+
+puts array.inspect
+
+# =&gt; [1, 4, 9, 16]</code></pre></noscript></div>
+
+
+<p>这段程序做了什么呢？</p>
+
+<ol>
+<li>定义了一个数组 <code>array</code> .</li>
+<li>把 <code>collect!</code> 这个方法连同它后面的代码块传入这个数组 .</li>
+<li>这个代码块找到 <code>collect!</code> 这个方法用的变量 (也就是 <code>n</code> )，然后对其进行操作 (在这里是平方)。</li>
+<li>每个 <code>n</code> 都操作一遍，得到最后的结果。</li>
+</ol>
+
+
+<p>跟 <code>collect!</code> 使用一个 block 看起来很容易，只需想像成 <code>collect!</code> 这个方法把代码块在数组里面每个元素上都过了一遍。但是如果我们要自己写这个方法呢？假设这个方法名字叫 <code>iterate!</code> 的话，写出来是这样的：</p>
+
+<!-- more -->
+
+
+
+
+<div><script src='https://gist.github.com/4120210.js?file=Ruby_blocks_example_2.rb'></script>
+<noscript><pre><code>class Array
+  def iterate!
+    self.each_with_index do |n, i|
+      self[i] = yield(n)
+    end
+  end
+end
+
+array = [1, 2, 3, 4]
+
+array.iterate! do |n|
+  n ** 2
+end
+
+puts array.inspect
+
+# =&gt; [1, 4, 9, 16]</code></pre></noscript></div>
+
+
+<p>我们打开 <code>Array</code> 这个类，在里面定义 <code>iterate!</code> 方法，然后像上面使用 Ruby 内置的 <code>collect!</code> 方法一样使用它。注意看 <code>iterate!</code> 方法的定义， ( <code>self[i] = yield(n)</code> ), 不需要指定将要传入的代码块名字，只需使用 <code>yield</code> 这个关键字，调用这个关键字就会执行传入的代码块 . 另外，注意 <code>n</code> 这个变量是如何传入 <code>yield</code> 的。</p>
+
+<ol>
+<li>将 <code>iterate!</code> 方法传入某个数组。</li>
+<li>当遇到 <code>yield(n)</code> 调用时，将 <code>n</code> 传给后面给定的代码块 .</li>
+<li>代码块对 <code>n</code> 进行操作 (此处是平方)，由于此操作就是代码块最后一步，得到的数值自动成为返回值。</li>
+<li><code>yield</code> 把这个返回值回输到方法中，重写数组中对应的值。</li>
+<li>数组中的每个元素都如此操作一番。</li>
+</ol>
+
+
+<p>使用 blocks 让我们能非常灵活的与方法交互，改动代码块可以实现对数组的各种不同操作。然而用 <code>yield</code> 调用 blocks 只是闭包的其中一种实现方式，下面是以上功能的另一种实现方法：</p>
+
+<div><script src='https://gist.github.com/4120210.js?file=Ruby_procs_example_1.rb'></script>
+<noscript><pre><code>class Array
+  def iterate!(&amp;code)
+    self.each_with_index do |n, i|
+      self[i] = code.call(n)
+    end
+  end
+end
+
+array = [1, 2, 3, 4]
+
+array.iterate! do |n|
+  n ** 2
+end
+
+puts array.inspect
+
+# =&gt; [1, 4, 9, 16]</code></pre></noscript></div>
+
+
+<p>看起来没什么区别嘛，其实有两处：第一，定义的方法 <code>iterate!</code> 需要传入一个参数 <code>&amp;code</code> . 这个参数所指代的就是代码块；第二，上次使用 <code>yield</code> 的地方这次使用的是 <code>call</code> 方法带着参数 <code>n</code> 去调用代码块。尽管有这两处区别，但是运行结果是完全一样的。</p>
+
+<p>坑爹啊！为啥同样的功能要有两种写法来混淆视听呢？</p>
+
+<p>首先看看所谓的 block 到底是什么东西，这样看：</p>
+
+<div><script src='https://gist.github.com/4120210.js?file=What_is_a_block.rb'></script>
+<noscript><pre><code>def what_am_i(&amp;block)
+  block.class
+end
+
+puts what_am_i {}
+
+# =&gt; Proc</code></pre></noscript></div>
+
+
+<p>原来一个 block 其实就是一个 Proc 啊！可是 Proc 又是什么呢？</p>
+
+<h2>Procedures, AKA, Procs</h2>
+
+<p>Blocks 使用方便，写起来也很简单，然而有时候我们需要在很多不同的地方应用相同的代码块，使用 blocks 的话则只能一遍又一遍的重复写，鉴于 Ruby 是完全的面向对象语言，我们有更优雅的解决方式 &ndash; 把需要重复使用的代码块存成一个 object , 现在这段代码就是一个「过程」(Procedure)，缩写为 Proc .</p>
+
+<p>Blocks 和 Procs 的唯一区别是： blocks 没法保存；而 Procs 则可以存下来多次使用。换句话说， 一个 block 就是一个只能用一次的 Proc .</p>
+
+<p>举例看看 Proc 的复用：</p>
+
+<div><script src='https://gist.github.com/4120210.js?file=Ruby_procs_example_2.rb'></script>
+<noscript><pre><code>class Array
+  def iterate!(code)
+    self.each_with_index do |n, i|
+      self[i] = code.call(n)
+    end
+  end
+end
+
+array_1 = [1, 2, 3, 4]
+array_2 = [2, 3, 4, 5]
+
+square = Proc.new do |n|
+  n ** 2
+end
+
+array_1.iterate!(square)
+array_2.iterate!(square)
+
+puts array_1.inspect
+puts array_2.inspect
+
+# =&gt; [1, 4, 9, 16]
+# =&gt; [4, 9, 16, 25]
+</code></pre></noscript></div>
+
+
+<p>看这里我们把一个代码块存在名字叫 <code>square</code> 的 object 里面，然后分别用在两个数组上。由于 blocks 使用的时候没有地方可以让我们传入代码块名，所以无法复用；而 Procs 允许我们传入一个代码块的名字 (本例中为 <code>square</code> )，就可以实现代码复用。</p>
+
+<p>不事先把代码块存起来，而直接在方法后面跟 Proc 的代码也是可以的，如下例：</p>
+
+<div><script src='https://gist.github.com/4120210.js?file=Ruby_procs_example_3.rb'></script>
+<noscript><pre><code>class Array
+  def iterate!(code)
+    self.each_with_index do |n, i|
+      self[i] = code.call(n)
+    end
+  end
+end
+
+array = [1, 2, 3, 4]
+
+array.iterate!(Proc.new do |n| 
+  n ** 2
+end)
+
+puts array.inspect
+
+# =&gt; [1, 4, 9, 16]</code></pre></noscript></div>
+
+
+<p>实际上，这才是大多数编程语言处理闭包的方式，显然这种写法不如 blocks 优雅，但其实 blocks 归根到底就是上面这东西。</p>
+
+<p>除了代码复用， Procs 还有一项能力 blocks 难以做到，那就是我们只能往一个方法传入一个 block ，但是可以传入一个以上的 Procs ，像这样：</p>
+
+<div><script src='https://gist.github.com/4120210.js?file=Ruby_procs_example_4.rb'></script>
+<noscript><pre><code>def callbacks(procs)
+  procs[:starting].call
+
+  puts &quot;Still going&quot;
+
+  procs[:finishing].call
+end
+
+callbacks(:starting =&gt; Proc.new { puts &quot;Starting&quot; },
+          :finishing =&gt; Proc.new { puts &quot;Finishing&quot; })
+
+# =&gt; Starting
+# =&gt; Still going
+# =&gt; Finishing</code></pre></noscript></div>
+
+
+<p>所以，如果你希望闭包代码能够复用，又或者你需要往方法里面传入多个闭包，那就用 Procs , 别的情况 blocks 就好了。</p>
+
+<h2>Lambdas</h2>
+
+<p>Ruby 语言里面的 Procs 的行为非常像别的语言里面的<a href="http://en.wikipedia.org/wiki/Anonymous_function">匿名函数</a> (又称为 Lambda 方法)，然而 Ruby 似乎生怕自己不够复杂没有把大家绕晕，她除了 Procs 以外居然也还有个货真价实的 lambdas , 用起来是这样的：</p>
+
+<div><script src='https://gist.github.com/4120210.js?file=Ruby_lambdas_example_1.rb'></script>
+<noscript><pre><code>class Array
+  def iterate!(code)
+    self.each_with_index do |n, i|
+      self[i] = code.call(n)
+    end
+  end
+end
+
+array = [1, 2, 3, 4]
+
+array.iterate!(lambda { |n| n ** 2 })
+
+puts array.inspect
+
+# =&gt; [1, 4, 9, 16]</code></pre></noscript></div>
+
+
+<p>看起来不是跟 Procs 一模一样嘛！ Matz 你不要太过分！</p>
+
+<p>其实呢 Procs 和 lambdas 有那么两小点微妙的区别：</p>
+
+<p>第一点： Procs 不检查传入代码块的参数数量，而 lambdas 是要检查的。像这样：</p>
+
+<div><script src='https://gist.github.com/4120210.js?file=Ruby_lambdas_example_2.rb'></script>
+<noscript><pre><code>def args(code)
+  one, two = 1, 2
+  code.call(one, two)
+end
+
+args(Proc.new{|a, b, c| puts &quot;Give me a #{a} and a #{b} and a #{c.class}&quot;})
+
+args(lambda{|a, b, c| puts &quot;Give me a #{a} and a #{b} and a #{c.class}&quot;})
+
+# =&gt; Give me a 1 and a 2 and a NilClass
+# *.rb:8: ArgumentError: wrong number of arguments (2 for 3) (ArgumentError)</code></pre></noscript></div>
+
+
+<p>在 Proc 的例子中，多出来的参数就设成 nil 了，而 lambda 则直接抛错。</p>
+
+<p>第二点： 一个方法中的 Proc , 碰到代码块里面有 <code>return</code> 语句的话，会返回 <code>return</code> 语句的值，然后中断这个方法的执行；而一个方法中的 lambda , 碰到代码块中有 <code>return</code> 语句的话，会返回 <code>return</code> 语句的值，但不中断方法的执行，示例如下：</p>
+
+<div><script src='https://gist.github.com/4120210.js?file=Ruby_lambdas_example_3.rb'></script>
+<noscript><pre><code>def proc_return
+  Proc.new { return &quot;Proc.new&quot;}.call
+  return &quot;proc_return method finished&quot;
+end
+
+def lambda_return
+  lambda { return &quot;lambda&quot; }.call
+  return &quot;lambda_return method finished&quot;
+end
+
+puts proc_return
+puts lambda_return
+
+# =&gt; Proc.new
+# =&gt; lambda_return method finished</code></pre></noscript></div>
+
+
+<p><code>proc_return</code> 这个方法执行到 <code>Proc.new</code> 这一句，在 Proc 的代码块中碰到了第一个 <code>return</code> , 就被中断了，第一个 <code>return</code> 语句的值就是整个方法的返回值；<code>lambda_return</code> 这个方法在 lambda 的代码块中碰到第一个 <code>return</code> , 但方法并没有被中断，最后方法返回值是第二个 <code>return</code> 语句的值。</p>
+
+<p>为什么有这样的区别，在此我们终于看到 Procs 和 lambdas 的本质差异：前者是「过程」而后者是「方法」。 一个 Proc 的行为像一段 code snippet , 是所在方法的一部分，所以运行到 return 就直接跳出方法了；而一个 lambda 的行为则像一个方法，它所在的方法对它进行调用，调用完了还返回原方法里面。这也是第一点区别的根源所在， Procs 只是代码块，不去管你传进来几个参数；而 lambdas 则是实实在在的方法，会严格检测你丫有没有搞错参数的数量。跟普通方法的区别在于 lambdas 是匿名的，就是说这个方法没有名字。</p>
+
+<p>再举两个例子：</p>
+
+<div><script src='https://gist.github.com/4121472.js?file=Ruby_lambdas_example_4.rb'></script>
+<noscript><pre><code>def generic_return(code)
+  code.call
+  return &quot;generic_return method finished&quot;
+end
+
+puts generic_return(Proc.new { return &quot;Proc.new&quot; })
+puts generic_return(lambda { return &quot;lambda&quot; })
+
+# =&gt; *.rb:6: unexpected return (LocalJumpError)
+# =&gt; generic_return method finished</code></pre></noscript></div>
+
+
+<p>Ruby 有一个限制，调用一个方法的时候传入的参数不能含有 <code>return</code> 这个关键字，所以上例中 <code>Proc.new { return "Proc.new" }</code> 这个参数是非法的。但是为何 <code>lambda { return "lambda" }</code> 这个参数又是合法的呢？还是因为 lambdas 是方法， <code>return</code> 被封装在这个方法里面了，外面是看不到的，所以不判定为非法。</p>
+
+<div><script src='https://gist.github.com/4121472.js?file=Ruby_lambdas_example_5.rb'></script>
+<noscript><pre><code>def generic_return(code)
+  one, two    = 1, 2
+  three, four = code.call(one, two)
+  return &quot;Give me a #{three} and a #{four}&quot;
+end
+
+puts generic_return(lambda { |x, y| return x + 2, y + 2 })
+
+puts generic_return(Proc.new { |x, y| return x + 2, y + 2 })
+
+puts generic_return(Proc.new { |x, y| x + 2; y + 2 })
+
+puts generic_return(Proc.new { |x, y| [x + 2, y + 2] })
+
+# =&gt; Give me a 3 and a 4
+# =&gt; *.rb:9: unexpected return (LocalJumpError)
+# =&gt; Give me a 4 and a 
+# =&gt; Give me a 3 and a 4</code></pre></noscript></div>
+
+
+<p>这个例子中， <code>generic_return</code> 这个方法期待代码块给它返回两个值，使用 lambdas 简单直接，就 <code>return</code> 两个值完事儿 (第 1 个 <code>puts</code>)；使用 Proc 就很考验人，首先不能出现 <code>return</code> 这个关键字 (第 2 个 <code>puts</code>)，其次要是不用 <code>return</code> 关键字的话，两个返回值不知道该怎么送回去 (第 3 个 <code>puts</code>)，当然依赖 Ruby 强大的灵活性还是能找到方案 (第 4 个 <code>puts</code> )，</p>
+
+<p>如此说来，若需要的闭包是一个简单的代码块而已，那么 Procs 很好；如果需要闭包作为方法被调用的话， lambdas 是你的选择。</p>
+
+<p>当你看到 lambdas 是披着 object 外衣的匿名方法的时候，有没有想到什么呢？既然一个匿名方法能当成闭包使用，那具名方法 (也就是普通方法) 呢？毕竟现成的普通方法有好多好多 …</p>
+
+<h2>方法对象</h2>
+
+<p>你别说，还真能这么用。这是 Ruby 提供的第四种闭包方式：方法对象 (Method Objects) .</p>
+
+<div><script src='https://gist.github.com/4121472.js?file=Ruby_method_objects_example_1.rb'></script>
+<noscript><pre><code>class Array
+  def iterate!(code)
+    self.each_with_index do |n, i|
+      self[i] = code.call(n)
+    end
+  end
+end
+
+def square(n)
+  n ** 2
+end
+
+array = [1, 2, 3, 4]
+
+array.iterate!(method(:square))
+
+puts array.inspect
+
+# =&gt; [1, 4, 9, 16]</code></pre></noscript></div>
+
+
+<p>上例中，我们有个现成的普通方法 <code>square</code> , 有需要的话，可以将其直接当成闭包复用了，做法是使用 <code>method</code> 方法将其转换成一个方法对象，然后就当普通闭包该怎么用就怎么用。</p>
+
+<div><script src='https://gist.github.com/4121472.js?file=Ruby_method_objects_example_2.rb'></script>
+<noscript><pre><code>def square(n)
+  n ** 2
+end
+
+puts method(:square).class
+
+# =&gt; Method</code></pre></noscript></div>
+
+
+<p>大家都能猜到 <code>square</code> 是个方法，不是个过程吧。也就是说这种闭包的行为跟 Procs 闭包不一样，而与 lambdas 闭包一致，实际上 method objects 和 lambdas 仅仅是匿名与否的区别。</p>
+
+<h2>总结</h2>
+
+<p>Ruby 处理闭包有两种形态：一是 snippets 型，包括 blocks 和 Procs , 其中 blocks 只是书写简化但受到一些限制的 Procs ; 二是 methods 型，包括 lambdas 和 method objects , 前者匿名后者具名。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[关于 iPhone 5 的一些想法]]></title>
+    <link href="http://webabie.com/some-thoughts-about-iphone-5/"/>
+    <updated>2012-09-18T18:37:00+01:00</updated>
+    <id>http://webabie.com/some-thoughts-about-iphone-5</id>
+    <content type="html"><![CDATA[<p>感谢科技的进步，让贫富差距变小。近五年来，无论一个英国人是领着政府救济的贫困户，还是普通中产阶级，抑或是腰缠万贯的富豪，他能买到的最好的手机都是 £500 左右一台 iPhone . Apple 自从 2007 年发布第一代 iPhone 以来，一直保持着每年一次，不多也不少的更新频率。 今年九月十二号， Apple 按例在旧金山芳草地艺术中心发布了最新一代 &ndash; <a href="http://www.apple.com/iphone/">iPhone 5</a> .</p>
+
+<p>只是， iPhone 5 现在还能算最好的手机么？</p>
+
+<p><img src="http://images.apple.com/iphone/home/images/wireless_hero.jpg" title="iPhone 5" alt="iPhone 5" /></p>
+
+<!-- more -->
+
+
+<h2>令人失望的 iPhone 5</h2>
+
+<p>这个问题并非那么容易回答，以前 Steve Jobs , 现在的 Tim Cook 在每次 iPhone 发布会上都会说：「这是我们造出的有史以来最好的一台 iPhone .」明眼人都能看出这是废话：如果一年后新发布的消费数码产品连前一代都比不上，这公司好该关门大吉了。 iPhone 5 比前几代都好是毫无争议的，问题是，它的进步幅度够大么？</p>
+
+<p>用户的反应说明了很多问题， Apple 开发布会的同时， Twitter 等社交网络上循例热闹非凡，然而跟以前 iPhone 发布会全民欢腾场景不一样，这次发布会大家主要在冷嘲热讽。「我的 4S 又可以多陪我一年了。」「 Apple 完蛋了。」「好失望，一点诚意都没有。」「看了 iPhone 5 发布会，更坚定了我买 Galaxy S3 的决心。」「可以留着我的肾了，好高兴。」在 <a href="http://www.hotukdeals.com/">HotUKDeals</a> 上，iPhone 5 的 deal 全部被 downvote ，<a href="http://pic.webabie.com/webabie.com/iPhone-5-cold.jpg">预订贴一度接近 -1100 度</a> ，创下网站最冷记录。我本人也不例外，预期了这一代 iPhone 将无法达到分析师预测的销量， $AAPL 将会重挫。</p>
+
+<h2>心口不一的用户</h2>
+
+<p>然而事实证明，用户们在 Twitter 上的抱怨仅仅停留在口头上。九月十四号， <a href="http://www.macrumors.com/2012/09/14/iphone-5-pre-order-shipping-estimates-slip-to-two-weeks/">iPhone 5 开始接受预订的一个小时内，第一批产品就被一扫而空</a> 。 Apple 发言人对用户的反应表示「<a href="http://allthingsd.com/20120914/apple-on-iphone-5-pre-orders-weve-been-completely-blown-away/">震惊</a>」。 $AAPL 则青云直上历史第一次捅破 $700 大关。<a href="http://9to5mac.com/2012/09/17/apple-announces-iphone-5-preorders-hit-two-million-in-24-hours">预订开始的24小时之内，订单数超二百万，是 iPhone 4S 记录的两倍，平均每秒售出 23 台</a>。</p>
+
+<p>用户们实在太不像话了。</p>
+
+<h2>iPhone 5 真的很烂？</h2>
+
+<p>为什么用户对 iPhone 5 态度前后反差如此之大？这里面的因素很多，只能猜测一下。</p>
+
+<h3>期望与现实的差距</h3>
+
+<p>第一代 iPhone 翻天覆地地改变了手机产业，此后每一代 iPhone 推出，都伴随着惊喜。 Steve Jobs 每年上台一次，像一位腼腆又骄傲的魔术师，把新一代 iPhone 最神奇的一面展示给世界。用户们已经习惯了看魔术表演，如果连续看了五次精彩演出，第六场忽然变得平平无奇，喝倒彩是正常的。</p>
+
+<p>iPhone 5 的情况比这更糟糕，魔术师的表演看上去平平无奇倒还罢了，表演开始之前已经有人在你耳边东一句西一句，剧透了个底朝天，甚至连魔术原理都揭开了，再好的表演也只能味同嚼蜡。然而用户们有心理惯性：「既然每次都有惊喜，这次虽然已经<a href="http://reviews.cnet.com/8301-19512_7-20073431-233/iphone-5-rumor-roundup/">剧透到了这个程度</a>，但也还应该有什么我们不知道的东西吧？」结果自然大失所望。</p>
+
+<p>然而 iPhone 5 在发布会两天后才开始接受订单。这两天时间足以让失望的情绪平复，进而理性地审视这台新手机，考虑是否值得购买。从结果来看，尽管经济大环境恶劣， iPhone 定价也绝不算便宜，但人群依然趋之若骛，为何如此呢？</p>
+
+<h3>iPhone 5 的改良</h3>
+
+<p>是的， iPhone 5 已经没有创新，只有改良了。但改良如果足够好，也能吸引用户。</p>
+
+<ul>
+<li><p>iPhone 5 采用了<a href="http://www.anandtech.com/show/6292/iphone-5-a6-not-a15-custom-core">据猜测是由 Apple 定制并参与设计 ARM 芯片</a>，而且内存也加了一倍到 1GB . 在 Geekbench 测试中 <a href="http://browser.primatelabs.com/geekbench2/1030202">iPhone 5</a> 跑分性能与 <a href="http://browser.primatelabs.com/geekbench2/989732">HTC One X</a> 和 <a href="http://browser.primatelabs.com/geekbench2/1026099">Samsung Galaxy S3</a> 相当，纯运算部分较弱，但内存性能和带宽都大大强于后两者（credit to <a href="http://blog.est.im/post/31703069009">est</a>）， iOS 设备一般能以一半的分数达到安卓设备的同等性能，在同分的情况下可想而知。</p></li>
+<li><p>屏幕加长到 4 英寸，这个改良应是妥协的产物。在其它品牌手机屏幕动辄 4.6, 5.3 的压力下， iPhone 无法死守 3.5 不放，又要兼顾单手握持控制的便利性，再加上考虑开发者修改应用以适应新分辨率的工作量，只好只加长，不加宽。我使用 4.65 英寸屏幕的 <a href="http://www.google.com/nexus/#/galaxy">Galaxy Nexus</a> 确实不如 iPhone 4S 顺手，但屏幕宽度没有增加的情况下，浏览网页等应用场景并不能有效利用加大的空间，跟竞争对手相比 4 英寸也还是太小，妥协的产物很难达到良好的效果。这一点改良我觉得意义不大，还平白增加了开发者的工作量。</p></li>
+<li><p>新技术让显示饱和度增加了 44% . 业界色彩最精确的显示屏。这在 <a href="http://www.displaymate.com/iPad_ShootOut_1.htm">The New iPad 那块 99% sRGB 色域的神屏</a>上已经见识过了，并非什么新东西，只是确保不会被竞争对手比下去而已。</p></li>
+<li><p>4G LTE ， UK 的 LTE 刚刚起步，我暂时无法体验，这一点改良也是跟随竞争者的脚步作出的，并非业界先锋。但，在美加澳等发达地区非常非常实用，相信很多人是冲着这一点下的订单。</p></li>
+<li><p>前置摄像头换成高清，这也是早就该有的升级。后置摄像头的参数没有变化。</p></li>
+<li><p>三麦克风设计，提升语音质量。</p></li>
+<li><p>Lightening 接口和 Nano Sim ，都是为了节省机内空间。 Lightening 接口看在不分正反这个大优点上我没什么意见， Nano Sim 就有点不能理解：真的差那么小一点点的地方，值得为此换个 Sim 卡标准？虽然这事情运营商能解决，但旧 Sim 卡无法使用会对一部分用户造成不便。</p></li>
+<li><p>铝制后盖，整机更轻薄。技术男们对这种改进一般不怎么关注，但我觉得这才是 iPhone 5 最大的改良。后面一块玻璃改成铝壳，前面采用了<a href="http://news.cnet.com/8301-13579_3-57492629-37/apple-patent-could-lead-to-thinner-lighter-iphone-screens/">新的触摸屏技术</a>，让整机厚度减少到 7.6mm ，重量只剩下 112g . 这种「摸过才知道」的改进对 Geek 们没什么吸引力，对普通用户特别是女性用户的影响却不可小视。</p></li>
+</ul>
+
+
+<p><img src="http://pic.webabie.com/webabie.com/precision_side.png" title="iPhone 5 side view" alt="iPhone 5 side view" /></p>
+
+<p>Apple 从 iPhone 4 开始摈弃了工程塑料，只用金属和玻璃制做机身，牺牲了一些重量和厚度，换来用户不一样的手感和心理感觉。这实际上是一种错觉，高端的工程塑料完全可以做出不输给铝壳的耐用度，但无意识积累的日常生活经验已经在大部分人潜意识里把塑料和廉价低端产品联系在一起（塑料确实也较为便宜）。金属，玻璃，陶瓷这些材料给人的感觉更精致高级些。尤其在这个时代，<a href="https://github.com/harryf/thoughts/blob/master/mobile-killed-the-login.md">手机和人几乎一体 (you and your phone are one thing; a single organism. )</a>，这种无法量化的感觉也是用户体验中重要的一环。话说回来，当我拿到 The New iPad 的时候，还是很希望能换个塑料背壳让整机重量轻一些的。 iPhone 5 能兼顾材料，厚度，重量和电池寿命，确是工业设计的巅峰之作。</p>
+
+<p>当我列完以上几点后，回头看看，心情有些复杂。 iPhone 5 把 iPhone 4S 身上的缺陷一一补足，可以说是一台没有明显短板的手机，无论从哪个方面去看都非常优秀。但无可否认，这是一个防御型产品，只有改良，没有创新， iPhone 4 带来了当时无与伦比的 Retina Display ； iPhone 4S 的 Siri 虽然不算成功，好歹也是创新。 而在 iPhone 5 身上我们只看到修修补补 &ndash; 当然修补得很好 &ndash; 看不到真正领先于竞争对手的地方了。</p>
+
+<h2>Apple 为什么停止了创新？</h2>
+
+<p>首先 Apple 未必真的已经停下创新的步伐，但这一代的 iPhone 确实没有新意。因素应该不止一个。</p>
+
+<ul>
+<li><p>很大一部分人把这个问题归咎于 Steve Jobs 的离开。 他重新接手 Apple 的时候，<a href="http://pocketnow.com/2012/08/20/apple-most-valuable-company-in-history/">传说公司的现金流已经不足以支持三个月</a>， 15 年后的今天， Apple 市值六千五百亿美元，早已创下历史最高记录。 Steve Jobs 血液里流淌着创新的基因，他一手建立了整个 iDevice 产品线，并亲自为每一代产品把关，他的英年早逝，使得 iPhone 失去了方向。</p></li>
+<li><p>也有人认为经过前五代产品， iPhone 已经是趋近成熟，产品已经定型，留给创新的空间不多了。于此相辅相成的另一观点认为某一时间点上能应用到生产中的科技有其极限，现在的 iPhone 和其它高端智能手机已经很接近这个极限，想要继续创新，必须等待科技的发展。比如新材料的问世，电池技术的突破等。</p></li>
+</ul>
+
+
+<h2>生态系统</h2>
+
+<p>能够单纯对比手机本身的时代已经过去了，现在竞争已经上升到生态系统层面。 iPhone 的竞争对手们都对此很了解，在比较的时候，总会刻意避开这一点，因为现阶段 iOS 下的生态系统依然大幅领先，但优势能保持多久，很难说。</p>
+
+<p>Apple 是如何打造出良好的生态系统的呢？</p>
+
+<ul>
+<li><p>Apple 给开发者提供了完善，便利的全套开发环境；</p></li>
+<li><p>不仅如此， Apple 还提供了方便的销售渠道 iTunes App Store ；</p></li>
+<li><p>iOS 产品线短小统一，对开发者有利；</p></li>
+<li><p>iOS 设备一般在新品发布后很长时间才会有越狱方案出现，而且一直伴随各种问题，使得越狱率不高，盗版不会对开发者的收入冲击太严重；</p></li>
+<li><p>由手机本身的创新吸引用户，足够的用户数量产生可观的购买力，这种购买力被导向到手机应用消费上，利益驱使开发者做出优秀应用，又吸引更多的用户，打造出生态系统的良性循环。</p></li>
+</ul>
+
+
+<p>总结起来其实就两点，1. 方便；2. 有利可图。这样开发者蜂拥而至，为 iOS 平台创造出大批高质量的应用，平台用户体验也水涨船高。</p>
+
+<p>Google 收购并开源 Android 系统是一步伟大的战略，若非如此，今天的智能机市场格局将完全不同。 Android 系统进化到 <a href="http://developer.android.com/about/versions/jelly-bean.html">4.1 版本</a>，<a href="http://www.androidpolice.com/2012/09/18/ux-things-i-hate-about-android/">细节上依然问题很多</a>，但整体已经趋近于完善。撇开良莠不齐的安卓手机，鱼龙混杂的 Play Store ，光看系统的话，即使站在果粉的立场上，也必须承认 Android 系统更先进，更有趣。比如真实多任务系统；又比如分享中心。但一直以来， Android 的生态系统都不尽人意。</p>
+
+<p><img src="http://pic.webabie.com/webabie.com/jelly-bean.jpg" title="Jelly bean" alt="Jelly Bean" /></p>
+
+<p>今年六月底 Google 发布了自己贴牌的第一台 Android 平板 <a href="http://www.google.com/nexus/#/7">Nexus 7</a> . 高配低价，硬件上来说是难得的好产品。当天我就订了一台，爱不释手。但是几周前，我毫无留恋地将其卖掉了。机器本身是很好的，可惜找不到什么好应用来跑。</p>
+
+<p>其实也不是一个都找不出来， Google 本家的一套应用都很好，也有几个 iOS 移植过来的优秀应用，比如 <a href="https://play.google.com/store/apps/details?id=flipboard.app">Flipboard</a> 等，但还是太少了。 iOS 下 <a href="http://tapbots.com/software/tweetbot/">Tweetbot</a> ， <a href="http://www.omnigroup.com/products/omnifocus-iphone/">OmniFocus</a> 这种等级的应用，欠奉。更令人吃惊的是， Nexus 7 的四核心 CPU 十二核心 GPU 听着吓人，实际跑起应用来居然还是卡，这没法责备硬件机能不足，只能是应用的优化没有做到家的问题。</p>
+
+<p>操作系统再先进，硬件性能再强，最终还是要着落在应用上，因为应用是最上一层，是用户直接交流的一层。 Google 对此很清楚，也下了很大功夫。鉴于 Android 系统发布于 <a href="http://en.wikipedia.org/wiki/Apache_License">Apache 许可证</a>下， Google 无法直接控制各手机生产商的系统代码。与 Apple 的 “Absolute Control” 方针不一样。 iOS 由于软硬件一体化，所有用户体验细节都能详尽控制， Android 则软硬分开，一套软件核心要适应成千上万种硬件搭配，只能采取 “Loose Control” 的方针，成立<a href="http://en.wikipedia.org/wiki/Open_Handset_Alliance">开放手机联盟</a>，大家都遵循一些指导方针。</p>
+
+<p>虽然现阶段 Android 的生态系统落后一些，但经历了最初几年的浑沌期，整个系统正在向好的方面发展，与 iOS 的差距逐渐缩小，表现在：</p>
+
+<ul>
+<li><p>开发环境的日益完善，以及开发社区的壮大，使得 Android 开发门槛越来越低。 Android 开发优势在于不用去学习一门语法奇特的新语言 (是的我觉得 Obj-C 好奇特)，也不用购买 Mac 机器以及缴纳每年 $99 作为初期投资；</p></li>
+<li><p>Google 终于整合出一个靠谱的 <a href="https://play.google.com/store">Play Store</a> . 而且它<a href="http://www.theverge.com/2012/9/14/3335204/google-statement-acer-smartphone-launch-aliyun-android">表明了维护整个系统生态的决心</a>。</p></li>
+<li><p>Google 早就是互联网巨头了，在网络整合方面 Apple 是追赶者。在 Mountain Lion 和 iOS 6 这两个最新操作系统中表现犹多。 iCloud 刚出的时候就像一个笑话，现在的可用性已经相当强，不算完美，但非常便利，真正的无形整合。相比之下， Android 系统的云整合没有那么紧密方便，但这一块是 Android 的传统优势，很容易能做好。</p></li>
+<li><p>Android 设备价格覆盖 $50 &ndash; $600 全区间，加上优秀的操作系统，<a href="http://www.washingtonpost.com/business/technology/worldwide-market-share-for-smartphones-a-market-dominated-by-apple-and-android/2012/09/18/fa3f8f56-019b-11e2-bbf0-e33b4ee2f0e8_story.html">市占率提升得很快</a>。由于用户基数庞大，开发者逐渐被吸引，越来越多的 iOS 应用会同时或者稍晚推出 Android 的版本，生态系统的良性循环正在逐渐成型。</p></li>
+</ul>
+
+
+<p>照这样的发展速度，我预测两三年内 Android 的生态系统会赶上 iOS . 顶级 Android 手机的用户体验也会达到同期 iPhone 的水平。其实，在 iPhone 5 发布会那天晚上，我担心 iOS 生态会变成一种恶性循环，即手机缺乏创新，导致用户数量减少，开发者利润下降，离开或者不再专注于 iOS 平台，使得应用数量和质量都下滑，又进一步从负面影响用户购买决策。从第一天的订单数目来看，至少这个现象不会发生在这一代 iPhone 身上， Apple 还有时间。</p>
+
+<p><img src="http://pic.webabie.com/webabie.com/Apple-vs-Google.jpg" title="Apple vs Google" alt="Apple vs Google" /></p>
+
+<h2>Apple 还处于领先位置么？</h2>
+
+<p>从用户体验来说确实如此，但领先的距离不大了。 iPhone 的先发优势保持了这么多年，已经难能可贵，指望竞争对手一直落后是不现实的。 iPhone 5 依然会大卖，只是以前笑傲江湖，一览众山小的感觉已经消失，想要继续获得用户认可， Apple 必须使出吃奶的力气才行了。</p>
+
+<p>这对果粉和普通消费者来说，都应当是好事。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[西方文明之根(10/47) — 古希腊建筑与戏剧]]></title>
+    <link href="http://webabie.com/the-foundation-of-western-civilization-10-of-47/"/>
+    <updated>2012-09-01T00:00:00+01:00</updated>
+    <id>http://webabie.com/the-foundation-of-western-civilization-10-of-47</id>
+    <content type="html"><![CDATA[<p>上两期(aka 一年多以前，sorry ;&ndash;( )我们访问了 <a href="http://webabie.com/the-foundation-of-western-civilization-8-of-47/">斯巴达</a> 和 <a href="http://webabie.com/the-foundation-of-western-civilization-9-of-47/">雅典</a> 这两座最负盛名的伟大希腊城邦，从社会和政治两方面进行了一些分析。接下来不妨看看在这些古希腊城邦里面产生了什么样的文化。概括而言，所有城邦的文化都有一些共同点，但每个城邦也都具备自己的特色。</p>
+
+<p>鉴于如今对古希腊城邦的了解大部分都建立在雅典城邦上，这次还是以她为例。来到公元前五世纪，雅典城邦正值她在古典时代的黄金时期。让我们从最为公开的艺术形式 建筑 和 戏剧 开始。</p>
+
+<p>建筑是文化标志中最公开，最公共的一种。巨大的建筑物矗立在城邦中，城邦居民每天都要看到它们。无论他们对这些建筑是喜是恶，是赞美还是批判，也动摇不了这些建筑分毫。这些建筑可以告诉我们很多信息，关于它们的城市，关于它们的建筑者。</p>
+
+<!-- more -->
+
+
+<p>荷马多次提到过 <a href="http://en.wikipedia.org/wiki/Temple">神殿(庙宇)</a> ，前面说过，荷马史诗大概成型于公元前725年。我们未必能就此断言迈锡尼时代已经有了神殿，但是可以肯定在荷马的时代庙宇这种建筑已经出现了。从现存的考古证据来看，在黑暗时代/古风时代的希腊人已经不再像迈锡尼时代那样建造大型的宫殿和大型的城市防御工事，建筑物逐渐地向民用方向倾斜，更多地为满足城邦居民的需求而建造，正如神殿就是为了满足城邦居民崇拜神灵的需求而建造的。古希腊在「海外」的殖民地在兴建建筑物的时候，一般会刻意模仿其母城的建筑。所以我们在地中海沿岸要是看到古希腊风格的神殿，那是丝毫不足为奇的。</p>
+
+<p>庇西特拉图在位期间在雅典建造了许多大型建筑，如上一期所言，部分原因是刷城邦自豪感，部分原因是解决城邦居民的就业问题。这些建筑应当对我们了解当时雅典的居民生活很有帮助。可惜的是在希波战争期间，波斯军队一度攻破雅典城，这些建筑物大部分被烧毁了，没能留到今天。当然这也给他的后任克里斯提尼留下了很大的发挥空间。战后的和平时光，加上大量流入的财富，重建非常的迅速。在公元前450年到公元前420年这三十年间，雅典兴建起大量美仑美奂的建筑，但最伟大，最重要，从某种意义上来说也是最有趣的，当属 <a href="http://en.wikipedia.org/wiki/Parthenon">帕特农神殿(Parthenon)</a> 。</p>
+
+<p><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Parthenon-2008.jpg/800px-Parthenon-2008.jpg" title="现存的帕特农神殿 (图片来自wikipedia)" alt="现存的帕特农神殿 (图片来自wikipedia)" /></p>
+
+<p>帕特农是供奉<del>城户纱织</del>女神 <a href="http://en.wikipedia.org/wiki/Athena">雅典娜</a> 帕特诺斯 (意为处女雅典娜，雅典娜是雅典主神，雅典城是她的专属城市，以她命名。) 的神殿。从公元前447年左右开始兴建，公元前438年左右竣工，但殿内雕塑直到公元前432年才全部完成。即便如此，在当时的生产力条件下，这座宏伟的神殿也只用了不到二十年的时间。帕特农神殿的建筑负责人和设计师是 <a href="http://en.wikipedia.org/wiki/Ictinus">伊克提诺斯</a> 和 <a href="http://en.wikipedia.org/wiki/Callicrates">卡利特瑞特</a> 。以现有的证据，我们无法断言这两位建筑师还参与了雅典城里哪些建筑物的设计和兴建，但是他们的指纹一定也印在了别的地方，因为他俩实在太出色了。神殿的主雕塑师是 <a href="http://en.wikipedia.org/wiki/Phidias">菲迪亚斯</a> 。殿中的雅典娜金身雕像正是出自他手，可惜此像已经<del>化身一位日本女孩</del>消失在历史长河中，无处觅芳踪。</p>
+
+<p>古希腊的神殿一般结构是这样的：在平地上建起一块高台作为底座，有阶梯可以攀上。在底座上是环绕神殿的 <a href="http://en.wikipedia.org/wiki/Colonnade">柱廊(colonnade)</a> ，一般来说是四面环绕，也有一些特例。在柱廊内是一个或几个房间。基本结构都是这样。想象一下就知道，神殿最显眼的部分就是组成柱廊的柱子群了。一根柱子由两到三个部分组成：一个柱轴(或柱身 Shaft)，一个 <a href="http://en.wikipedia.org/wiki/Capital_(architecture">柱冠(Capital)</a>) ，以及可能有一个 <a href="http://en.wikipedia.org/wiki/Pedestal">底座(Pedestal)</a> 。古典时代的希腊建筑有三种形式的柱子 — <a href="http://en.wikipedia.org/wiki/Doric_order">多立克柱式(Doric order)</a> ； <a href="http://en.wikipedia.org/wiki/Ionic_order">爱奥尼柱式(Ionic order)</a> 和 <a href="http://en.wikipedia.org/wiki/Corinthian_order">科林斯柱式(Corinthian order)</a> 。多力克柱柱身中部较粗，没有底座，柱冠简单，象征着稳定和力量；爱奥尼柱柱身修长，有深窄的凹槽，基本都有底座，柱冠呈卷轴形，象征优雅和美丽；科林斯柱特色介于两者之间，特色为柱冠非常精致华丽，后来的罗马人和文艺复兴时期的艺术家对科林斯柱都青眼有加。</p>
+
+<p>在柱子的上面有一个建筑结构叫做 <a href="http://en.wikipedia.org/wiki/Entablature">檐(entablature)</a> 。指的是柱顶之间横置的石条。如果你伸起左右手食指朝天，相隔五六厘米，在两个指尖横放一根铅笔试试平衡，那根铅笔就是檐。这些石条除了每个相邻的柱子之间，也放置在柱子和内墙之间。在檐的上方才是屋顶，屋顶可能是木制或石制，两者混合的的情况也经常出现。对于我们而言这些建筑的檐部非常重要，因为檐部有 <a href="http://en.wikipedia.org/wiki/Metopes_of_the_Parthenon">装饰格(Metopes)</a>  ，在装饰格中有各种浮雕，是了解当时文化的很好的参照物。</p>
+
+<p>帕特农神殿从落成以来就一直保存得很好，直到1687年，土耳其军队在神殿中保存火药，被威尼斯海军的炮弹击中，大爆炸把神殿变成了现在的样子。幸运的是在1674年有人做过神殿全图，我们还能知道帕特农的原貌。现在神殿许多雕塑散布在世界各地，保存最完好的一批在大英博物馆。希腊政府一直在跟大英博物馆以及英国政府交涉，希望他们能够归还，不过这是需要立法的事情，没有那么容易。所以如果你想仔细研究帕特农神殿的雕塑，不要去雅典，而应该到伦敦去。</p>
+
+<p>帕特农神殿宽度超过了100英尺(30米)，长度近230英尺(70米)，是一座庞大的建筑。一般的神殿前部有6根柱子，侧面有12或15根；而帕特农前部有8根柱子，侧面则有17根。尽管身为庞然大物，却丝毫不减她的优雅美丽。帕特农神殿的雕塑分为三个大的部分，在神殿的一端，是雅典娜降生的故事；神殿的另一端，是雅典娜与海神波塞冬争夺雅典城的战争故事。这是雅典神话中的两个最重要的时刻。然而环绕房间的一组，则描述了一次盛大的女神节庆祝活动。换句话说，在这里，雅典人选择了「当下」而不是「过去」，这相当值得我们思考和向雅典城邦的居民致敬。帕特农神殿名义上是献给雅典娜女神，实际上是为了雅典市民而建造的，是为了让雅典市民感到骄傲自豪，为了让他们接受雅典帝国，接受他们为此付出的代价。神话故事雕塑展示了雅典的漫长而荣耀的历史，而这在其他神殿雕塑中很不常见的女神节庆典，就像把一面镜子放在雅典市民面前，让他们能看到自己，觉得自己也是荣光万丈的雅典城的一部分。</p>
+
+<p>建筑就先说到这里，让我们看看戏剧。在雅典城邦中戏剧是非常公开的艺术形式，一般在露天的剧院内上演。从艾菲烈特执政时期开始，雅典公民进剧院就是免费的，费用直接走帝国财政，算公民福利。悲剧，是雅典戏剧的主旋律。我们现在能看到的最早的雅典戏剧在大约公元前470年，这是一个关于悲剧的悲剧 — 考古学家们能考证出一百多部曾在雅典城邦上演的戏剧的名字，但是流传下来的只有二十出头；考古学家们还找到了几十位剧作家的名字，但是只有三位剧作家 ( <a href="http://en.wikipedia.org/wiki/Aeschylus">埃斯库罗斯 Aeschylus</a> ，<a href="http://en.wikipedia.org/wiki/Sophocles">索福克勒斯 Sophocles</a> ，以及 <a href="http://en.wikipedia.org/wiki/Euripides">欧里庇得斯 Euripides</a> )的作品今天还能看到。这几个名字可能比较陌生，不过他们的作品一旦说出来，大家估计都会恍然大悟。</p>
+
+<p>亚里士多德在他的 <a href="http://en.wikipedia.org/wiki/Poetics_(Aristotle">诗学(Poetics, 世界上第一本文学批评著作)</a> 中说，悲剧是一种诗歌形式，是严肃的诗歌。它用美丽、优雅、令人感动的语言，把敬畏和怜悯展现出来，以此净化观众的内心世界。悲剧的定义并非是有什么人意外死去，让他的亲友很悲伤这样子。亚里士多德认为这种事情不叫悲剧，甚至压根儿很无趣，反正人早晚是要死的。古希腊悲剧归根结底都是一个精美的，描述一个品德高尚的人在无奈的命运下内心世界的挣扎的故事。悲剧的意味在于两难，在于这种挣扎。埃斯库罗斯的代表作是唯一一部流传下来的古希腊戏剧三部曲 <a href="http://en.wikipedia.org/wiki/The_Oresteia">俄瑞斯忒亚</a> 。英雄阿伽门农之子俄瑞斯忒斯弑母为父报仇，最后在雅典娜面前受审判的故事。整个三部曲就像一个长长的，关于正义的沉思。什么是人眼中的正义，什么是神祗眼中的正义。俄瑞斯忒亚于公元前458年在雅典上演，这个剧目中的故事发生在很久以前，然而剧目上演的时间正是雅典的元老委员会亚略巴古被完全架空的四年之前，这出剧的最后正是是俄瑞斯忒斯在类似亚略巴古的法庭上受审。这是借古喻今的手段，虽然是神话故事，却是在向当时的雅典人以当时发生的事情为话题对话。这也是为何我们把戏剧称为公开的艺术，并不完全因为它们露天上演，门票免费，也因为它们述说讨论着当时的，公开的话题。埃斯库罗斯流传下来的作品中甚至有一部「波斯人」，须知波斯人没几年前才刚刚攻破雅典城一次，几乎把雅典烧成了平地，而埃斯库罗斯就写了一部关于波斯人的戏剧，让雅典人看到波斯人也是普通人，有一样的希望、梦想、心愿和敬畏之物。(在21世纪的某天朝上国是会被口水淹死的。)</p>
+
+<p>索福克勒斯的剧作对正义，原则，因果等进行了深刻的探索，在他的剧作中，「我应做的」和「我想做的」总是有非常紧张的冲突。他的名作之一 <a href="http://en.wikipedia.org/wiki/Antigone_(Sophocles">「安提戈涅」</a>) 公认是戏剧史上最伟大的作品之一。女主角安提戈涅的兄长波吕尼刻斯反叛城邦而被杀，国王下令曝尸荒野不得安葬，安提戈涅声称诸神令她安葬兄长，尽管国王交涉未果，依然把波吕尼刻斯的尸体埋葬了。国王暴怒之下，活埋了安提戈涅。索福克勒斯以此告诉观众，安提戈涅在按一种超越人世的律法行事，这律法比人间帝王定下的要更高，更有优先权。国家有兴废，帝王如轮转，王家的律法也朝令夕改，但安提戈涅遵从的是诸神的法例，不会变更。这出剧并非到此为止，后面还有更多的剧情，在此就不冗述了。</p>
+
+<p><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Lytras_nikiforos_antigone_polynices.jpeg/800px-Lytras_nikiforos_antigone_polynices.jpeg" title="Nikiphoros Lytras 的油画，安提戈涅站在波吕尼刻斯的尸体前" alt="Nikiphoros Lytras 的油画，安提戈涅站在波吕尼刻斯的尸体前" /></p>
+
+<p>如果以上两出剧你都不熟悉，那么索福克勒斯的另一部名作你应该至少听说过名字： <a href="http://en.wikipedia.org/wiki/Oedipus_the_King">「俄狄浦斯王」</a> 。亚里士多德称之为「古今最高杰作」，这个名字被后世的佛洛依德用来命名他的「恋母情结」理论。剧作中，俄狄浦斯是个罕见的好人，罕见的好国王，他善良，正直，仁慈，但被命运无情地戏弄，他在不知情的情况下，杀死了自己的亲生父亲，娶了自己的亲生母亲，最后自挖双眼成了瞎子。从头到尾观众都能深深地感受到命运的束缚，剧中人的身不由己，当俄狄浦斯失明之后，他反而能把命运看得更清楚。这出剧曾经引起了一段哲学争论。</p>
+
+<p>除了悲剧，雅典戏剧中也有一定数量的喜剧。喜剧一般的背景设定在当代，而不是遥远的过去；角色也不会是传奇人物，而是生活中的普通人；剧情更加贴近当时雅典人的生活。雅典喜剧的代表剧作家是 <a href="http://en.wikipedia.org/wiki/Aristophanes">阿里斯托芬</a> 。他的剧作诙谐幽默之余，亦不失优雅精致，阿里斯托芬生活的年代正是雅典的黄金时期，他流传最广的剧作应该是 <a href="http://en.wikipedia.org/wiki/Lysistrata">吕西斯忒拉忒(Lysistrata)</a> ，描述了一位聪明的女人对雅典和斯巴达的希腊内战非常的厌恶，于是联合希腊的女性进行「性罢工」，对男人极尽挑逗之后拂袖而去，声言战争不结束的话绝无房事。最后结局自然是和平降临，举国欢腾，大团圆收场。荒诞可笑的对白和情节贯穿全剧，但是就主题而言，却又绝不荒诞，而是严肃沉重的。</p>
+
+<p>从雅典的戏剧艺术我们可以看出这个城邦的很多特色。最重要的一点是，这是一个非常开放的社会，在这个社会里几乎所有事情都可以公开拿出来讨论宣讲，充满了活力。另外，从建筑艺术和戏剧艺术中都可以看出雅典文化的精致细腻，严肃和诙谐兼而有之，是古文明中的精品。下一期，我们看看雅典城邦发展出的另一种「艺术」。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Rails on Ubuntu VPS]]></title>
+    <link href="http://webabie.com/rails-on-ubuntu-vps/"/>
+    <updated>2012-03-19T10:05:00+00:00</updated>
+    <id>http://webabie.com/rails-on-ubuntu-vps</id>
+    <content type="html"><![CDATA[<p>So now I have a KVM VPS running Ubuntu. How do I setup a rails development environment? The Linux/OSX users are no as lucky as the Windows users at this &mdash; There is no simple stupid all-in-one script/binary for us. Most of us need to go through a try-and-error process to accomplish the task. In this post I am going to do it again and try to record it so that other people (or the future me) can playback.</p>
+
+<h3>Prepare</h3>
+
+<p>That&rsquo;s the routine commands:</p>
+
+<figure class='code'><figcaption><span>update system </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>sudo apt-get update
+</span><span class='line'>sudo apt-get upgrade
+</span><span class='line'>sudo apt-get install git curl build-essential vim libcurl4-openssl-dev bison openssl libreadline6 libreadline6-dev zlib1g zlib1g-dev libssl-dev libyaml-dev libsqlite3-0 libsqlite3-dev sqlite3 libxml2-dev libxslt-dev autoconf
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>ZSH</h3>
+
+<p>This step is optional. Bash is good enough. However I like the fancy zsh for its flexible custom prompt.</p>
+
+<figure class='code'><figcaption><span>install oh-my-zsh </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>sudo apt-get install zsh
+</span><span class='line'>git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+</span><span class='line'>cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
+</span><span class='line'>chsh -s /bin/zsh
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Personally, I will change the zsh theme to &ldquo;gnzh&rdquo;. You can leave it as is or use any theme you prefer. To do this, open ~/.zshrc and alter &ldquo;ZSH_THEME&rdquo;.</p>
+
+<!-- more -->
+
+
+<h3>Install Ruby Version Manager (RVM)</h3>
+
+<figure class='code'><figcaption><span>install rvm </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>bash -s stable &lt; &lt;<span class="o">(</span>curl -s https://raw.github.com/wayneeseguin/rvm/master/binscripts/rvm-installer<span class="o">)</span>
+</span><span class='line'><span class="nb">source</span> ~/.rvm/scripts/rvm
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Then open ~/.zshrc (or ~/.bashrc if you use bash) and add the following line <strong>before</strong> the line of &ldquo;ZSH_THEME&rdquo;:</p>
+
+<figure class='code'><figcaption><span>add rvm to path </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:<span class="nv">$HOME</span>/.rvm/bin
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Then add this line to the end of the file:</p>
+
+<figure class='code'><figcaption><span>startup env </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="o">[[</span> -s <span class="s2">&quot;$HOME/.rvm/scripts/rvm&quot;</span> <span class="o">]]</span> <span class="o">&amp;&amp;</span> . <span class="s2">&quot;$HOME/.rvm/scripts/rvm&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Install Ruby</h3>
+
+<figure class='code'><figcaption><span>install ruby 1.9.3 </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>rvm install 1.9.3
+</span><span class='line'>rvm --default use 1.9.3
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Install Rails</h3>
+
+<figure class='code'><figcaption><span>install rails </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>sudo apt-get install install libbuilder-ruby
+</span><span class='line'>gem install rails
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Install Passenger with Nginx</h3>
+
+<figure class='code'><figcaption><span>install passenger and nginx </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>gem install passenger
+</span><span class='line'>sudo -s
+</span><span class='line'>passenger-install-nginx-module
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Enter to continue; choose 1 (Yes: download, compile and install Nginx for me. (recommended))
+Here the installation script thrown an error at me. It could not find &ldquo;pcre-8.12&rdquo;. Turns out this version is too old and has already been removed from the source server. I have to install it manually.
+Goto <a href="ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/">ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/</a> and download the latest version from there. At this moment it is pcre-8.30</p>
+
+<figure class='code'><figcaption><span>install pcre </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>wget ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/pcre-8.30.tar.gz
+</span><span class='line'>tar zxvf pcre-8.30.tar.gz
+</span><span class='line'><span class="nb">cd </span>pcre-8.30
+</span><span class='line'>./configure
+</span><span class='line'>make
+</span><span class='line'>sudo make install
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Now try &ldquo;sudo -s ; passenger-install-nginx-module&rdquo; again. It should work this time.</p>
+
+<p>Specify prefix directory of nginx. The default /opt/nginx is fine. Some prefer /usr/local/nginx . Not much difference.</p>
+
+<p>Note: if passenger-install-nginx-module can not be found, use the full path.</p>
+
+<p>(/home/<em>username</em>/.rvm/gems/ruby-<em>(version)</em>/gems/passenger-<em>(version)</em>/bin/passenger-install-nginx-module)</p>
+
+<h3>Nginx startup script</h3>
+
+<figure class='code'><figcaption><span>install and test nginx startup script </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>sudo mkdir /opt/nginx/init.d
+</span><span class='line'>sudo wget --no-check-certificate http://github.com/ascarter/nginx-ubuntu-rvm/raw/master/nginx -O /opt/nginx/init.d/nginx
+</span><span class='line'>sudo chmod +x /opt/nginx/init.d/nginx
+</span><span class='line'>sudo ln -s /opt/nginx/init.d/nginx /etc/init.d/nginx
+</span><span class='line'>sudo ln -s /usr/local/lib/libpcre.so.1 /usr/lib/libpcre.so.1
+</span><span class='line'>sudo /etc/init.d/nginx start
+</span><span class='line'>sudo /etc/init.d/nginx status
+</span><span class='line'>sudo  /etc/init.d/nginx stop
+</span><span class='line'>sudo /usr/sbin/update-rc.d -f nginx defaults
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Note: if you installed nginx in a place other than /opt/nginx, open the script file and change the path of <em>DAEMON</em>, <em>PIDSPATH</em>, <em>NGINX_CONF_FILE</em>.</p>
+
+<h3>Install rmagick</h3>
+
+<figure class='code'><figcaption><span>install imagemagick and rmagick </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>sudo apt-get remove imagemagick
+</span><span class='line'>sudo apt-get install libperl-dev gcc libjpeg62-dev libbz2-dev libtiff4-dev libwmf-dev libz-dev libpng12-dev libx11-dev libxt-dev libxext-dev libxml2-dev libfreetype6-dev liblcms1-dev libexif-dev perl libjasper-dev libltdl3-dev graphviz gs-gpl pkg-config
+</span><span class='line'>wget ftp://ftp.imagemagick.org/pub/ImageMagick/ImageMagick.tar.gz
+</span><span class='line'>tar zxvf ImageMagick.tar.gz
+</span><span class='line'><span class="nb">cd </span>ImageMagick-*<span class="o">(</span>version<span class="o">)</span>*
+</span><span class='line'>./configure
+</span><span class='line'>make
+</span><span class='line'>sudo make install
+</span><span class='line'>gem install rmagick
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Test</h3>
+
+<figure class='code'><figcaption><span>create a new rails app for env test </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>rails new testapp
+</span><span class='line'><span class="nb">cd </span>testapp
+</span><span class='line'>git init
+</span><span class='line'>git add .
+</span><span class='line'>git commit -a -m <span class="s2">&quot;Initial import&quot;</span>
+</span><span class='line'>bundle install
+</span><span class='line'>git add .gitignore
+</span><span class='line'>git commit -a -m <span class="s2">&quot;Add .gitignore&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Edit /opt/nginx/conf/nginx.conf (or your specified path to nginx.conf)</p>
+
+<figure class='code'><figcaption><span>virtual host config that needs to be added to nginx.conf </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>   server <span class="o">{</span>
+</span><span class='line'>      listen 80;
+</span><span class='line'>      server_name www.yourhost.com;
+</span><span class='line'>      root /somewhere/public;   <span class="c"># &lt;--- be sure to point to &#39;public&#39;!</span>
+</span><span class='line'>      passenger_enabled on;
+</span><span class='line'>   <span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Then restart nginx, try visit the server from browser.</p>
+
+<h3>Databases</h3>
+
+<p>MySQL:</p>
+
+<figure class='code'><figcaption><span>install mysql </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>sudo apt-get install mysql-client mysql-server
+</span><span class='line'>gem install mysql
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>PostgreSQL:</p>
+
+<figure class='code'><figcaption><span>install postgresql </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>sudo add-apt-repository ppa:pitti/postgresql
+</span><span class='line'>sudo apt-get update
+</span><span class='line'>sudo apt-get install postgresql libpq-dev
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[所有的一切都是阴谋（微小说）]]></title>
+    <link href="http://webabie.com/behind-jeremy-lin/"/>
+    <updated>2012-02-21T00:00:00+00:00</updated>
+    <id>http://webabie.com/behind-jeremy-lin</id>
+    <content type="html"><![CDATA[<p>注：本故事纯属虚构。如有雷同，乃是巧合；本文纯属原创。如有雷同，实属抄我。</p>
+
+<p>2011 年圣诞节前夕，美国纽约市第五大道 645 号 Olympic Tower 的某办公室内，两人隔桌相对而坐。</p>
+
+<p>大班椅中的老者显得有些心不在焉。即使坐着的时候，也能看出他身材不高，约莫六十来岁的样子，虽然未见谢顶，但头发已经根根银白。此刻他一只手无意识地拨弄着桌上的钢笔，眼神似乎看着办公桌对面的人，又似乎透过了那人而望向远方不知何处。他脸上表情严肃，嘴角略微下垂，两条还没有完全变成银色的眉毛锁向中间。</p>
+
+<p>老者对面的中年男子是一名黑人，虽然身着西服，也能从外形上看出他身材十分粗壮，他的嘴唇很厚，双目坚定有神，而头上则是光溜溜的，此刻他身体略微前倾，一双大手按在桌面上，目光直视着老者，似乎正在等待对方发话。</p>
+
+<p>短暂的沉默后，黑人男子开口说道：</p>
+
+<p>「我说大卫，我们不是早就谈完了么？事情都已经解决了，名字全都签下了，咱俩还有啥可谈的啊？」</p>
+
+<p>黑人男子那洪亮的声音似乎让老者一下子回过神来，他的脸上瞬间幻化出一个和蔼而略带职业性的微笑，眉头也舒展开来，答道：</p>
+
+<!-- more -->
+
+
+<p>「我亲爱的德里克啊，别总是把我当成敌人嘛。正如你刚才所说，协议已经签好了，我们现在又是合作伙伴了，气氛别搞的那么紧张。来来来，先喝一杯再谈。」</p>
+
+<p>于是名叫大卫的老者变戏法似的从桌子下面取出一瓶红酒和两个高脚杯，倒了两杯酒。对面的德里克用左手拿起其中一杯，礼节性地抿了一口就放回桌上；而大卫则喝下了小半杯，然后开口说道：</p>
+
+<p>「德里克，我知道你们不满意，但是我有什么办法？那些数字就冷冰冰地摆在眼前。哪个老板愿意做赔本生意啊？总不能真搞得大家都没得玩儿吧？」</p>
+
+<p>德里克冷笑一声：</p>
+
+<p>「我亲爱的总裁先生，你这话我耳朵都听起老茧了，签字前说说也就罢了，现在还说有啥意思？」</p>
+
+<p>大卫呵呵地笑了两声：</p>
+
+<p>「放轻松点，我不是那个意思，你不会明白我在想什么的。你们觉得事情已经结束了，而我却不这么认为。如果不把这事从根源上解决掉，像今年这样的灾难还会再次上演，你信不信？」</p>
+
+<p>「总裁先生，如你所言，我压根儿就没考虑过这个问题。而且您的想法让我十分惊奇。就算再次上演，最早也是十年后的事情了，那时候&hellip;」德里克停顿了一下，似乎在斟酌他的表达方式：「&hellip;那时候，您也该早就光荣引退了吧？」</p>
+
+<p>「我知道你想说什么，德里克。你就算直接说出来我也不会生气的。没错，我有没有命再活上10年都说不准，何必去考虑这么长远的事情呢？只是&hellip;」大卫眼中射出交织着复杂感情的目光：「我已经在这个位置上坐了将近30年了，每天早上睁开眼睛到晚上闭上眼睛，脑子里想的都是如何发展这个联盟。让我不去考虑，怎么可能？再说，这个联盟是在我手里一飞冲天的，我不想让它在我的手里崩溃。你也知道，已经有球队落到需要托管给联盟的地步了。如果再这样发展下去，只怕这样的球队会越来越多啊。」</p>
+
+<p>德里克显然对这个话题的兴趣不大，但他还是礼节性地安慰道：「大卫，我理解你的心情。现在大环境比较糟糕，盈利困难也属正常。等经济复苏了，情况会慢慢好转的，不要太悲观了。」</p>
+
+<p>大卫摇了摇头，说：「坐等事情自己变好？要是总裁这么好当，这个位置谁都能坐了。」他拍拍大班椅的扶手，继续说道：「我们必须主动些，想办法来增加整个联盟的收入，这才是治本之道。只要总体收入增加了，别的内部矛盾都是小菜一碟。对大部分老板们来说，只要别亏钱，赚多一点还是少一点其实他们并不太在意。到时候，说不定还能把你们的份额提高点。回到57%可能性不大了，但是让一两个点出来并非不可想象的事情。」</p>
+
+<p>「这么说来，大卫，你已经有计划了？」德里克听到这里，似乎提起了一点儿兴致，说话的语调也急促了一些。</p>
+
+<p>「计划，哈哈，计划我至少有几十个。」老者大卫笑道：「你以为我整天都在想什么？有很多计划已经实施了，只是不见效果啊。不过，我现在要告诉你的这个计划，十有八九是能成功的，今天找你来，就是跟你商量一下，同时也需要你的配合。」</p>
+
+<p>「那么，请告诉我吧。」德里克把身体坐直。</p>
+
+<p>「如你所知，我们联盟最辉煌的时光，大概是在上个世纪最后的二十年里。不客气地说，主要是我的功劳。」大卫略显出一丝得色，说道：「不过，还有一个人也很重要，你知道是谁么？」</p>
+
+<p>「迈克尔。」说出这个名字的时候，德里克语气带着不屑，眼神中鄙夷之色一掠而过，当然未能逃过大卫的眼睛。</p>
+
+<p>「好啦，德里克。俗话说屁股决定脑袋，你不能怪迈克尔跟你站在敌对立场。如果有一天你当了老板，也会跟他一样的。何况他现在的境况也很不好，我看他的那点儿家底也经不起大折腾，如果联盟再这样亏下去，没两年恐怕他就得破产。」大卫笑道：「当然了，我们也想看到他第三次复出，不过我想现在你都能轻易把他给过了吧？」</p>
+
+<p>「得了，得了，我明白。」德里克说：「你的意思是，我们再找一个迈克尔出来，然后包装推广？还是直接去推广勒布朗？他已经包装得够好了吧。」</p>
+
+<p>德里克并没有发现自己无意识地使用了「我们」这个词，大卫却发现了。他满意地笑道：</p>
+
+<p>「你的理解能力相当出色，德里克。不过有些许的误差。不错，既然这个模式已经被证明是有效的，我们应当再次利用它，但是不能照本宣科，依葫芦画瓢。而且，我们也找不出第二个迈克尔了&hellip;」</p>
+
+<p>「不见得吧，勒布朗，还有我队友科比&hellip;」</p>
+
+<p>「要光说球技的话这两人确实跟当年的迈克尔有得一拼，问题是他们跟迈克尔太相似了，没有什么独特之处。第二趟人们就不觉得新鲜了。」大卫摇摇头，接着说道：「再说，这两人的名声都不怎么样。你的好队友科比2004年之后就臭了，他老婆都不待见他；至于勒布朗&hellip;我理解他想要总冠军，不过去跟两个自己同等级的球员抱团，即使他拿下12个总冠军，也没法跟迈克尔比了。更何况那个该死的「决定」，哼，亏我那么看重他。哎&hellip;」</p>
+
+<p>大卫叹了一口气，看到德里克又端起酒杯来，并没有插话的意思，于是接着说道：</p>
+
+<p>「不，我们不找第二个迈克尔。联盟里面确实有几个非常有潜力的年轻人，但是再怎么发展，也不过如此了。人们只会说，「哦，很不错，迈克尔当年玩儿剩下的，还有啥新鲜的没有？」我们要另辟蹊径才行。」</p>
+
+<p>「另辟蹊径？你的意思是？&hellip;」</p>
+
+<p>「要找一个和迈克尔完全不同的人，身份，个人经历，崛起的过程等等，我们需要一个完全不同的故事。」</p>
+
+<p>「这太难了吧？大部分球星走的都是迈克尔的路，最多也就是参加选秀早几年的区别。」德里克略加思索，说道：「国际球员倒是不一样，但是他们这个国家的支持率有限，德克都夺冠了，人们还是更关注勒布朗。」</p>
+
+<p>「再想想，过去几年最火的国际球员可不是德克。」</p>
+
+<p>「啊，你指的是&hellip;」德里克一下子反应过来了：「但是，他已经退役了啊，伤成那个样子，我看也没法复出了。」</p>
+
+<p>「脑筋灵活一点，德里克。我们要看到的是现象背后的本质，现在你来告诉我，明为什么会火爆？」</p>
+
+<p>「让我想想&hellip;他数据出色，形象正面，勤奋刻苦，而且来自神秘的东方国度。」</p>
+
+<p>「说得不错，德里克，说得不错。刚才你也说过，现在这个国家的经济大环境比较差，国内市场我们已经开发到顶部平台，再想有大的发展很难了，最好的决策还是大力开发国外市场，如果能两者兼顾当然更加理想。」名叫大卫的老者说道：「欧洲市场虽然潜力巨大，但是就现在而言，他们的经济环境比我们还要糟糕，恐怕很难指望，我觉得近期还是应该把重心放在亚洲市场这一块，尤其是中国。」</p>
+
+<p>「我也听说了，据说中国现在自己的联赛搞得风生水起，我们谈判的时候，不是有好几个球员到他们的联赛去打球了么？J.R. 还有阿隆那几个人，现在还在那里呢。」</p>
+
+<p>「不错。」大卫略有些忧心地说道：「这可不是什么好消息。中国人都去看他们自己的联赛，我们的联赛收视率必然要下降啊。本来让他们一大早爬起来看我们的联赛就很不讨好了，现在有这么强力的竞争，我们得想想办法。」</p>
+
+<p>「明还在打球的时候，中国人可是天天追火箭队的直播的。」德里克说：「要不我们多引进一些中国球员？或者实在不行，亚洲球员也能凑乎啊。」</p>
+
+<p>「恐怕没那么简单。」大卫回答道：「亚洲球员想在这个联赛立足确实很困难，明是天赋异禀，你上哪儿再找一个七尺六寸还能像他那样灵活的亚洲人去？据我所知，中国球员来了五个，只有他一个成功了。对了，前两年你们队里头不就有一个么？上场时间加起来有没有十分钟？还混了总冠军戒指回去。还有一个大个子在马刺队当陪练来着，我看蒂姆绑起一只手来也能把他打得找不着北，居然也混了枚戒指，老约翰可真够冤的。」</p>
+
+<p>「约翰那是时运不济，赶上迈克尔的那一拨人，通通都时运不济。」德里克不知道是打抱不平还是借此发泄对这个迈克尔的不满。</p>
+
+<p>「是啊，时也命也。」大卫继续：「说正题，我们其实一直有留意中国联赛，希望能挖人过来，可是太难了，压根儿找不着够得上我们这个联盟水平的人。几年前有个姓朱的还不错，我们跟他接触过，但是他自己没这个意愿，后来膝盖受伤，也就没了下文。依我看，只能内部挖潜了。你看这个人怎么样？」他打开办公桌右边最靠近桌面的抽屉，取出几张纸来交给桌子对面的德里克。后者放下酒杯，接过来仔细地阅读：</p>
+
+<blockquote><p>姓名：杰里米・书豪・林
+出生日期：08/23/1988
+出生地：洛杉矶，加利福尼亚
+身高：六尺三寸
+体重：两百磅
+毕业院校：哈佛大学
+现效力球队：金州勇士
+场上位置：控球后卫
+技术统计：平均上场9.8分钟得2.6分1.2篮板1.4助攻1.1抢断</p></blockquote>
+
+<p>德里克耐着性子看完了下面的球探报告，抬头说道：</p>
+
+<p>「恕我直言，总裁先生，这个&hellip;」他低头扫了一眼手中的文件：「&hellip;这个杰里米林，他的数据好像只比当年我们队里面的悦孙强那么一点点吧？」</p>
+
+<p>「是的，但是我们实在没有更好的人选了。」大卫无奈地说：「你想想，这个人的背景实在太符合我们的需求了。他是华裔&hellip;」</p>
+
+<p>「这里写着他出生在洛杉矶。」德里克说：「他是美国人，在中国和亚洲恐怕没有明那么大的影响力吧？」</p>
+
+<p>「这点我也考虑过，不过问题应该不大。只要一个黄种人在我们联盟能够成名，中国人都会吃这套的 &mdash; 只要这个人不是日本人就行。何况杰里米从血缘上说就是纯正的中国人，他还说汉语，只需要包装得当就行。」大卫笑笑继续说道：「何况，这样的情况未尝不是好事。你想想：一个华裔第三代移民的美国梦，多么励志的故事，还跟迈克尔完全不同&hellip;这绝对是两大洲通吃的人选，可遇而不可求啊。那么，现在你愿意听听我的计划么？」</p>
+
+<p>「说的倒也是。」德里克点头道：「那么，大卫，你的计划到底是什么呢？」</p>
+
+<p>「首先，我们得把他挪个地方，奥克兰虽然也还算繁华，但是毕竟不是首屈一指的大球会。」德里克似乎想插话，大卫抬手阻止了他，继续说道：「我知道，当年芝加哥也不是什么大球会，但是不能拿迈克尔跟他比啊。迈克尔可以自己创造机会，而杰里米恐怕需要我们为他把铺垫做好才行。」</p>
+
+<p>「哪里呢？」</p>
+
+<p>「说到大都市，大球会，最佳选择当然是你的队了。他家也在那里。」大卫的笑容越发明显：「怎么样，让杰里米接你的班？」</p>
+
+<p>「什么？你叫我来就是跟我说这个？」德里克简直惊呆了，不过他很快从对面坐的人的神情中了解到这只是一个玩笑。「哈哈，我没问题，不过你得自己跟科比解释去。」</p>
+
+<p>「哼，我还要跟他解释？」大卫收起笑容：「开个玩笑而已，计划已经有了，我要把他送到这里来。」</p>
+
+<p>「这里？」德里克不解地问，随后恍然大悟：「哦，你是说尼克斯？」</p>
+
+<p>「不错，纽约，新时代的万城之城，不错吧？」大卫得意地说：「一夜成名的最佳地点，一定会引起轰动的。你能想到更完美的地方么？」</p>
+
+<p>「我不能，纽约确实是最佳地点。」德里克说：「只是&hellip;你怎么确定他就能一夜成名呢？」</p>
+
+<p>老者大卫盯着德里克的双眼，缓缓地说道：「我不确定，我只能给他营造各种机会，能不能抓住要看他自己。这也是我现在要跟你谈话的原因。先告诉你一件事情。在你进来之前，迈克尔刚刚从我这出去。」</p>
+
+<p>「这计划你也告诉他了？他支持么？」</p>
+
+<p>「废话，他怎么可能不支持，难道他想坐等破产么？实际上，他也是这计划的一部分，我交给他一项任务。」</p>
+
+<p>「任务？什么任务？」</p>
+
+<p>「他和我刚才一起看了杰里米的比赛和训练的录像。他觉得杰里米的身体天赋和头脑都不错，在联盟控卫平均水平线以上，就是有点儿缺练。」</p>
+
+<p>「缺练？这可是新鲜事儿。华裔不是出了名的吃苦耐劳么？」</p>
+
+<p>大卫又一次展开了他的笑容：「德里克，你别忘了，迈克尔说的缺练跟我们说的缺练，恐怕完全是两码事。如果你队友科比在这儿，他就能明白是什么意思。」</p>
+
+<p>德里克吸了口冷气：「我明白了，你把那个疯子派去&hellip;」</p>
+
+<p>「我可派不动他，他好歹也是个老板，我只是请求他去特训杰里米一段时间。」</p>
+
+<p>「可怜的孩子，他知道自己面对的是什么么？」</p>
+
+<p>「我想他很快就会知道了。我对迈克尔说，训练标准就用他第一次复出被魔术队在第一轮横扫之后，他训练自己的那个标准即可。为了避免杰里米起疑，迈克尔会随便再挑几个年轻球员，一起训练他们」</p>
+
+<p>「那几个陪练的球员可真是无妄之灾啊&hellip;&hellip;」德里克脸上写满了同情，问道：「他有说需要多长时间么？」</p>
+
+<p>「他说一个月就行，两个月的话效果会非常理想。」</p>
+
+<p>「那么，只能祝杰里米好运了。」德里克又问道：「那么，我也是这计划的一部分么？」</p>
+
+<p>「你知道，所有球员里面我最喜欢控球后卫了，因为他们最聪明。」大卫答道：「不够聪明的人根本打不了这个位置。猜对了，你也是这计划的一部分。」</p>
+
+<p>「那么，我的任务是什么？」德里克问道，并不如何惊讶。</p>
+
+<p>「尽管我完全相信迈克尔，为了把计划的失败率降到最低，我还是要做另一手准备。」大卫微笑着说：「如果湖人和尼克斯对阵的话，同杰里米对位的，是你吧？」</p>
+
+<p>德里克终于吃了一惊，抬头用不可思议的目光盯着大卫，后者报以微笑，等待着他开口。</p>
+
+<p>「我倒无所谓。」德里克终于打破了沉默：「我年纪摆在这里，随便哪个后卫爆了我都不是新鲜事。也没有人会怀疑什么。不过总裁先生，你不会打算跟每个队的控卫都来一次这样的谈话吧？」</p>
+
+<p>大卫并未开口，只是继续望着对面的德里克，脸上的微笑更盛。</p>
+
+<p>德里克看着这微笑，像是突然明白了过来，再次大吃一惊：</p>
+
+<p>「难道说，这才是我的任务？」</p>
+
+<p>「所以说控卫就是聪明，又猜对了。」大卫终于开口说道：「倒不是我怕麻烦，而是经过这次谈判，球员们对我恐怕没有什么好印象，我跟他们说话，效果不好。而你这个工会主席很有威望，由你去说会好得多。」</p>
+
+<p>「不不不，不可能，我怎么跟他们说？看到杰里米林上篮就让开？防守的时候故意给杰里米林留个传球的空档？我自己这么干还勉勉强强，去叫别人也这么干，太荒谬了。」</p>
+
+<p>「当然不能这么说。你是个聪明人，一定能想到办法的。」</p>
+
+<p>德里克低头思索起来，大概半杯红酒的功夫，他抬头说道：</p>
+
+<p>「我可以去逐个请他们吃饭，席间讨论起劳资谈判的事情，就势引出需要增收的话头，然后不经意地把我们刚才的谈话重复一遍，需要在亚洲发展啦，没法引进中国球员啦，眼下就有一个人啦，要是他火起来就好啦，说不定球员能多分点账啦&hellip;算是个暗示吧。然后当杰里米跟我对位的时候，我尽量不露痕迹地让他多拿点分，数据好看一点，算是做个样子给我谈过话的控卫看看，希望他们够聪明，能够明白是什么意思。我最多只能做到这样了。」</p>
+
+<p>「足够了，足够了，我也想不到更好的法子了。」大卫高兴地说，看得出来这回他是发自内心地感到快乐：「正像我说的，控卫都是绝顶聪明的人，一定能明白的。」</p>
+
+<p>「那么，要把这计划告诉杰里米他自己么？」</p>
+
+<p>「千万不要，他一定不能知道这个计划。」大卫的笑容敛去，认真地说道：「首先，他要是知道这些事情，恐怕会放松训练，我的苦心就白费了；其次，我听说他是一个虔诚的基督徒，他的推特头像都是耶稣基督，我怕他对这种计划反感&hellip;」</p>
+
+<p>看到德里克的脸上显出一丝不豫，老者忙陪笑道：「当然我不是影射你对信仰不虔诚，只是杰里米他毕竟还太年轻，我怕他会认死理。而且他要是知道了计划，口风不严透露出去，我们可就全砸了。」</p>
+
+<p>「有道理。」德里克说：「如果计划进行顺利，但是像我刚才说的，中国地区的观众不把他当中国人看呢？」</p>
+
+<p>「这事情你就不用担心了。」大卫狡颉地笑道：「我打包票，如果杰里米能一夜成名，两大洲的媒体的报道肯定铺天盖地。而且，我还巴不得太平洋对岸产生对他归属地的争议呢。有争议，才有热度啊；没有争议，哪来的新闻？」</p>
+
+<p>「老狐狸。」德里克小声嘟囔了一句，也不知大卫有没有听见。他随即站起身来提高声音说道：「好，我这就去准备，希望这计划能够成功。」</p>
+
+<p>「成功的机会很大。」大卫也站起来，抬头说道：「机会很大，只要我们都把自己的任务完成。圣诞快乐。」</p>
+
+<p>「圣诞快乐，再见，大卫。」</p>
+
+<p>德里克・费舍尔大步走出了总裁办公室，大卫・斯特恩目送他离开，然后转过身来，望着落地玻璃窗外纽约的璀璨夜色，自言自语道：</p>
+
+<p>「基督徒，唔，这是上帝在使用我来祝福杰里米・林么&hellip;管他的，只要计划成功就好，联盟和杰里米都是赢家，上帝想必也不会怪我。」</p>
+
+<p>他转向办公桌，又给自己倒了小半杯红酒。然后举杯向天，小声说道：</p>
+
+<p>「干杯！」</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Octopress for Absolute Beginners]]></title>
+    <link href="http://webabie.com/octopress-for-absolute-beginners/"/>
+    <updated>2011-11-19T09:55:00+00:00</updated>
+    <id>http://webabie.com/octopress-for-absolute-beginners</id>
+    <content type="html"><![CDATA[<h3>What is Octopress</h3>
+
+<p><a href="http://octopress.org/">Octopress</a> is a &ldquo;blogging framework&rdquo; according to its author. I&rsquo;d rather call it a webpage publishing system. For its main function is to publish webpages.</p>
+
+<h3>Why use Octopress</h3>
+
+<p>For blogging, most people use blogger, wordpress.com, livejournal, etc. Some build independent blogs with their own domain, own hosting and WordPress source code. Those are all very good solutions and one doesn&rsquo;t need to switch unless has really good reasons.</p>
+
+<p>However if you, like myself, are already bored with all those popular platforms; or, again like myself, are planning to learn <a href="http://www.ruby-lang.org/en/">Ruby</a>, <a href="http://git-scm.com/">Git</a> and are trying to work your way out of <a href="http://github.com/">GitHub</a>. Then Octopress may be for you.</p>
+
+<p>By using Octopress you will get:</p>
+
+<ul>
+<li>to learn how to build a Ruby programming environment.</li>
+<li>some basic command of Git.</li>
+<li>to write blog posts and pages completely with <a href="http://en.wikipedia.org/wiki/Command-line_interface">CLI</a>. That&rsquo;s right. You can write articles with VIM.</li>
+<li>to use <a href="http://daringfireball.net/projects/markdown/basics">markdown syntax</a> in blog posts. Or to learn it if you don&rsquo;t already know.</li>
+<li>to host your blog on GitHub. Free.</li>
+<li>very nice code highlighting.</li>
+</ul>
+
+
+<p>&hellip;and, on top of all, it is fun.</p>
+
+<!--more-->
+
+
+<h3>I am convinced, how do I start?</h3>
+
+<p>It is not that difficult to setup Octopress even for absolute beginners. Although you will spend some time on try-and-error &mdash; story of a coder&rsquo;s life.</p>
+
+<p>I assume that you are working with a Mac. If you are not, go get one.</p>
+
+<p>First you will need to set up a Ruby environment and, of course, to install git. Octopress can only be run on Ruby 1.9.2 or later. OS X Lion&rsquo;s pre-installed Ruby is 1.8.7 and is not suitable for Octopress.</p>
+
+<p>Installing Ruby 1.9.2 is very simple but I&rsquo;d rather set up a complete Ruby on Rails development environment instead since I will soon need it anyway. As an absolute beginner myself, I followed <a href="http://wp.xdite.net/?p=2063">this walkthrough</a>. However there are a couple of mistakes in it. So I will just list all the commands again for future reference.</p>
+
+<ul>
+<li>Software update</li>
+<li>Install Xcode</li>
+<li>Install <a href="http://github.com/mxcl/homebrew">Homebrew</a>, Git and Imagemagick / MySQL / Sphinx</li>
+</ul>
+
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>ruby -e <span class="s2">&quot;$(curl -fsS https://raw.github.com/gist/323731/install_homebrew.rb)&quot;</span> <span class="c"># The link in the origin post didn&#39;t work. I figured this is the right one.</span>
+</span><span class='line'>brew install git
+</span><span class='line'>brew update
+</span><span class='line'>brew install imagemagick
+</span><span class='line'>brew install mysql
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Notice the version of MySQL. Then:</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nb">unset </span>TMPDIR
+</span><span class='line'>mysql_install_db <span class="c"># This line is not right. Check the install log after the command &quot;brew install mysql&quot;. The right command is in there. I forget what it is.</span>
+</span><span class='line'>cp /usr/local/Cellar/mysql/5.1.54/com.mysql.mysqld.plist ~/Library/LaunchAgents <span class="c"># Replace the &quot;5.1.54&quot; with the MySQL version you installed just now.</span>
+</span><span class='line'>launchctl load -w ~/Library/LaunchAgents/com.mysql.mysqld.plist
+</span><span class='line'>/usr/local/Cellar/mysql/5.1.54/bin/mysql_secure_installation <span class="c"># Again replace the version number.</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Now you need to initialise MySQL. Just answer Yes for all yes/no questions and give a password when asked.</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>brew install sphinx
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>Install RVM and Ruby 1.9.2</li>
+</ul>
+
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>bash &lt; &lt;<span class="o">(</span> curl https://raw.github.com/wayneeseguin/rvm/master/binscripts/rvm-installer <span class="o">)</span> <span class="c"># This one freaked me out a bit. It took me some time to find out the issue at http://bit.ly/tte5Iq</span>
+</span><span class='line'><span class="nb">echo</span> <span class="s2">&quot;[[ -s $HOME/.rvm/scripts/rvm ]] &amp;&amp; source $HOME/.rvm/scripts/rvm&quot;</span> &gt;&gt; ~/.profile <span class="o">&amp;&amp;</span> . ~/.profile
+</span><span class='line'><span class="nb">source</span> ~/.profile
+</span><span class='line'>
+</span><span class='line'>rvm install 1.9.2 <span class="c"># Or 1.9.3 or later. If rvm doesn&#39;t work, try use the full path at ~/.rvm/bin/rvm</span>
+</span><span class='line'>rvm use 1.9.2 --default
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>Install necessary gems</li>
+</ul>
+
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>gem install rails
+</span><span class='line'>gem install mysql2
+</span><span class='line'>gem install mysql
+</span><span class='line'>gem install passenger
+</span><span class='line'>gem install nokogiri
+</span><span class='line'>gem install capistrano
+</span><span class='line'>gem install capistrano-ext
+</span><span class='line'>gem install delayed_job
+</span><span class='line'>gem install hoptoad_notifier
+</span><span class='line'>gem install facebooker2
+</span><span class='line'>gem install factory_girl
+</span><span class='line'>gem install sphinx
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Now the RoR environment is established. Next up: get Octopress work.</p>
+
+<p>Actually, to this step you can just follow the <a href="http://octopress.org/docs/setup/">official Octopress document</a> to finish the setup process provide that you are familiar with GitHub. If not, here is what you need to do:</p>
+
+<ul>
+<li><p>Register a GitHub account and log in. Please use <strong>all lower-case letters</strong> in your account name. Otherwise there may be problems when Octopress tries to connect to the repository the first time.</p></li>
+<li><p><a href="https://github.com/repositories/new">Create a new GitHub repository</a>. Fill &ldquo;Project Name&rdquo; with your username. Again no capital letter. Description and Homepage URL can be left blank.</p></li>
+<li><p>Get your repository URL. This one is a little tricky. If you have not used GitHub before, you may go for the URL in the browser&rsquo;s address bar, which is wrong. The correct one can be find on the repository&rsquo;s page with the form &ldquo;git@github.com:<em>repositoryname</em>/<em>username</em>.github.com.git&rdquo;.</p></li>
+<li><p>Now install Octopress.</p></li>
+</ul>
+
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>ruby --version <span class="c"># Make sure you have Ruby 1.9.2 or later in use.</span>
+</span><span class='line'>git clone git://github.com/imathis/octopress.git octopress
+</span><span class='line'><span class="nb">cd </span>octopress
+</span><span class='line'>
+</span><span class='line'>gem install bundler
+</span><span class='line'>bundle install
+</span><span class='line'>rake install
+</span><span class='line'>
+</span><span class='line'>rake setup_github_pages
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Now you will be asked for the GitHub Pages repository URL. Enter the one from last step. (Start with <em>git@</em>)</p>
+
+<p>Open file <em>_config.yml</em> and fill the configs of <em>url</em>, <em>title</em>, <em>subtitle</em> and <em>author</em> as you see fit. Save and exit.</p>
+
+<p>Then run:</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>rake generate
+</span><span class='line'>rake deploy
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Go grab a coffee and wait for the email from GitHub telling you the commit succeeded. The go on:</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>git add .
+</span><span class='line'>git commit -m <span class="s1">&#39;some message&#39;</span>
+</span><span class='line'>git push origin <span class="nb">source</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>This should be it. Visit <a href="http://*username*.github.com/">http://*username*.github.com/</a> to see whether it works. If it doesn&rsquo;t, try run generate and deploy again.</p>
+
+<h3>Awesome! But how do I write posts?</h3>
+
+<p>Very simple:</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>rake new_post<span class="o">[</span><span class="s2">&quot;your_post_title_here&quot;</span><span class="o">]</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>This command will generate a file with the name you specified under <em>source/_posts</em> . Just open it and write away. When finished, save and exit, then:</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>rake generate
+</span><span class='line'>rake deploy
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>What else should I know?</h3>
+
+<p>Congratulations. Now you know as much as I do. (That is to say, maybe 1% of Octopress.) Now go to the <a href="http://octopress.org/docs/">official documentation of Octopress</a> and read the whole thing. At least learn how to put a custom domain on your blog. That&rsquo;s essential. Of course so is other stuff, such as creating a page and changing the favicon.</p>
+
+<p>You should also learn <a href="http://daringfireball.net/projects/markdown/syntax">markdown syntax</a>. It&rsquo;s not hard and very useful.</p>
+
+<p>Since I myself is also in beginner&rsquo;s stage I can not give more advices. I am sure you will know how to proceed after mastered the basis.</p>
+
+<p>So that&rsquo;s it. Good luck and happy blogging on GitHub with Octopress.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[DIY 家用 NAS]]></title>
+    <link href="http://webabie.com/diy-nas-for-home-use/"/>
+    <updated>2011-08-20T00:00:00+01:00</updated>
+    <id>http://webabie.com/diy-nas-for-home-use</id>
+    <content type="html"><![CDATA[<h3>1. 为什么需要 NAS</h3>
+
+<p>随着科技进步，普通家庭中的智能设备越来越多，包括传统的台式机，笔记本电脑以及新潮的平板电脑，智能手机甚至媒体播放器(把 iPod touch 归为媒体播放器有点怪异，但人家确实是 iPod 家族成员&hellip;)。而便捷地在这些设备之间共享文件的需求也日益增加，于是原本属于专业设备的 <a href="http://en.wikipedia.org/wiki/Network-attached_storage">NAS (Network-Attached Storage)</a> 逐渐进入普通家庭中。</p>
+
+<p>NAS 相当于大大扩充了家庭中每一台智能设备的存储容量，同时也让它们都能随时独立访问任何文件。简而言之，就是“扩容”和“共享”两大功能。如何利用这功能，则看用户需求了。有些人把 NAS 当作多媒体库使用，存放大量的影视音乐文件；有些人则将其作为备份仓库，存放数码照片原片以及视频原始脚本等。总而言之，可以将其看做一块无线连接在所有智能设备上的大硬盘，随便如何使用。</p>
+
+<!-- more -->
+
+
+<h3>2. 家用 NAS 方案</h3>
+
+<p>在专业的 NAS 使用场合，为了数据安全和连接可靠，一般使用昂贵的专业解决方案。而作为家用计划，不可能负担动辄上万美刀的专业设备。摆在家庭用户面前有两条路：直接购买家用 NAS 成品设备，或者 DIY 一台 NAS 。</p>
+
+<p>这两个选择各有利弊，没有什么绝对的优劣之分。不过作为一个手头拮据而且对外观毫无要求的男性资深电脑爱好者，本人的选择应当是一目了然的了。唯一的问题是我生活在折合人民币两块六一度电的神奇国家， DIY 的 NAS 耗电量令人头疼。这点上不可能达到成品设备水平，只能设法尽量接近了。</p>
+
+<p>综合许多意见之后，最终配件清单如下：</p>
+
+<ul>
+<li>£104 <a href="http://www.amazon.co.uk/gp/product/B004KX216E/">Asus E35M1-M Pro</a></li>
+<li>£42 <a href="http://www.amazon.co.uk/gp/product/B003ZDJ42O/">Corsair CMX4GX3M1A1333C9 XMS3 Desktop Memory 4GB</a> * 2</li>
+<li>£32 <a href="http://www.amazon.co.uk/gp/product/B003OEMH28/">Cooler Master RC-370-KKN1 Elite 370 Midi Tower PC Case</a></li>
+<li>£47 <a href="http://www.amazon.co.uk/gp/product/B001KN8CVA/">Be Quiet! Pure Power 350W PSU</a></li>
+<li>£219 <a href="http://www.ebuyer.com/254429-hitachi-2tb-3-5-deskstar-coolspin-sata-iii-6gb-s-hard-drive-5900rpm-32mb-0f12117">Hitachi 2TB 3.5&#8221; Deskstar Coolspin HDS5C3020ALA632</a> * 4</li>
+</ul>
+
+
+<p>逐个解释：</p>
+
+<p>主板和处理器选择 AMD 新出的 APU 方案，一大半是由于其功耗上的优势；此平台实际运行功耗25W左右，是带 T 后缀的 Intel i3 系列的一半。虽然性能上无法与 Intel i3 相提并论，但作为一个 NAS 的处理器是超标的，至少比市面上任何成品家用 NAS 盒子都强得多。</p>
+
+<p>选择平台时还遇上了一个问题，就是对比 Asus E35M1-M Pro 和 <a href="http://www.amazon.co.uk/Gigabyte-GA-E350N-USB3-E350N-USB3-Mini-ITX-Motherboard/dp/B004NW0KY2">Gigabyte GA-E350V-USB3</a> 。华硕和技嘉在品牌上不相上下，这两块板价格相当，主要参数也相当接近，应当如何取舍？最终我选择了华硕这块板，基于两点理由：</p>
+
+<ul>
+<li>华硕这块板自带5个 SATA 槽，比技嘉的多出一个，换句话说，不加卡的前提下，华硕这块板能多挂一个硬盘，作为 NAS 这是个大优势。</li>
+<li>华硕这块板的处理器是被动散热，无风扇噪音低，长期开机这也是个优点。</li>
+</ul>
+
+
+<p>至于技嘉板优势在于主频高，板子面积小，装 HTPC 这块板更好一些，但这次还是不选它了。</p>
+
+<p>内存方面，现在 DDR3 内存正是论斤卖的时候，不过初始我只预计了 4GB 的配额。后来由于要使用 ZFS 文件系统，[需要至少 6GB 安装内存才能达到最佳性能]<a href="http://doc.freenas.org/index.php/Hardware_Requirements#RAM%EF%BC%8C%E5%8F%AA%E5%A5%BD%E5%A4%9A%E6%8F%92%E4%B8%80%E6%9D%A1%E3%80%82%E5%A6%82%E6%9E%9C%E4%BD%BF%E7%94%A8%E5%88%AB%E7%9A%84%E7%B3%BB%E7%BB%9F%EF%BC%8C%E6%AF%94%E6%96%B9">http://doc.freenas.org/index.php/Hardware_Requirements#RAM%EF%BC%8C%E5%8F%AA%E5%A5%BD%E5%A4%9A%E6%8F%92%E4%B8%80%E6%9D%A1%E3%80%82%E5%A6%82%E6%9E%9C%E4%BD%BF%E7%94%A8%E5%88%AB%E7%9A%84%E7%B3%BB%E7%BB%9F%EF%BC%8C%E6%AF%94%E6%96%B9</a> Windows ， 4GB 就足够了。须知那些成品家用 NAS 恐怕连 1GB 的都很少。</p>
+
+<p>机箱没什么好说的，看个人爱好。我买了个比较大的，方便日后增加硬盘。电源不需要买太大功率，因为整机功率不高。我的标准是大厂，安静。有这两点就差不多了。</p>
+
+<p>NAS 的核心部分自然是硬盘了。现在大容量硬盘的故障率有多高大家都清楚，买硬盘就是拼人品。但故障率跟品牌还是有联系的，根据<a href="http://blog.backblaze.com/2011/07/20/petabytes-on-a-budget-v2-0revealing-more-secrets/">这篇文章</a>，故障率最低的大容量硬盘品牌既不是希捷，也不是西数，而是日立。这一次我入了4块 2TB 的日立盘，如果对容量要求更高，可以一次到位买8块 3TB 的日立盘，组 RAID 6 或者 RAIDz2 还能达到 18TB 的容量， RAID 10 都能有 12TB ，不过需要额外买一块 PCI 转 SATA 的卡。</p>
+
+<h3>3. 系统的选择</h3>
+
+<p>大家应该意识到这其实是一台电脑，所以&hellip;跟那些成品 NAS 有很大的区别，可以安装任何操作系统，甚至可以在操作系统里面安装虚拟机再装另一个操作系统。从 Flexibility 上考虑，我推荐直接安装 Windows 7 或者 Windows Server 2008 。有以下两点好处：</p>
+
+<ul>
+<li>不但可以做 NAS ，而且直接变身一台备机，可以用来做超多事情，甚至直接当主力机器用。这个平台跟 Atom 不同，性能强很多，大部分日常工作胜任有余。</li>
+<li>软件丰富，配置简单，要 stream 什么的都有解决方案，毕竟是 Windows 。而且没有学习曲线，立即就能用。</li>
+</ul>
+
+
+<p>这个方案不大好的地方包括：</p>
+
+<ul>
+<li>理论上， Windows 是要买的，尽管大部分中文区用户不会真的花钱，但这其实是不对的&hellip;</li>
+<li>上面一节忘了说明， APU 平台现在的主板都不带 RAID 。也就是说只能用软 RAID 。而 Windows 7 下软 RAID 方式有限，只能做 stripe 和 mirror 。Windows Server 2008 倒是可以做软 RAID 5 ，但是性能臭名远扬。四盘 stripe 的风险有多高就不必说了， Mirror 损失一半空间，我实在接受不了。 Windows 7 还可以用类似 JBOD 的技术把四块硬盘合成一个卷使用，经查证也是类似 stripe ，一块盘完蛋就全完蛋，不敢用。</li>
+<li>Windows 支持的文件系统数量较少， FAT 家族，NTFS &hellip; 不支持 ZFS 等高级文件系统，这个问题单独看倒不是特别严重，但是跟上一个放一起看就很别扭，总之，如果有四块硬盘，装 Windows 的话最佳方案是完全分开使用，设置四个盘符，四个共享。如果不嫌麻烦，其实也不算太大的问题&hellip;</li>
+</ul>
+
+
+<p>其实后两点有个很简单的 workaround ，就是前面说的， Windows 系统中安装虚拟机，虚拟机里面使用 FreeBSD 或者 Linux 来管理硬盘。不过其一会遇到性能上的问题，其二嘛&hellip;这未免太折腾了。</p>
+
+<p>假如出于种种原因，不想装 Windows ，还有什么选择呢？ 爱折腾的人可以装个 Linux 随便整，如果你有信心这样做那么自然是高手，我就不多说了。否则，个人推荐使用 FreeNAS 这个完全基于 FreeBSD 的系统。</p>
+
+<p>这个系统的好处只有三个字母: <a href="http://en.wikipedia.org/wiki/ZFS">ZFS</a> . 太强大的文件系统了，天生是 NAS 的绝配。(Well&hellip; 任何系统的绝配&hellip; ) 由于我也刚接触，不敢说太多，以后有什么心得再分享。现在主要是使用它的 RAIDz 功能，把四块硬盘合成一个带冗余的 6TB 卷，通过 FreeNAS 的共享功能可以方便地在 Mac OSX 和 Windows 里面访问，也可以直接作为 Mac 上 Time Machine 的备份盘。可以定时做 Snapshot ，可以定时 做 S.M.A.R.T 检查，出现问题的话自动发邮件通知等。真正的高手也可以摈弃 FreeNAS ，直接在 原装 FreeBSD 上自行完成这些功能，我是做不到的&hellip;</p>
+
+<p>update: 忘了说一点。系统盘和数据盘应当严格分开。</p>
+
+<h3>4. 总结</h3>
+
+<p>折腾的过程也是学习的过程。在 DIY 这个 NAS 硬件的过程中我总算 catch up 了一些最新的硬件知识，这方面好久没有关注了。安装配置 FreeNAS 的过程中学习了 ZFS 这个文件系统的一些知识。当然最重要的收获还是以相对低廉的价格 (约450镑，在中国购买配件的话恐怕低于四千块人民币，仅仅是一个品牌四盘位 NAS 的空壳价格) 得到了一台配置强劲系统灵活，拥有 6TB 容量 (拜可恶的1024问题所赐，实际可用空间显示为 5.3TB T_T) 的NAS 。在此鸣谢在 twitter ，论坛和 irc 给了我大量帮助和指导的朋友们，Love you &lt;3 :&ndash;)</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[西方文明之根(9/47) — 雅典]]></title>
+    <link href="http://webabie.com/the-foundation-of-western-civilization-9-of-47/"/>
+    <updated>2011-05-06T00:00:00+01:00</updated>
+    <id>http://webabie.com/the-foundation-of-western-civilization-9-of-47</id>
+    <content type="html"><![CDATA[<p>上期我们介绍了重要的古希腊城邦之一 &mdash; 斯巴达城邦。这一期，我们转向最著名，最重要，在很多方面也是最有趣的城邦 &mdash; 雅典城邦。</p>
+
+<p>斯巴达的社会制度非常有序，稳定，难以变化，而在雅典，则完全没有这回事，前面几个形容词一个也套不到雅典的头上。雅典人的爱好就是冒险，他们喜欢危机，喜欢波澜，喜欢改变。 以现代人的眼光来看，雅典城邦经历过的最大变革，是她的掌权者的变化。起初，雅典城邦的统治者是一小部分叫 <a href="http://en.wikipedia.org/wiki/Eupatridae">Eupatridae</a> (中文勉强翻译成 世袭贵族 吧，就是 well fathered men ，俺爸是李刚那么个意思。希腊语这个词后半截 πατέρας 就是爸爸之意。) 的人。在一段大概200年的历程中，权力逐渐转移到 <a href="http://en.wikipedia.org/wiki/Glossary_of_rhetorical_terms#Demos">Demos</a> (全体城邦公民，猜猜这是哪个<a href="http://en.wikipedia.org/wiki/Democracy">词</a>的词根，哈哈，别告诉我你看不出来。) 的手中。关于这个“全体公民”是怎么定义的，容后详述。</p>
+
+<!-- more -->
+
+
+<p>乍一看，似乎事情的发展合情合理，一个城邦从寡头统治转变成民主制度，是社会自然而然的发展进步。hmm&hellip;其实这是犯了以今度古的错误。因为我们今天觉得民主制度是好的 &mdash; 就连北韩都要打上“朝鲜民主主义共和国”的牌子 &mdash; 所以认为古希腊也有同样的价值观。其实呢，就我们还能找到的资料而言，那时候的古希腊人也没有觉得这制度就如何优越了。因为这制度太复杂，也太不稳定，并非那么容易驾驭好的。实际上在这段漫长的转变过程中，并没有一个人站出来说：有了！我们搞民主制度吧！这是一个缓慢的平滑的改变，而且有不少的偶然成分在里面。概括的来说，雅典在一个又一个危机的应对过程中无意地转向了民主制度。</p>
+
+<p>公元前七世纪，古希腊世界中许多城邦在经历一段 <a href="http://en.wikipedia.org/wiki/Tyrant">Tyranny (僭主制)</a> 时期。这个词一开始并无负面意思在内，只是简单地表明统治者是强有力的人。原因大概是这样，当时战事颇多，一个城邦想要居民参军卖命，就得分点政治权利给他们，但是总有觉得分的不够多的人，一旦在军中建立起威信来，就直接夺权了。然而有两个城邦并没有出现这种情况，雅典是其中之一。(另一个是谁？回头温习上篇谢谢。)</p>
+
+<p>雅典对这种危机的回应是这样的 &mdash; 历史重大转折，在公元前621年，一个叫 <a href="http://en.wikipedia.org/wiki/Draco_%28lawgiver%29">德拉古 (Draco)</a> 的人被赋予整理制定城邦法律的任务。这个德拉古制定的法律嘛，极度的严苛，管你啥罪行一律处死。以至于今天形容严刑峻法都用 draconian 这个词。不过呢我们现在看来这部法律的内容不如它的发行方式重要 &mdash; 德拉古把他制定的法律刻石板上放阿哥拉里公示了！这可是前所未有的事情。在此之前希腊没有成文法，都是口头法律， Eupatridae 爱怎么解释就怎么解释，跟平民打官司他们从来不输，贵族们只需向彼此负责，不需要向平民负责(话说我咋看着就这么眼熟？)；而从德拉古开始，法律明文化了。这是一个原则上的转变，<strong>从 人治 转向了 法治</strong>。尽管还仅限于原则上，而且还是严刑峻法，但以今度古，毕竟是巨大的进步。两千六百多年之后还有些国家没转过这个弯来呢。</p>
+
+<p>不过原则上的法治也解决不了所有的问题，雅典居民还是被资源问题困扰着。雅典由其地理位置成为交易的中心，本地的农民以贩卖农产品为生，显然这东西受天时的影响极大，也受其它地方收成的影响，比方说如果今年黑海一带小麦丰收，那么雅典地区小麦就卖不起什么价格，最好是雅典丰收别的地方歉收，问题这不是雅典人能决定的，所以雅典居民的经济情况时好时坏，这是雅典面临的问题之一。</p>
+
+<p>另一个问题是雅典的商人带来的。作为一个商业中心，雅典自然有很大数量的常驻商人以及他们的家眷，这些人不是雅典人，在雅典没有根，也没有土地，更不是贵族，应当把他们放在什么位置上对待呢？他们是财富的创造者，但是在政治系统里没有他们的位置。</p>
+
+<p>公元前594年， <a href="http://en.wikipedia.org/wiki/Solon">梭伦 (Solon)</a> 成为雅典的执政官。如果你去查字典，“Solon”第一个意思是梭伦这个人，第二个意思是“a wise law giver”(英明的法律制订者)。这也是对梭伦生平的概括。他来自一个历史悠久，地位重要的雅典贵族家庭，作为领导者，他有机会对法律和政治系统进行改良。梭伦这个人非常有趣，他本人是个毫无野心的诗人，对权力地位财富这些东西，不说视做粪土吧，也可以说是完全没有兴趣。他尽自己的领导责任，把改良都做好发布出来，然后 &mdash; 就拍屁股走人了。他离开雅典十年之久，原因是，他不想这个系统必须通过他才能运作，要完成一个不依赖于某个个人的法律和政治系统。</p>
+
+<p>那么这些改良都包括什么呢？首先他面对雅典的三类人：不愿分享权力的贵族地主；没有政治地位的商人；靠天吃饭的农民。梭伦从农民下手，他免除了农民大量的债务和卖身契。解释一下这个卖身契，农民未必都有自己的耕地，许多农民租贵族的土地来耕种，期待好的收成和好的价格能让他们在付完租金后还能盈利，能维持到下一年。然而收成和价格并非每年都能理想，如果入不敷出，今年就得负债；万一连续好几年都负债，最后很有可能签下卖身契成为贵族的奴隶，甚至会被卖到海外为奴。梭伦不但免掉了这些卖身契，他甚至下令从海外买回许多以前被外卖的雅典人。</p>
+
+<p>然后，他对雅典的官员制度也进行了改革，从以前的只看出身，改成了只看财产(&ndash;_&ndash;||)。这叫做 <a href="http://en.wikipedia.org/wiki/Timocracy">Timocracy</a> 。其实就是想办法把那些没有上层地位但是有钱的商人放进了这个系统里。梭伦按财产把雅典居民分成四个等级，此处不展开了，有兴趣可以自行查阅。</p>
+
+<p>他又建立了一个400人组成的议会，向公民大会提供议程。这里的公民大会，指的是雅典全体男性成年公民，这点倒是跟斯巴达一致，但是制度完全相反。雅典是少数人(议会)提议，多数人(公民大会)表决；斯巴达则是多数人(公民大会)提议，少数人(元老院)表决。</p>
+
+<p>梭伦是一位诗人，他在一首诗里把自己比喻成一个大鸟(不愤怒哦亲)，它一个翅膀护住一派人，另一个翅膀护住另一派人。然而事实上是，梭伦对两派人都没能讨好。贵族这边自然觉得他太过分了；农民商人那边呢又觉得他做得不够啊。问题是，如果两派人都讨厌他，是不是说明他做的事情大致上正确呢？</p>
+
+<p>梭伦的改良对一些表面上的问题有所缓解，但是远远不能根除实质问题。大概公元前560年，他的一个亲戚， <a href="http://en.wikipedia.org/wiki/Peisistratos_%28Athens%29">庇西特拉图 (Peisistratos)</a> 从下层崛起，以战争胜利的形式获得了雅典的统治权。名义上这算是僭主，他和他的儿子统治了约有40年。</p>
+
+<p>在庇西特拉图做执政官间，他并没有如何实行独裁统治，还是保留了大量梭伦的系统，只是对土地进行了一定程度的重新分配。前面说过，梭伦从海外买回了许多雅典人，但是这些雅典人都是农民，回到雅典后又没有土地，只能长期做为赤贫阶层在社会下层混日子。庇西特拉图于是分给这些人少量的土地，以供他们安身立命。</p>
+
+<p>庇西特拉图还给雅典制定了一系列的节日，例如著名的 <a href="http://en.wikipedia.org/wiki/Panathenaic_Games">女神节(Panathenaic Festival)</a> 。他还在雅典启动了一系列大型建筑计划，雅典的宏伟建筑多半在他执政期间开始建造。庇西特拉图做这些事情基于几个方面的理由：首先他希望雅典人民能够为雅典城邦感到骄傲自豪，希望雅典城邦能够青史留名。其次他希望借此能团结雅典人民，使人民能够效忠雅典城邦，而不是他们自己的阶层。最后是一个非常现实的原因：尽管给贫困阶级分了少量土地，毕竟是不够的，还有大量的雅典居民没有土地耕作，无法自足；这些大型工程正好需要大量人手，能够解决这些人的“就业问题”。</p>
+
+<p>好景不长，雅典城邦内的贵族家族们暗地里联合斯巴达人；贵族们当然是认为自己的利益受到了侵犯，而斯巴达则是觉得，雅典的“民主”制度太不稳定了，太危险了；虽说看似跟斯巴达城邦无关，但是就怕有斯巴达人看了之后产生什么想法(以古为鉴，可知兴替，毫厘不爽)。所以这两方一拍即合，公元前510年放逐了庇西特拉图家族，推举了一名纯正的蓝血贵族 <a href="http://en.wikipedia.org/wiki/Cleisthenes">克里斯提尼 (Cleisthenes)</a> 上位担任雅典执政官。他们当然是想恢复以前贵族说了算的局面，结果如何呢？克里斯提尼被现代历史学家称为“雅典民主之父”(The father of Athenian democracy)。统统靠不住啊。</p>
+
+<p>克里斯提尼到 <a href="http://en.wikipedia.org/wiki/Pericles">伯里克利 (Pericles)</a> 在位期间，从公元前510年到450年，大概60年，也就是两代人的时间内，雅典真正形成了民主制度。克里斯提尼对雅典的贵族们一开始就非常失望，觉得靠这批人不可能把雅典搞好，于是他转向平民，开始真正把平民往雅典政治系统里面塞。梭伦的政策很大程度停留在纸面上，而克里斯提尼开始真正地贯彻实行。比方说，他创建了一个新的五百人议会，分成十组，每组五十人。这个议会的组成非常复杂，但是藏在后面的理念很简单：雅典三类人：住平原的(富裕地区)，住山区的(贫瘠地区)，住海边的(商人)。克里斯提尼在三类人里面各取一批，放在一起，组成一个“选区”；这样组了十个选区，每年每个选区里面自行选出五十个人来，一共五百个人就是议会。他希望这样能够打破地区、身份、家族、职业等藩篱，让这些人通力合作，让雅典人民能为雅典的好处着想。他把雅典的政府职位向几乎所有的雅典男性公民开放，比梭伦的“按财取材”更进一步。现在雅典平民不仅能投票，还能当官了。</p>
+
+<p>说到投票跑个题，介绍一下雅典独有的 <a href="http://en.wikipedia.org/wiki/Ostracism">放逐制度 (Ostracism)</a> 。这也是克里斯提尼的发明之一。每年一次，雅典公民在阿哥拉聚会投票，每人在陶片 ( ostracon 就是陶片的意思)上写个名字，然后开始唱票。如果票数最高的那个倒霉蛋得到了足够的票数，比方说，几千票，那么他在雅典就是神憎鬼厌的人，必须离开雅典城邦十年。这个制度是为了防止贵族对改革进行阻挠的，如果某个贵族引起了众怒，这风险可是很大的，平民们可以用选票把这个人给踢出雅典。</p>
+
+<p>克里斯提尼的改革力度很大，雅典的全体民主制在他执政期间基本成型，其后还有一些修补和发展。比方说雅典有不少海员水手，他们没有被纳入到这个系统中来。在公元前490年到478年，希腊世界与波斯进行了波澜壮阔的 <a href="http://en.wikipedia.org/wiki/Greco-Persian_Wars">希波战争 (Greco-Persian Wars)</a> 。许多传奇故事，如马拉松，温泉关三百勇士等，以后详述，这里只是想说明，虽然胜利属于希腊联军，但对波斯决定性的胜利是由雅典海军完成的。雅典海军的实际指挥者 <a href="http://en.wikipedia.org/wiki/Themistocles">地米斯托克利 (Themistocles)</a> 获得了极高的威望 (这也给他带来了灾难) 。他利用他的威望在议会通过了法案，给海员们在雅典政坛也争得了一席之地，也给雅典民主补上了一块拼图。</p>
+
+<p>在约公元前460年至450年，雅典执政官是 <a href="http://en.wikipedia.org/wiki/Ephialtes">Ephialtes (艾斐烈特，被暗杀了)</a> 和前面提到的伯里克利。他们搬开了雅典民主的最后两块绊脚石。首先，艾菲烈特把传统的元老委员会 <a href="http://en.wikipedia.org/wiki/Areopagus">亚略巴古 (Areopagus)</a> 的权力大幅削弱。这个元老委员会本来的权力就不如斯巴达的元老院，改革后更是只剩下对谋杀定罪的功能。所以说他被暗杀也不是无缘无故的。其次这两位执政官引入了 付费公共服务 ( paid for public service )。这个概念到今天还有争论，公共服务到底需要不需要付费？这个问题太深奥就不说了。总之，在大概公元前450年，一次又一次的危机过后，雅典民主总算是成了。所有雅典公民都能参政，都能投票，都能当公务员，这个系统不会去查你的财产，出身，职业等等。</p>
+
+<p>这个系统是怎么工作的呢？雅典主要的管理官员有三名，每年由选举产生。这些官员的权力相对较弱，远不及斯巴达国王。主要的权力掌握在公民大会手中。根据现在能掌握到的信息，当时雅典公民大会里的辩论是极其激烈的，雅典公民是非常认真地参与到政治中来。这对民主制度是非常重要的。然而这种制度也存在问题，公民大会的意见过于摇摆不定，过于多变，导致许多政策无法延续实行。斯巴达的制度抵制一切改变，雅典的制度则太过易变，斯巴达没有油门，雅典则没有刹车。</p>
+
+<p>那么说了半天公民大会，到底谁才算雅典公民？嗯，雅典公民的定义是“父母都是雅典人的成年男性”。在四十万雅典居民中，大概有10%也就是四万人的样子。其他人，包括未成年人、女性、暂居雅典的工人或商人、奴隶，都不包含在这个民主系统内。也就是说，对雅典城邦10%的居民来说，这是一个高度民主的政治系统。而对剩下90%的人来说，就不是这么回事了。</p>
+
+<p>雅典城邦的财政来源是哪里？希波战争之后，斯巴达人看大局已定，就回家去了。而雅典人觉得在亚得里亚和爱奥尼亚海岸地区还有希腊人被波斯统治着，应该去把他们解放出来。于是以雅典城邦为首组建了联合部队反攻波斯。一开始这个联合部队是自愿加入的，各城邦之间的合作也算是不错。在公元前454年，雅典把这个同盟变成了 <a href="http://en.wikipedia.org/wiki/Athenian_Empire">雅典帝国</a> ，雅典城邦则坐收帝国各地的上贡财物。这些财物名义上是维持雅典军队之用，当然大部分也确实是用在了这里，不过还有一部分被用来建造雅典的宏伟建筑了。这是一部分财政来源。另一部分则是大量的奴隶带来的生产力。在雅典，奴隶没有斯巴达那么普遍，但是依旧是整个系统中非常重要的一个环节。</p>
+
+<p>雅典的民主制度在当时以及不久的后世是一直被诟病的。比如柏拉图和亚里士多德认为，雅典这个制度的问题在于，它不能把最优秀的人摆上领导位置。他们认为政府应当由“最优秀”的人组成。这叫 <a href="http://en.wikipedia.org/wiki/Aristocracy">Aristocracy</a> 。也有人认为这种制度缺乏对优秀公民的尊重。更多的人认为这种制度太过不稳定，太过多变，永远也无法预测下一步会有什么政策出台。</p>
+
+<p>雅典民主给当时以及其后两千五百年中的人留下了很大的想象空间，它给人展示了一个民主制度的可能性，在此基础上，后人需要解决“如何运作”以及“为谁运作”等问题。城邦政治就到此为止，下几期，我们看看城邦在文化方面的遗产。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[知识就是力量......法国就是熏肉]]></title>
+    <link href="http://webabie.com/knowledge-is-power-france-is-bacon/"/>
+    <updated>2011-05-05T00:00:00+01:00</updated>
+    <id>http://webabie.com/knowledge-is-power-france-is-bacon</id>
+    <content type="html"><![CDATA[<p>小时候，父亲教导我：「知识就是力量，法国就是熏肉。」</p>
+
+<p>前一半我懂，可后一半是神马意思？为什么这两句看起来毫无关联的话会放在一起？我为此疑惑了十多年。</p>
+
+<p>有时跟别人聊天，我会引用这句话：「知识就是力量，法国就是熏肉。」听者都会点头。而有时听到有人引用前半句「知识就是力量」，我会给他们补上后半句「法国就是熏肉」。他们也表示同意，并不觉得惊异。</p>
+
+<p>我有一次真的去找老师问这个问题：「知识就是力量，法国就是熏肉。」到底是什麼意思？这位老师花了整整10分钟时间给我解释「知识就是力量」，却完全没有涉及后半句。最后我用疑问的语气问道：「法国就是熏肉？」希望能得到一些讲解，但是只得到了一个字「对」。当时我才12岁，就没有勇气继续追问了，只好接受这个事实 &mdash; 我永远也没法搞懂这句话。</p>
+
+<p>数年前，我看到了写在纸上的这句话，终于恍然大悟&hellip;&hellip;</p>
+
+<blockquote><p>Knowledge is power.</p>
+
+<p>&mdash; Franc<s> </s><s>e </s>is   Bacon</p></blockquote>
+
+<p>强烈建议懂基本英语的筒子们去看 <a href="http://www.reddit.com/tb/dxskm">原贴</a> 。感谢 <a href="http://twitter.com/#!/fyer">大师</a> 的指引。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[西方文明之根(8/47) -- 斯巴达]]></title>
+    <link href="http://webabie.com/the-foundation-of-western-civilization-8-of-47/"/>
+    <updated>2011-04-19T00:00:00+01:00</updated>
+    <id>http://webabie.com/the-foundation-of-western-civilization-8-of-47</id>
+    <content type="html"><![CDATA[<p>上期说到，在古希腊的古风时代，希腊城邦开始出现和发展。这一期我们把聚光灯打在其中一个城邦上，看看著名的斯巴达城邦是如何运作的。下一期，再去看看雅典城邦。我们可以从政治，社会和文化几个方面入手去了解。文化方面的内容放到后几期，这两期主要看政治和社会。</p>
+
+<p>以下文中所说的城邦，如无特别说明，均指古希腊城邦。要了解城邦，首先要搞清楚城邦的概念。城邦是什么？城邦代表了什么？</p>
+
+<p>表面上来看，城邦的组成结构很简单，两个部分 &mdash; 市中心和围绕市中心的一圈土地(基本上是耕地)。每个城邦的中心固然差别很大，但都会有一些相同的元素在里面。 比方：</p>
+
+<!-- more -->
+
+
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Agora">阿哥拉(Agora)</a> ，指的是城邦里的露天市场，城邦居民做商业交易的地方，但也是居民平时社交的场所。在某种意义上城邦的非正式社交活动都在阿哥拉展开。</li>
+<li>各种寺庙，主要的寺庙会供奉这个城邦的“主神”，也有各种其他神的寺庙。</li>
+<li>一个正式的社交场所，可能是一个大型建筑，也可能是个露天广场。</li>
+<li>娱乐设施，可能是个 <a href="http://en.wikipedia.org/wiki/Theatre">大剧场(Theatre)</a> ，也有可能是个 <a href="http://en.wikipedia.org/wiki/Stadium">体育场(Stadium)</a> 。</li>
+<li>有一些城邦有一定的防御建筑，如城墙，或在城市制高点建筑的据点。</li>
+</ul>
+
+
+<p><a href="http://en.wikipedia.org/wiki/Aristotle">亚里士多德(Aristotle)</a> 这位古希腊哲学家认为，人的天性决定人就应当在城邦中生活。大家可能听过这位伟大哲人说的一句名言：人本质上是政治动物。(Man is a political animal.) 实际上这句话是 &ldquo;Man is by nature a creature who lives in a polis.&rdquo; (人本质上是生活在城邦中的生物。)当然在城邦里的生活也就是社交活动也就是政治活动，所以那样理解也没什么大错。插一句， Polis 这个词是 policy, polity, police 和 politics 这些词的词根。仅从这点可以想象古希腊城邦对今日西方文明的影响深远至何种程度。</p>
+
+<p>我们今天大概能找到两百余个城邦的痕迹，亚里士多德喜欢寻求藏在事物表面以下的规律，在他的那个年代，他和他的学生们对一百多个城邦进行了研究，可惜的是，这些研究资料绝大部分都没有流传下来。现代人无法对当时多数城邦有什么深入的了解，但对于几个大城邦，考古学家和历史学家还是获得了一定的认识。可以肯定的一点是，它们是形态各异的，没什么相似之处。</p>
+
+<p>开始看看今天的主角 &mdash; 斯巴达。斯巴达的历史从神话起源(谁不是呢?)。传说中众神把一部法律给了斯巴达的始祖 <a href="http://en.wikipedia.org/wiki/Lycurgus_of_Sparta">来古格士(Lycurgus)</a> ，建立了斯巴达。现在一般认为这个人是真是存在的，在建立斯巴达城邦社会中也有很重要的地位，不过斯巴达的社会形态不是一下子建立，而是在很长一段时间内慢慢发展出来的。前面说到过，对付人口和资源的矛盾，斯巴达的方法是打出去，征服邻居，把土地变成斯巴达的土地，人变成斯巴达的奴隶。在这个过程中，逐渐把社会规则建立起来。大概在公元前800年左右成型。不过这个想法是很有意思的 &mdash; 一个人从神那里得到了启示或者律法，转授给一群人，从而奠定一个国家的基础。这个故事似乎屡见不鲜，以前的迈锡尼，我们最熟悉的摩西，以及后来罗马人都有这样的传说。这些传说还有一个共同特点：Founding Father(s)，没有Mother。(美国建国也是一批Founding Fathers。)</p>
+
+<p>那么斯巴达人生活在怎样的社会制度下面呢？以我们今天来看，一个好的社会制度应该是能够适应各种变化的，能够包容消化变化，并让社会向前发展的制度。斯巴达人，他们的想法完全相反，他们的制度不但不适应变化，而且还阻碍变化，事实上他们的社会制度有一大功能就是防止社会出现些什么变化。(Sounds familiar hah？) 斯巴达的社会制度是人类历史上最保守的制度，而且是专门特意设计出来的制度，不是无意间产生的。</p>
+
+<p>斯巴达社会是等级社会，第一层，也是最重要的一层是 <a href="http://en.wikipedia.org/wiki/Spartiate">Homoioi (Equals)</a> ，亦即成年斯巴达男性。斯巴达成年的定义是18岁。这些 Homoioi 在斯巴达有许多的政治权利，如公众发言和投票等。这是个很有趣的现象，尽管斯巴达社会制度保守得无以复加，然而在那个时代，并无第二个文明能够让这么多人参与到政治生活中来。有人会问这算不算某种意义上的民主？这个问题不太好回答，因为虽然参与的人多，毕竟也只是包涵了社会的一个阶层。下一期介绍雅典城邦的时候，可以对比着看看。</p>
+
+<p>第二层，是一批叫 <a href="http://en.wikipedia.org/wiki/Perioeci">Perioikoi</a> 的人， peri 指 around ，就是围在附近， oikoi 是指房子。那么这个词就是 “房子附近的人” 的意思。引申为旅居者的意思。这批人具体是什么人，学术界还有一定争议。可以肯定的是这批人住在斯巴达，接受斯巴达的保护，也是自由身，职业则多是商人，在城邦之间进行商旅贸易。但是，他们不算斯巴达城邦的公民，没有政治权利。</p>
+
+<p>最底一层的是 <a href="http://en.wikipedia.org/wiki/Helots">黑劳士(Helots)</a> 。他们是斯巴达城邦的奴隶，大部分是被征服的迈锡尼人。与其它奴隶制社会不同的是，这些黑劳士不属于任何斯巴达人，他们隶属斯巴达城邦，是“国家财产”。斯巴达有很多的社会制度是专门设计出来针对黑劳士的，目的是完全控制这批奴隶。</p>
+
+<p>斯巴达城邦实行双王制，有两名国王同时在位，他们必须互相监督。在很长一段时间内这两名国王都是从两个特定家族中出来的。一般是父位子承，不多的时候也有兄位弟承的例子。这两名国王，其中一名长期坐镇斯巴达城邦，履行政务；另一名则长期随军征战。斯巴达人不会把两名国王同时送上战场，认为这样太冒险，不过一般只留一名国王在城中。这两名国王完全平等，其中一名国王做的决定，另一名可以否决掉。</p>
+
+<p>在斯巴达，国王负责信仰，司法以及一些军事上的事务，但实权普遍认为是掌握在议会手中。议会分两院，现代英美的两院制不知道是不是起源于此。“下院”是 公民大会(Assembly) ，成员为所有的斯巴达 Equal ，也就是所有的18岁以上男性斯巴达公民。公民大会可以提议法律条文、提议作战、提议停战，但公民大会不能独自做出任何决定。这些提案会被提交到”上院“ 元老院(Council) 讨论。元老院才是斯巴达政治结构的中心。</p>
+
+<p>元老院由以下人员组成：两位国王，五位 <a href="http://en.wikipedia.org/wiki/Ephors">执政长官(Ephors)</a> ，以及所有60岁以上的 Equal 。插一句，远古时期统计平均寿命期待值很低，看起来60岁似乎很难达到，其实不然，平均寿命很大程度上是被极高的出生死亡率和夭折率拖低的，如果能平安度过儿童时期，能活过60岁并不为奇。那么，看看元老院的人员组成，也许就会稍微理解为什么斯巴达的社会制度如此保守了吧。&mdash; 60岁一群老头，什么创新能让他们看了高兴？</p>
+
+<p>元老院是做决定的组织，公民大会只能提交草案，不过公民大会虽然没有通过权，却有否决权，如果元老院有什么决定让 Equals 大部分不满，公民大会是可以否决掉的。回头说说这五位执政长官，他们的主要工作也很好玩，负责审议元老院通过的法令，要保证这些法令、法律条文等跟现有的斯巴达法律不冲突不矛盾。这又让天平向保守一方多倾斜了一点。最后，斯巴达城邦内还有一群”秘密警察“，这群人是18-20岁的 Equal ，他们的职责是在城邦中四处转悠，首要任务当然是看住黑劳士们，次要人物是顺便监视其他的斯巴达公民，确保人人都品行端正，没有什么作奸犯科的行为。</p>
+
+<p>斯巴达人将初生男性婴儿做体质测试，不通过的，就丢弃在公共场合，任其自生自灭；通过的就还给父母，让他们养到7岁，然后带到军事训练营，从这时开始到死亡，他都是军队的一员了。7岁开始到18岁，是地狱般的军事训练；18岁到20岁，大部分人 &mdash; 不是全部 &mdash; 会去当一阵子的秘密警察；20岁编制入正规军，直到60岁。60岁后进元老院，编制还是不变的，只是不用上战场厮杀了。</p>
+
+<p>斯巴达人的婚姻基本不包括”住在一起“，斯巴达成年男性公民都住在兵营里，男性结婚的最主要目的是 ”To make more equals.“ (制造更多斯巴达男性公民。) 斯巴达的婚姻里面没有什么忠诚，关爱，亲情的概念，只是为了生产更多的士兵。斯巴达城邦的整个社会制度就是为了战争而存在的。</p>
+
+<p>斯巴达人的生活极度简约节俭，没有什么宏伟的建筑留存，他们吃穿都很简单，并以此为荣。他们奉行”沉默是金“的信条，平时决不说一句多余的话。另外，他们认为知识使人软弱，读书让男人女性化，因此毫不鼓励任何”学习文化知识”之类的行为。斯巴达的流通货币是 &mdash; 大块的铁块。可以想象这东西携带和使用都很不方便，哈哈，这是故意的，就是不让你方便的用钱。斯巴达根本就不鼓励交易什么的行为，“你要钱干什么？”</p>
+
+<p>那么如果你足够细心，一定会提出这个疑问，劳动力全去参军了，谁生产粮食和军需用品来供应这支大军呢？斯巴达女人？当然不是，女人的工作是生产军队本身。而粮食和军需用品，则着落在黑劳士的身上了。没有这些黑劳士，斯巴达这个系统根本就运作不起来，黑劳士才是斯巴达整个社会制度的基础。有了这些奴隶，斯巴达就可以全民参军，征服更多的地盘，当然也掳来更多的黑劳士，象滚雪球一样扩张。大约公元前550年，斯巴达城邦基本上平定了整个希腊南部地区，征服了那地区的绝大部分城邦，建立了以自己为首的 <a href="http://en.wikipedia.org/wiki/Peloponnesian_League">伯罗奔尼撒联盟(Peloponnesian League)</a> 斯巴达城邦在此联盟中有绝对的统治地位，其它城邦并无多少话语权。斯巴达奉行寡头政治，因为其“最稳定”。其他政体都容易引起变化。直到公元前2世纪，罗马人吞并希腊的时候，斯巴达的这个体制依然没有变化，延续600年之久，不得不说至少在保守这一点上，斯巴达人非常成功。</p>
+
+<p>有趣的是，当代人对斯巴达怀着一种欣赏敬佩的情感，敬佩他们的强壮，他们的简朴，以及他们的稳定。这里有个值得思考的问题：大多数人都愿意生活在一个稳定的社会环境中，有很多人都会被“稳定的社会制度”所吸引，即使这种制度对个人的权利有很大的削弱和限制。在人类的潜意识里，有一种对稳定的追求，所以对斯巴达的稳定保守的社会产生欣赏和向往。下一期，作为对比，我们转向希腊最著名，也是最有意思的城邦 &mdash; <a href="http://webabie.com/the-foundation-of-western-civilization-9-of-47/">雅典</a> 。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[How to install custom kernel on OVH / Kimsufi servers]]></title>
+    <link href="http://webabie.com/how-to-install-custom-kernel-on-ovh-kimsufi-servers/"/>
+    <updated>2011-04-10T00:00:00+01:00</updated>
+    <id>http://webabie.com/how-to-install-custom-kernel-on-ovh-kimsufi-servers</id>
+    <content type="html"><![CDATA[<p>OVH servers are shipped with their specially tailored kernels. They are not bad but sometimes the applications (for example VirtualBox) do not agree with them. And they are also too old. Here is how to install custom kernels on these servers. Everything based on Ubuntu Server 10.10.</p>
+
+<p>Most credits go to <a href="http://forums.ovh.co.uk/showpost.php?p=15454&amp;amp;postcount=4">this post</a>. I updated some details and added the grub part.</p>
+
+<p>So let&rsquo;s say you are going to compile and install kernel 2.6.38.2 (latest kernel by now) on a kimsufi server.</p>
+
+<p>First of all, install Ubuntu server 10.10 in the managerv3, login with root.</p>
+
+<!-- more -->
+
+
+<p>Then:</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>apt-get install lzma
+</span><span class='line'><span class="nb">cd</span> /usr/src
+</span><span class='line'>wget http://www.kernel.org/pub/linux/kernel/v2.6/linux-2.6.38.2.tar.bz2
+</span><span class='line'>tar xf linux-2.6.38.2.tar.bz2
+</span><span class='line'><span class="nb">cd </span>linux-2.6.38.2
+</span><span class='line'>make mrproper
+</span><span class='line'>wget ftp://ftp.ovh.net/made-in-ovh/bzImage/2.6.34.6-3/2.6-config-xxxx-std-ipv6-32
+</span><span class='line'>cp 2.6-config-xxxx-std-ipv6-32 .config
+</span><span class='line'>make menuconfig
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>At this step, you need to scroll to the end of the options and select &ldquo;Load an Alternate Configuration File&rdquo;, load file .config, then go up and make sure &ldquo;Enable loadable module support&rdquo; is checked. Then go in &ldquo;General setup&rdquo;, Clear whatever in the &ldquo;Local version &ndash; append to kernel release&rdquo;. Now you can exit and save the config file.</p>
+
+<p>Go on do the make. if you are on a multi-core server you can use the -j stuff. If not, drop that option.</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>make -j5 <span class="nv">CONFIG_DEBUG_SECTION_MISMATCH</span><span class="o">=</span>y
+</span><span class='line'>make modules
+</span><span class='line'>make modules_install
+</span><span class='line'>cp arch/i386/boot/bzImage /boot/bzImage-2.6.38.2
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Now here is different from the original post. OVH replaced lilo with grub. So the modifying lilo.conf method in the original post is no longer suitable. Instead, you need to alter the grub config file which is:</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>vim /boot/grub/grub.cfg
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Search for &ldquo;OVHkernel&rdquo; and change the bzImage file name in this block accordingly. Then save and exit.</p>
+
+<p>Alright, you are good to go. Pray and type &ldquo;reboot&rdquo;. Good luck.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[西方文明之根(7/47) — 黑暗和古风时代]]></title>
+    <link href="http://webabie.com/the-foundation-of-western-civilization-7-of-47/"/>
+    <updated>2011-04-06T00:00:00+01:00</updated>
+    <id>http://webabie.com/the-foundation-of-western-civilization-7-of-47</id>
+    <content type="html"><![CDATA[<p>上一期我们了解了一些传说与真实相间的，希腊文明的初始，让我们顺着时间线往下走。迈锡尼文明之后，公元前1,200年到公元前550年这段时期，将是这一期的主要内容。这段时期又可以分成两部分： <a href="http://en.wikipedia.org/wiki/Greek_Dark_Ages">黑暗时代(Dark ages)</a> 和 <a href="http://en.wikipedia.org/wiki/Archaic_Greece">古风时代(Archaic period)</a> 。</p>
+
+<p>荣耀的古希腊文明，在发展的路途中并非一帆风顺，而是进进退退，或者用时髦的词语来说，螺旋上升的。在公元前1,200到公元前1,100年间，亦即著名的 <a href="http://en.wikipedia.org/wiki/Trojan_War">特洛伊之战(Trojan War)</a> 战后，有显著的证据表明，迈锡尼文明的许多属地开始负发展，表现在出土的建筑物的损毁程度上。可能是天灾，也可能是人祸。更有可能是迈锡尼文明在内外交困下其实已经徒有其表了，特洛伊之战只是文明崩塌的导火索。毕竟月满则亏，盛极必衰，也是很自然的现象。不过有一点反常的是，迈锡尼文明从未被传承下来。其他许多的文明都有过低谷期甚至接近完全毁灭，如希伯来，古中华等，但总会有传承不绝，而迈锡尼文明就这样自然地消失了。今天迈锡尼城遗址还在，如同一座幽灵城般，游人只能从残存的石块中想象当年阿伽门农的英姿，海伦的倾城绝色了。</p>
+
+<!-- more -->
+
+
+<p>除了内部自然的衰落，还有外部强敌的威胁。有考古证据表明当时的迈锡尼很可能遭到了 <a href="http://en.wikipedia.org/wiki/Dorians">多利安人(Dorians)</a> 的入侵。多利安人把迈锡尼人向南边驱逐，赶过了陆桥，到了希腊半岛的最南端，后来被 <a href="http://en.wikipedia.org/wiki/Sparta">斯巴达(Sparta)</a> 所征服，成了奴隶。</p>
+
+<p>那么多利安人赶走迈锡尼人以后就在希腊半岛上住了下来，从语言上来看，我们就算他是希腊人的一支了。从此之后，古希腊就正式进入黑暗时代。这个黑暗时代的意思并不是说当时的社会有多么的黑暗，而是指现代人对那个时代了解不多，因为基本没有文献流传下来。为什么呢？原因很好玩：希腊人忘了怎么写字了(囧&hellip;)。这是人类历史上唯一一个发展出书写又“失传”了的事件。古希腊这段没有文字的时期大概是公元前1,100年到公元前800年。</p>
+
+<p>这段时期，从考古学来看，也没有什么值得大书特书之处，基调是走下坡路的，人口减少，城镇减少，没什么大型建筑。在连文字都没有的条件下，这也是可以理解的。</p>
+
+<p>插叙一段，关于考古学。正式的考古学出现在19世纪，不过在那之前几个世纪已经有考古者了。最初的考古学是为博物馆服务的，其主要功能是四处寻找挖掘“漂亮的东西”摆在博物馆里供大家赏玩。现代的考古学家当然也很乐意挖到一些“漂亮的东西”，但是现代考古学的主要意义已经完全改变了。现代考古学到古文明遗迹周围，一层一层地挖掘土地，希望找到当时普通人生活的痕迹，来推断当时社会的形态。例如从挖掘出的骨头中禽类和畜类的比例来推断当时普通人的食谱，他们的蛋白质摄入比例等。这样，即使某段时期没有任何文献流传，考古学家也能还原出一些情况来。</p>
+
+<p>约公元前800年到公元前700年，在低谷中徘徊了几个世纪的古希腊文明开始出现一丝生气，人口开始增长，城镇也开始增多，这段时期是黑暗时代到古风时代的过渡期。在这段时期内，古希腊文明最最重要的组成部分 &mdash; <a href="http://en.wikipedia.org/wiki/Polis">希腊城邦(Polis)</a> 出现了。希腊城邦文化对西方文明的直接影响力极其巨大，且一直持续到今天。当然在那个时期，城邦还只是处于萌芽的阶段。</p>
+
+<p>黑暗时期的希腊人生活是很平静安详的。稀少的人口导致资源相对的丰富，也没有什么外族入侵之虞，生活质量还算不错。于是在这种安逸的环境下，自然而然地人口开始增长起来。希腊的地形很有特色，山峰丘陵占了很大的面积，在这些山区之间，偶有一块平地适合人类居住，于是人们自然地聚集在这样的地区。但是这样的地区面积都不大，人口一旦开始增长，很快就会超出这块地区出产的粮食所能支持的上限。这就是古希腊一系列政治经济问题的最初起源所在，也是城邦出现的根本原因。</p>
+
+<p>大概在公元前750年，人口与资源的矛盾已经达到不可调和的程度，这时候，古希腊的众城邦中出现了三种解决方案。</p>
+
+<ul>
+<li>征服你的邻居吧！他们有土地，有食物，他们的人还可以做我们的奴隶！代表城邦：不问可知，斯巴达。</li>
+<li>打打杀杀的多野蛮，我们向腓尼基人学习，做生意啊。代表城邦： <a href="http://en.wikipedia.org/wiki/History_of_Athens">雅典(Athens)</a> 。</li>
+<li>人多了不是？养不起了不是？好办啊，送走，开辟新天地去。代表城邦： <a href="http://en.wikipedia.org/wiki/Ancient_Corinth">科林斯(Corinth)</a> 。</li>
+</ul>
+
+
+<p>前两种都好理解，第三种有些值得说明的地方。这方法说白了就是殖民，殖民的新城市并非与母城完全脱离关系，而是与母城保持着紧密的联系，军事上，商业上，文化上都是如此。现代英语中的 <a href="http://en.wikipedia.org/wiki/Metropolis">大都市(Metropolis)</a> 一词是来源于古希腊，当时的意义是“殖民地的母城”，换句话说一个城邦必须有 <a href="http://en.wikipedia.org/wiki/Colony">殖民地(Colony)</a> 才能称为 Metropolis 。这些古希腊城邦的殖民地当时遍布黑海地区以及北非沿地中海一带，还有意大利地区，尤其是南意和西西里岛，事实上西西里的国王就被称为“The Great Greece”。还有那不勒斯，现在的意大利第三大都市，也是古希腊人建立的殖民地。</p>
+
+<p>这些解决方案显示了古希腊文明的创造力和适应能力。他们面对同一个问题，却发展出了完全不同的解决方式。而在这些方式中，以殖民的影响力最为广泛，这种方式把古希腊的文化扩展到了整个地中海和部分中亚地区。我们今天沿地中海岸旅行的话，一路上都能见到古希腊人留下的神庙遗址，他们留下的建筑，艺术，语言的痕迹，还有他们价值观，文献，政体和生活方式的影响，都是在那时候开始被殖民者带到这些地方的。</p>
+
+<p>在前几期我们说到腓尼基人，他们是地中海的第一批殖民者，比古希腊人要早。但腓尼基人只是为了做生意方便，古希腊人则不同，他们的“希腊意识”非常强烈，是有意识的要把希腊文化在殖民地扎下根来，在他们看来，这些殖民地不是全新的城市，而是希腊本土的扩展。这种信念也加速了古希腊的殖民过程，最后把整个地中海沿岸变成了同一个文化圈 &mdash; 古希腊文化圈。</p>
+
+<p>在这殖民过程中，也并非完全一面倒地是古希腊文化去同化别的地区文化，古希腊人也向其他文化学习借鉴。我们只说一点最重要的，他们从腓尼基人处学到了 &mdash; <a href="http://en.wikipedia.org/wiki/Alphabet">字母(Alphabet)</a> ！(泪流满面，总算又学会写字了。) 所以大概从公元前800年开始，我们今天所说的古希腊文开始出现，希腊文明终于走出了黑暗时代。</p>
+
+<p>就在这个过渡期，我们开始看到一些重要的转变，古希腊文明的一些特征开始真正的显现出来，他们的价值观，他们的思考方式。这些内容后面几期会稍微详细一些讨论，这里只一笔带过。比方器皿上的装饰图案，开始出现了几何图形，说明抽象思维已经萌芽，已经有人开始思考“眼睛能看见的”以外的世界。与相邻的几个较早文明比较，古希腊文明有一种“观察”的能力，他们似乎能够脱离身体的束缚，从上帝的视角来观察世间万物，从这个角度去思考，这使得古希腊文明有强大的创造力。</p>
+
+<p>那么我们回头看看荷马，虽然荷马史诗描述的是约公元前1,200年的事情，但前800到前700这个过渡期才是荷马真实生活的年代。在荷马史诗中，我们可是实实在在感受到这个过渡期的变化。在伊利亚特中，可以发现里面的角色都强悍好斗，非常争强好胜。这跟古希腊人的性格很吻合 &mdash; 想想是谁发明了奥林匹克？古希腊奥林匹克虽然四年一届，但是在其他年份也会有别的比赛。伊利亚特里的战争场面虽然宏大，但具体的描写总是聚焦到两个战士的单挑上，这两个人先对骂，然后对打，然后对骂，然后对打，然后对骂，然后对打……肉体上的竞争和语言上的竞争同时进行，Brains and Brawn 都要分个高下。</p>
+
+<p>在荷马史诗中我们还能看到对人与人，人与社会关系的思考，个人之间的关系，个人的责任，权利，义务等，还有权力的来源，谁能够参与掌权？是伟人还是普通民众？另外战争带来的人口迁移，城邦对外来希腊人的态度等等。荷马史诗中我们可以看到古希腊的政治，信仰等情况，留待后几期详述。下期，我们迎来古典文明的曙光 &mdash; <a href="http://webabie.com/the-foundation-of-western-civilization-8-of-47/">城邦时代</a> 。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[西方文明之根(6/47) — 神话与真实之间]]></title>
+    <link href="http://webabie.com/the-foundation-of-western-civilization-6-of-47/"/>
+    <updated>2011-04-05T00:00:00+01:00</updated>
+    <id>http://webabie.com/the-foundation-of-western-civilization-6-of-47</id>
+    <content type="html"><![CDATA[<p>那么上一期结尾提到我们这期将遇到 <a href="http://en.wikipedia.org/wiki/Ancient_Greece">古希腊(Ancient Greece)</a> 。前几期每次都出现一个甚至多个文明，但是古希腊文明的待遇相比之下就特殊了，大家会连着好几期跟这个文明亲密接触。原因无它： 古希腊是现代西方文明的正源，多花点时间在上面也是应该的。</p>
+
+<p>那么所谓的古希腊文明自身的起点又在何时何地呢？可以追溯到约公元前2,000年前 <a href="http://en.wikipedia.org/wiki/Crete">克里特岛(Crete)</a> 上的 <a href="http://en.wikipedia.org/wiki/Minoan_civilization">米诺斯文明(Minoan civilization)</a> 。这个名字来自此文明神话传说中的国王 <a href="http://en.wikipedia.org/wiki/Minos">米诺斯(Minos)</a> (没错，就是建迷宫那位) 。这位国王的宫殿遗迹可是实实在在地在克里特岛上被发现了的。</p>
+
+<p>关于米诺斯文明，现代人所知还是甚少，甚至不知道这些人是从什么地方跑到那个岛上去的。米诺斯文明留下了很多的文字记载，这些文字我们现在称之为 <a href="http://en.wikipedia.org/wiki/Linear_A">线形文字A(Linear A)</a> 。很遗憾，这种文字尚未被破译出来，没人能看明白这些文献。</p>
+
+<p>文献没有用，只好靠实物了，考古学家闪亮登场。他们到克里特掘地三尺，看看从米诺斯的超大型宫殿遗迹以及挖出来的东西里能不能看出一些蛛丝马迹。</p>
+
+<!-- more -->
+
+
+<p>遗迹中可以发现，宫殿里有许多间大型的储藏室，那么按正常的思路，国王一定储藏了不少东西，例如粮食等。于是考古学家们继续大胆假设，从苏美尔文明的楔形文字文献的用途来类比推断，这些还没有破译的线形文字A，有可能大部分是宫殿的管理记录，城市的管理记录，甚至是海外贸易的记录等。虽然不知道这些记录的内容，但是总算知道这是一个有完善管理制度的文明。</p>
+
+<p>从遗迹上的以及出土的壁画残片中，可以看到记录了米诺斯文明与近东地区别的文明以及埃及文明的联系与冲突，可以猜测当时这些文明之间已经有了商业往来。另外，米诺斯文明没有修筑军事要塞，一个也没有。可见米诺斯人要么是不惧怕，要么是根本没想过会有外敌入侵。同时也说明米诺斯人本身对侵略别的文明没有兴趣。从壁画上还可以看到米诺斯人过着一种优雅的生活，壁画上的女性衣服饰物都非常华丽，还有一些展示了当时的球类运动等。总体而言，米诺斯文明是优雅休闲的。</p>
+
+<p>米诺斯文明的繁盛时间大致是在公元前1,800至公元前1,550年。在公元前1,626年距克里特岛约70英里的一个小岛上发生了猛烈的火山喷发，整个岛沉掉一半。克里特岛也受到了很大的影响，宫殿也被震塌了，虽然后来又重建得比以前更大，但考古学家相信这次天灾使得米诺斯文明开始走下坡路。大概75年之后，米诺斯文明被来自希腊半岛的外来文明 <a href="http://en.wikipedia.org/wiki/Mycenean_Greece">迈锡尼(Mycenean)</a> 征服。</p>
+
+<p>那么让我们先把克里特岛放在一边，把目光转向希腊半岛本土。首先要知道，希腊半岛可不是什么膏腴之地，比起两河流域，尼罗河三角洲等地，希腊半岛简直就不适合人类生存。山区连绵，多是岩石地貌，能耕作的土地非常有限。古希腊文化就在这样的环境下诞生的，是个苦孩子。</p>
+
+<p>在希腊地区最早发现的人类定居遗迹在公元前6,500年左右，略晚于苏美尔地区和埃及地区。大约公元前2,600年至公元前2,200年，开始出现城镇，考古学家证实在同一时间发现地中海地区的特色农作物： 小麦，橄榄和葡萄。这几样作物养育了地中海地区的人类超过一万年，直到今日。</p>
+
+<p>约公元前2,000年，迈锡尼文明在希腊成型。此文明得名于他们的著名城堡 <a href="http://en.wikipedia.org/wiki/Mycenae">迈锡尼(Mycenae)</a> ，阿伽门农之城。几乎可以肯定是迈锡尼文明征服了克里特岛上的米诺斯文明，不过在此之前，他们很有可能从米诺斯文明处学习了很多。迈锡尼文明的繁盛时期在约公元前1,400年到公元前1,200年。也正是著名的 <a href="http://en.wikipedia.org/wiki/Homeric_Hymns">荷马史诗(Homeric Hymns)</a> 开始记录的时间段。</p>
+
+<p>这段时期的迈锡尼文明建造了许多大型建筑，迈锡尼城堡本身就是个很好的例子，它建造在山顶上，巨大的岩石城墙，还有石铺道路一直通到山顶。这显示了当时的迈锡尼人不但有建造大型工程的技术，也有足够的财力。迈锡尼人的生活以耕作为主，但也进行海外贸易，有时还会发动战争。</p>
+
+<p>现代人了解迈锡尼文明主要通过三个方面：</p>
+
+<p>首先，迈锡尼文明也留下了大量的文献，其文字被称为 <a href="http://en.wikipedia.org/wiki/Linear_B">线形文字B(Linear B)</a> 。它与线形文字A最重要的一点区别是，它被破译了，现代人能基本看懂。这是个有趣的小故事，在很长的时期里线形文字B跟A一样，没人能看懂，以至于历史学家坚信现在所谓的希腊人是公元前1,200年以后才进入希腊地区的，在此之前的，不是希腊人，因为他们使用的文字完全不一样。二战之后，有一组研究人员，在战争期间是搞密码破译的(&ndash;_&ndash;||)，和平了没事干，就开始研究这个线形文字B。鉴于以前密码密文破解的多了，他们就想啊，说不定这就是希腊文，只是写法不一样而已&hellip;&hellip;结果果然就是这样。历史学家的观点被密码学家推翻了。</p>
+
+<p>其次，出土文物。有非常大量的迈锡尼文明文物和建筑出土。考古学家发现迈锡尼文明喜欢建造大型宫殿而不是大型寺庙。宫殿联系的是国王，勇士等，寺庙联系的是神祗。迈锡尼文明估计比较看重前者，了解这一点能帮助理解伊利亚特里面的很多内容。</p>
+
+<p>第三点，荷马史诗。它包含了 <a href="http://en.wikipedia.org/wiki/Iliad">伊利亚特(Iliad)</a> 和 <a href="http://en.wikipedia.org/wiki/Odyssey">奥德赛(Odyssey)</a> 。荷马史诗的作者有很多种说法，暂时不管它。伊利亚特记载的内容是大家再熟悉不过的特洛伊之战，奥德赛记载的是战后发生的故事。荷马史诗明显是很长时期的口口相传形成的，在大约公元前800年开始逐渐定型，于约公元前725年正式成型，大致公元前550年，被首次以文字形式记载下来。这有好处也有坏处，好处是故事从此稳定了，坏处也是这个，它就不再发展了。荷马史诗的艺术加工成分自然甚多，比方说两个国家不会真的为了海伦拼个你死我活，但是这场战争是真实发生过的，只是原因不同。</p>
+
+<p>由于荷马史诗的存在，迈锡尼成为了一个神话与真实之间的文明，下一期就要完全回到现实中来，看看<a href="http://webabie.com/the-foundation-of-western-civilization-7-of-47/">公元前1,200后的希腊是个什么情况</a>，至于雅典，斯巴达等内容，要等到再下几期了。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[西方文明之根(5/47) — 帝国传承]]></title>
+    <link href="http://webabie.com/the-foundation-of-western-civilization-5-of-47/"/>
+    <updated>2011-04-04T00:00:00+01:00</updated>
+    <id>http://webabie.com/the-foundation-of-western-civilization-5-of-47</id>
+    <content type="html"><![CDATA[<p>这一期主题包括两大帝国： <a href="http://en.wikipedia.org/wiki/Assyria">亚述(Assyria)</a> 和 <a href="http://en.wikipedia.org/wiki/Iran">波斯(Persia)</a> 。让我们看看在苏美尔文明的基础上，两河流域，中东地区这些庞大的帝国是如何建立运行起来的。</p>
+
+<p>上一期谈到在古埃及人和赫梯人两败俱伤的时间夹缝中，腓尼基和希伯来这两个影响深远广大的小文明兴起，在那个时候，亚述人还不怎么惹人注目，但是很快，他们就建起了当时面积最大的帝国。大概公元前900年，亚述人发动了一系列迅猛的军事行动，将亚述帝国的疆域扩大至北起土耳其，南至埃及，东达波斯湾，西临地中海。</p>
+
+<p>亚述人扩张如此迅速的原因在于：</p>
+
+<!-- more -->
+
+
+<ul>
+<li>他们有数量庞大的军队；</li>
+<li>他们使用铁制武器；</li>
+<li>他们骑马。</li>
+</ul>
+
+
+<p>数量庞大的军队虽然令人侧目，但却比不上铁制武器的重要性。在别的文明还处于青铜器时代的时候，亚述人使用了这种“领先一个时代”的武器，打起仗来自然占了很大优势。至于骑马，为什么我不说他们用骑兵呢？很简单，他们不是骑兵，骑马是为了迅速抵达战场，而非用马在战场上冲锋。虽说这样用马有点浪费，不过额外的机动力和更锋利的武器这两样加起来，足以让亚述军队无往而不利了。</p>
+
+<p>公元前722年，上期提到的希伯来文明已经分裂成北以色列国和南犹大国，亚述帝国于当年征服了北以色列，将以色列人掳走无数，这是犹太人第一次被放逐，在以后的日子还将一次又一次地上演。“刀剑不离大卫家”，上帝的这句话一直悬在犹太人的头顶，直到今天还是如此。</p>
+
+<p>扯远了，回头说亚述帝国，他们的统治方法简单粗暴，完全就是恐怖主义。亚述人可以无缘无故地进行一场大屠杀，其目的只是为了告诉民众：我们杀人不需要理由，想杀谁就杀谁。凭常理我们也可以猜测到，这样的帝国经济得不到健康发展，统治也不能持久。事实正是如此：公元前626年，新巴比伦帝国宣布独立，仅仅十余年，公元前612年，亚述帝国都城 <a href="http://en.wikipedia.org/wiki/Nineveh">尼尼微(Nineveh)</a> 陷落，亚述人退出历史舞台。</p>
+
+<p>一国衰落必有一国兴起，取亚述而代之的是 <a href="http://en.wikipedia.org/wiki/Neo-Babylonian_Empire">新巴比伦帝国(Neo-Babylonian Empire)</a> 以及 <a href="http://en.wikipedia.org/wiki/Medes">米底王国(Medes)</a> 。而这两国本出同源，连语言都差不多，两者的命运也雷同，在同盟灭了亚述之后不久，就分别为兴起的 <a href="http://zh.wikipedia.org/wiki/%E6%B3%A2%E6%96%AF%E5%B8%9D%E5%9C%8B">波斯帝国</a> 所灭。</p>
+
+<p>波斯帝国以一系列闪电般的战役开疆辟土。波斯帝国的疆域空前辽阔，东边直至今天中国新疆，南达印度半岛，西边到了希腊半岛，马其顿地区，以及部分埃及和利比亚地区。他们是如何做到的呢？</p>
+
+<p>首先自然是军队，波斯帝国的军队数量比亚述更多，据记载常规军就达到三十万之众。在当时的生产力环境之下，长期维持这样一支军队绝非易事。从一个社会维持军队的方式上可以学习到很多东西。在这三十万大军中有一个特殊的编制：一万人的 <a href="http://en.wikipedia.org/wiki/Immortals_%28Persian_Empire%29">长生军(Immortals)</a> 。玩过文明系列游戏的应该很熟悉了。这支精锐万人队其实是禁卫军的作用，一般不会上战场对敌厮杀。</p>
+
+<p>其次是骑兵，这回是真正的的骑兵了，波斯人不但利用马匹提高部队机动力，而且在战场上，他们也使用骑兵冲锋或迂回攻击，一般用步兵正面对敌，在适当的时机将骑兵投入战场，设法让敌军陷入被两面夹攻的境地。(Total war全面战争系列玩家泪流满面。) 这种战术直到现代还在战场上被使用。</p>
+
+<p>除了军事方面，在民政上，波斯人比亚述人宽容得多，他们大量起用被征服地区的本地人来为他们管理当地的人民。有意思的是，波斯皇帝会派出他的 <a href="http://en.wikipedia.org/wiki/Immortals_%28Persian_Empire%29">「耳目」(Eyes and ears of the King)</a> 到各地巡查，这些间谍是来无影去无踪的，当地的长官不会知道耳目的光临和离开，更不知道他们巡查的目的是什么。</p>
+
+<p>这里插一段关于国家管理方面的内容，如果要在一个疆域辽阔的国家建立政府体系，那么必须有很多各地的本地行政长官，这时候当政者有两种选择：第一种普遍而言是不那么好的，就是从中央指派行政长官，这个长官对当地情况所知不多，在当地也没有什么财产或者关系，当地人的福祉对他而言无关紧要，好处是这人一般会忠于当政者。这种方式也有很高效的时候，但普通而言不如第二种：从本地提拔行政长官。这样出来的长官熟知当地的情况，也有财产和关系在本地，管理起来当然会高效很多，只是需要解决忠诚问题。实际上这个忠诚问题不难办，只要把一个凭自己能力永远也爬不到这个位置上的人提拔上位，同时让他知道：1. 我能给你这地位，也能把这地位拿走；2. 你当过这里的行政长官，如果一下把你的地位拿走，让你回复平民身份，当地人会怎么对你？这样大部分长官都不会有贰心。波斯人在这方面很有点手段，而大家以后会看到，罗马人更是此道中的大师。在一个现实的国家中，一般是两种方式视情况混合使用。</p>
+
+<p>波斯帝国对日后的有什么贡献呢？说起来跟秦始皇有点像，在这个辽阔的帝国中：</p>
+
+<ul>
+<li>统一度量衡以及货币，使得生产和商业行为大大简化；</li>
+<li>修路。波斯人在国境中铺设了四通八达的道路，这倒不是出于什么方便群众的目的，而是为了能让波斯大军迅速地在帝国境内调动。然而这些道路在客观上使得波斯境内交通十分发达。这一点跟日后的罗马帝国异曲同工，哦不对，完全是同曲同工。</li>
+</ul>
+
+
+<p>波斯帝国的通行语言是 <a href="http://en.wikipedia.org/wiki/Imperial_Aramaic#Imperial_Aramaic">亚拉姆语(Aramaic)</a> 。波斯帝国也修建了不少美轮美奂的建筑。在宗教方面，以 <a href="http://en.wikipedia.org/wiki/Zoroastrianism">琐罗亚斯德教(Zoroastrianism)</a> 为国教。(没听说过？还有个名字叫拜火教，熟悉吧？还不知道的话，倚天屠龙记里面的明教就是从这个教发展过来的，总算知道了吧…)</p>
+
+<p>这个信仰属于 <a href="http://en.wikipedia.org/wiki/Dualism">二元论(Dualism)</a> ，此处就不展开了，这篇已经太长了…具体到琐罗亚斯德教大概是创世主有两个儿子，一正一邪，世间苦难由两者冲突产生之类的。二元论在历史上一次又一次的出现，我们会经常看到。</p>
+
+<p>总结：亚述人建立了一个较大的帝国，留下了一些建筑，除此之外就没有什么文化遗产了，野蛮人。而波斯人则不同，他们留下了较为成熟的政体以及其思想，留下了统一度量衡和货币的思想，留下了实实在在的道路，还留下了对日后的基督教和伊斯兰教都有影响的宗教，对西方文明的影响不可轻视。</p>
+
+<p>下一期我们将像入侵巴尔干的波斯人一般，迎面碰上公认的现代西方文明起源： <a href="http://webabie.com/the-foundation-of-western-civilization-6-of-47/">古希腊</a> 。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[西方文明之根(4/47) — 小国家的大思想]]></title>
+    <link href="http://webabie.com/the-foundation-of-western-civilization-4-of-47/"/>
+    <updated>2011-03-31T00:00:00+01:00</updated>
+    <id>http://webabie.com/the-foundation-of-western-civilization-4-of-47</id>
+    <content type="html"><![CDATA[<p>上次我们简略回顾了古埃及，虽然是辉煌的文明，然而这辉煌绝大部分都只存在人们的记忆中。这次要关注的两个文明，从规模上来说比古埃及小得多，然而它们对历史的影响却远远超过后者。</p>
+
+<p>首先关注 <a href="http://en.wikipedia.org/wiki/Phoenicia">腓尼基(Phoenicia)</a> 。这个文明从公元前2300年左右就开始存在于 <a href="http://en.wikipedia.org/wiki/Canaan">迦南(Canaan)</a> 。在政治上毫无可以称道之处，一直是大文明如埃及、亚述等的附庸，然而腓尼基人极其擅长于航海以及经商。在这个文明的昌盛时期，整个地中海都是他们的贸易圈。随着频繁的贸易，腓尼基人在地中海沿岸分布定居，在北非和西班牙等地都建立了殖民地，有一些殖民地发展良好，是一些今天仍存在的都市的前身。如法国马赛，阿尔及利亚君士坦丁，意大利热那亚，以及最近不得安宁的利比亚的黎波里等等。</p>
+
+<!-- more -->
+
+
+<p>腓尼基人的航海技术已经失传，然而商业传统却一直流传下来。除此之外，腓尼基人西方文明的一大贡献是 <a href="http://en.wikipedia.org/wiki/Phoenician_alphabet">腓尼基字母(Phoenician alphabet)</a> 。这是拉丁字母的起源。</p>
+
+<p>接下来是影响更为深远的 <a href="http://en.wikipedia.org/wiki/Hebrews">希伯来(Hebrews)</a> 。  希伯来人，亦即以色列人，犹太人，也许是最容易找到文献的古文明了。这文献现称之为 <a href="http://en.wikipedia.org/wiki/Hebrew_Bible">希伯来圣经(Hebrew Bible)</a> 或 <a href="http://en.wikipedia.org/wiki/Old_Testament">旧约(Old Testament)</a> 。</p>
+
+<p>希伯来人的历史略，有兴趣可自行读旧约，有兴趣没时间的话维基也行，但是你就错过了很有意思的阅读。至少从亚伯兰到所罗门这段历史是很有趣的。旧约圣经可分为 <a href="http://en.wikipedia.org/wiki/Torah">律法书(Torah)</a> (亦称摩西五经) ， <a href="http://en.wikipedia.org/wiki/Nevi%27im">历史书(Historical books)</a> ， <a href="http://en.wikipedia.org/wiki/Ketuvim">智慧书(Wisdom books)</a> ， 和 先知书(Prophet) ( <a href="http://en.wikipedia.org/wiki/Major_prophet">大</a> / <a href="http://en.wikipedia.org/wiki/Minor_prophet">小</a> )。</p>
+
+<p>想搞清楚圣经对西方文明的影响有多大是很困难的。(个人意见：想要多大就有多大。) 仅从名字上已经能看出很多，Testament 一个“约”字重逾千钧。我们今天常说中国是人情社会，西方是契约社会，这契约 &mdash; 西方文明的柱石之一 &mdash; 的概念，就能上溯到这里。旧约圣经中的约乃是上帝与人立的契约，这契约中明确了立约双方的责任，以及毁约的后果等。所以以色列人可以理直气壮地问上帝“My God my God why have you forsaken me？”这是当时宗教中独一无二的。</p>
+
+<p>契约之外还有律法，摩西五经中律法以及律法相关的内容占了很大的篇幅。其中最有名的当属 <a href="http://en.wikipedia.org/wiki/Ten_Commandments">十诫(Ten Commandments)</a> 。尽管前几条戒律带有浓厚的宗教色彩，它依然是西方文明道德观的基础。时至今日，美国一些法院内还公开刻有十诫条文。</p>
+
+<p>艺术方面，圣经对西方文学的影响有多大，这无法量化，但肯定远超莎士比亚。对西方音乐，美术的影响更不用说，(我估计这些点会在讲文艺复兴的时候详谈。)</p>
+
+<p>别小看希伯来这个人口，面积都微不足道的小文明，他们的思想对日后我们所称“西方文明”的影响不可估量，原因？你可以说是历史的巧合，不过问以色列人的话，他们一定会如此回答：</p>
+
+<p>「因为我们是上帝的选民。」</p>
+
+<p>未完待续。下一期： <a href="http://webabie.com/the-foundation-of-western-civilization-5-of-47/">帝国传承</a> 。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[西方文明之根(3/47) — 尼罗河的礼物]]></title>
+    <link href="http://webabie.com/the-foundation-of-western-civilization-3-of-47/"/>
+    <updated>2011-03-30T00:00:00+01:00</updated>
+    <id>http://webabie.com/the-foundation-of-western-civilization-3-of-47</id>
+    <content type="html"><![CDATA[<p>没有 <a href="http://en.wikipedia.org/wiki/Nile">尼罗河(The Nile)</a> ，就没有 <a href="http://en.wikipedia.org/wiki/Ancient_Egypt">埃及(Egypt)</a> 文明。</p>
+
+<p>埃及境内只有 5% 的面积不是荒漠，就在尼罗河两岸。尼罗河每年按时泛滥，带来的肥沃土壤养育了埃及文明。</p>
+
+<p>约公元前5,000年，沿尼罗河出现小聚居群落，沿河迁徙繁衍，逐渐合并为 <a href="http://en.wikipedia.org/wiki/Upper_Egypt">上埃及(Upper Egypt)</a> 与 <a href="http://en.wikipedia.org/wiki/Lower_Egypt">下埃及(Lower Egypt)</a> 。注意地图上上埃及在下，下埃及在上，上下是指尼罗河的上下游。约公元前3,000年，两埃及合一，进入 <a href="http://en.wikipedia.org/wiki/Ancient_Egypt#Predynastic_period">王朝时期(Dynastic Period)</a> 。</p>
+
+<p>前王朝时期特点：埃及文明相对孤立，无外敌，法老拥有完全的权力，大金字塔。</p>
+
+<p>中王朝时期特点：法老权力被贵族分享，埃及部分被 <a href="http://en.wikipedia.org/wiki/Hyksos">喜克索斯人(Hyksos)</a> 占领，埃及文明开始习武。</p>
+
+<p>新王朝时期特点：埃及文明开始信奉“先下手为强，后下手遭殃”，于是向周边扩张，西至现利比亚，北至现土耳其。</p>
+
+<p>新王朝时期埃及战火连绵，他们与 <a href="http://en.wikipedia.org/wiki/Hittites">赫梯人(Hittite)</a> 在 <a href="http://en.wikipedia.org/wiki/Canaan">迦南地(Canaan)</a> 北部拉锯作战长达百年，最终在决定性的 <a href="http://en.wikipedia.org/wiki/Battle_of_Kadesh">卡迭石战役(Battle of Kadesh)</a> 中两败俱伤，两个古文明从此开始走下坡路 &mdash; 有趣的是，双方的文献都将此战役视作己方“辉煌的胜利”。</p>
+
+<p>宗教特点：前王朝时期，埃及人分为两个阶级：1. 法老； 2. 其他人。法老即神。埃及人不能直接对法老说话，只能“说话让法老听见”。法老每天最重要的工作是 &mdash; 早上让太阳升起，晚上让太阳落下。不得不说法老干得很不错！一次事故都没有出。</p>
+
+<p>前王朝时期没有战事，土地肥沃，生活无虞，埃及人过得很幸福，以致他们不希望死后的生活有所改变。许多宗教都承诺“死后的生活更美好”，然而埃及人只追求死后跟生前的生活一样。</p>
+
+<p>中王朝时期开始法老逐渐走下神坛，埃及各地出现非常多的各种神灵，数不胜数，即使在多神教的苏美尔文明的立场来看，也未免太多了些。同时出现了苏美尔文明中没有的一个概念，即“善恶报应”。</p>
+
+<p>文化方面，古埃及有纸草书，象形文字，宏伟建筑如金字塔及各种神庙等。当然还有保存尸体的方法： <a href="http://en.wikipedia.org/wiki/Mummy">木乃伊(Mummy)</a> 。由于制作木乃伊需要解剖，古埃及文明对人体构造也很有心得。</p>
+
+<p>古埃及文明对如今的西方文明的影响远不及苏美尔文明。有人将古埃及文明归入非洲文明，但埃及人不同意，认为埃及文明与西方文明的联系更紧密。这一直是一个研究课题。</p>
+
+<p>未完待续。下一期： <a href="http://webabie.com/the-foundation-of-western-civilization-4-of-47/">小国家的大思想</a> 。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[西方文明之根(2/47) -- 一切从苏美尔开始]]></title>
+    <link href="http://webabie.com/the-foundation-of-western-civilization-2-of-47/"/>
+    <updated>2011-03-29T00:00:00+01:00</updated>
+    <id>http://webabie.com/the-foundation-of-western-civilization-2-of-47</id>
+    <content type="html"><![CDATA[<p><a href="http://en.wikipedia.org/wiki/Sumer">苏美尔文明(Sumer)</a> 起源于两河流域，是已知最早的人类文明。</p>
+
+<p>苏美尔文明多次被外来文明武力征服，但总能把外来文明同化。这是人类文明史上多次重复的现象，低等文明武力征服高等文明，但最终被高等文明同化。</p>
+
+<p>苏美尔文明由大小 <a href="http://en.wikipedia.org/wiki/City-state">城邦(City-state)</a> 构成。</p>
+
+<p>城墙开始是象征性的城邦界限，逐渐演化为战争时防御作用。</p>
+
+<p>苏美尔文明在荒漠的冲击平原上，无石可用，只能用木材和黏土建筑，因此无法造出类似金字塔的宏伟建筑。他们发明楔形文字，在黏土板上压刻后烤干，极为持久。</p>
+
+<p>城邦中最高大的建筑通常是神庙。</p>
+
+<p>城邦逐渐发展出 King(城主？君主吧) ，和 Landlord(地主) 等阶级，也演发出城邦之间的冲突和城邦内部的冲突。</p>
+
+<p>君主自称神的代理人，以使权力有正当的来源。</p>
+
+<p>苏美尔文明先后被 <a href="http://en.wikipedia.org/wiki/Akkadian_Empire">阿卡德帝国(Akkadian Empire)</a> 的 <a href="http://en.wikipedia.org/wiki/Sargon_of_Akkad">萨尔贡(Sargon of Akkad)</a> 以及 <a href="http://en.wikipedia.org/wiki/Babylon">古巴比伦(Babylon)</a> 的 <a href="http://en.wikipedia.org/wiki/Hammurabi">汉谟拉比(Hammurabi)</a> 所征服。然而其文明传承不绝，特别是后一次，使得苏美尔人分散到更大的地区，让许多城邦“苏美尔化”。</p>
+
+<p>苏美尔的宗教为 <a href="http://en.wikipedia.org/wiki/Polytheism">多神教(Polytheism)</a> 。天上诸神多为男性，大地诸神多为女性。而神灵与善恶报应等并无联系。</p>
+
+<p>苏美尔的法律多为戒律，由君主，祭司和城邦中地位高者商议决定。法律刻在黏土板上公开示众，以示为全体所遵守。</p>
+
+<p>苏美尔的文化成就极为灿烂辉煌，轮，楔形文字，天文记录，10进制/60进制，法典等等，更有人类最早的文学作品 <a href="http://en.wikipedia.org/wiki/Epic_of_Gilgamesh">吉尔伽美什史诗(Epic of Gilgamesh)</a> 。</p>
+
+<p>苏美尔文明为地中海到今伊朗一带地区提供了坚实的文明基础，亦为西方文明的祖先。</p>
+
+<p>未完待续，下一期： <a href="http://webabie.com/the-foundation-of-western-civilization-3-of-47/">尼罗河的礼物</a></p>
+]]></content>
+  </entry>
+  
+</feed>

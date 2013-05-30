@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: 互联网乱弹 | Qing Wang]]></title>
+  <link href="http://webabie.com/categories/hu-lian-wang-luan-dan/atom.xml" rel="self"/>
+  <link href="http://webabie.com/"/>
+  <updated>2013-05-30T14:33:50+01:00</updated>
+  <id>http://webabie.com/</id>
+  <author>
+    <name><![CDATA[Qing Wang]]></name>
+    <email><![CDATA[blacktulip@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Linode 信用卡信息泄露的幕后故事]]></title>
+    <link href="http://webabie.com/linode-being-hacked-behind-the-scenes/"/>
+    <updated>2013-05-07T13:40:00+01:00</updated>
+    <id>http://webabie.com/linode-being-hacked-behind-the-scenes</id>
+    <content type="html"><![CDATA[<p>上个月 <a href="https://blog.linode.com/2013/04/16/security-incident-update/">Linode 被骇客入侵</a>导致所有信用卡信息泄露，我也未能幸免地中招去换了卡。今天在 HN 看到<a href="http://straylig.ht/zines/HTP5/0x02_Linode.txt">侵入者所发布的幕后故事</a>，觉得挺有意思，就转过来跟大家分享一下。</p>
+
+<p>我对骇客界的术语完全不懂，以下转译基于 <a href="http://straylig.ht/zines/HTP5/0x02_Linode.txt">HN 上的一条评论</a>，掺杂一些我自己的理解。</p>
+
+<p>HTP (&ldquo;Hack The Planet&rdquo;) 是一个骇客组织，某不知名的团体装成另一个叫 (&ldquo;ac1db1tch3z&rdquo;) 的组织对 HTP 进行了一些调查活动，主要是想寻找 HTP 使用的 <a href="http://en.wikipedia.org/wiki/Botnet">Botnet (僵尸网络)</a>。而这行为被 HTP 察觉到了，于是打算进行报复。</p>
+
+<!-- more -->
+
+
+<p>HTP 发现这个不知名的团体在 <a href="http://www.swiftirc.net/">SwiftIRC</a> 上交流 (不懂什么是 IRC 的就想像成 QQ 群吧)。如果 HTP 可以控制 SwiftIRC ，就可以监听控制这个团体的交流；而 SwiftIRC 使用的服务器恰好是 Linode 提供的，所以 HTP 决定黑进 Linode ，取得底层服务器的根权限后，想干什么自然是轻而易举了。</p>
+
+<p>然而不知基于什么原因，也许是没有找到 Linode 的破绽， HTP 一开始并未直接对 Linode 下手，而是从 Linode 的域名注册商 <a href="http://www.name.com/">Name.com</a> 开刀，黑进了 Name.com 的后台取得了 Linode 域名的控制权限。所以说 HTP 一路找上游，路径看起来像这样：</p>
+
+<p>Name.com &ndash;> Linode &ndash;> SwiftIRC &ndash;> 不知名团体</p>
+
+<p>(顺带一提， HTP 原文中说到很多域名注册商，包括 Name.com , 新网 等等都在他们的控制之中。)</p>
+
+<p>控制了域名以后， HTP 的原计划是把 Linode 用户导向他们自己的网站，在跳转到 Linode 前截下用户密码。这计划看上去是个很大的动作，想不被人发现似乎可能性很小。</p>
+
+<p>不过在 HTP 实施这个计划之前，他们的一位成员发现了 Linode 使用的一个名叫 ColdFusion 软件的一个漏洞，利用这个漏洞， HTP 直接侵入了 Linode 的服务器，域名劫持计划最终并没有实施，因为已经不需要了。 HTP 顺利取得了 SwiftIRC (以及所有放在 Linode 上的网站，包括知名安全网站 nmap.org) 的控制权。</p>
+
+<p>然而！ FBI 卧底遍天下之名岂是空谈？就在 HTP 小组中，FBI 早就安插了眼线。此卧底发现 HTP 居然控制了 nmap ，觉得事态严重，于是暗中提醒 Linode ，「大哥醒醒你被黑掉啦」。</p>
+
+<p>这样一来 HTP 就面临一个问题，原本他们想神不知鬼不觉地控制这个不知名团体，但是现在 Linode 已经了解事态，肯定要公开通告用户，这样一来那个团体必然有所警觉，一旦他们挪窝，岂不是白忙活了？</p>
+
+<p>HTP 于是直接跟 Linode 谈判，他们要求 Linode 保持沉默到五月一号，交换条件是 HTP 会把从 Linode 得到的信用卡信息全部删除，否则就把信用卡信息公开。</p>
+
+<p>Linode 方面也许想过妥协，但是这根本由不得 Linode 做主，FBI 强制 Linode 必须立刻通告用户。 HTP 对此也没有办法，于是改为要求 Linode 在通告中说明这事情是 HTP 干的 (我咋听起来这么像栽赃…) ，然后 (据他们自己说) 删掉了信用卡信息。</p>
+
+<p>至于 HTP 后来有没有监控到那个不知名团体，就不清楚了。HTP 事后对小组成员进行了调查整肃，据说他们黑进了那个 FBI 卧底的电脑，打开了他的摄像头，看到他身后的 FBI 探员，于是把他踢出了 HTP .</p>
+
+<p>好吧，这是一个来自 HTP 单方面的故事，能相信多少我也不知道，就当是一点娱乐吧。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[关于 iPhone 5 的一些想法]]></title>
+    <link href="http://webabie.com/some-thoughts-about-iphone-5/"/>
+    <updated>2012-09-18T18:37:00+01:00</updated>
+    <id>http://webabie.com/some-thoughts-about-iphone-5</id>
+    <content type="html"><![CDATA[<p>感谢科技的进步，让贫富差距变小。近五年来，无论一个英国人是领着政府救济的贫困户，还是普通中产阶级，抑或是腰缠万贯的富豪，他能买到的最好的手机都是 £500 左右一台 iPhone . Apple 自从 2007 年发布第一代 iPhone 以来，一直保持着每年一次，不多也不少的更新频率。 今年九月十二号， Apple 按例在旧金山芳草地艺术中心发布了最新一代 &ndash; <a href="http://www.apple.com/iphone/">iPhone 5</a> .</p>
+
+<p>只是， iPhone 5 现在还能算最好的手机么？</p>
+
+<p><img src="http://images.apple.com/iphone/home/images/wireless_hero.jpg" title="iPhone 5" alt="iPhone 5" /></p>
+
+<!-- more -->
+
+
+<h2>令人失望的 iPhone 5</h2>
+
+<p>这个问题并非那么容易回答，以前 Steve Jobs , 现在的 Tim Cook 在每次 iPhone 发布会上都会说：「这是我们造出的有史以来最好的一台 iPhone .」明眼人都能看出这是废话：如果一年后新发布的消费数码产品连前一代都比不上，这公司好该关门大吉了。 iPhone 5 比前几代都好是毫无争议的，问题是，它的进步幅度够大么？</p>
+
+<p>用户的反应说明了很多问题， Apple 开发布会的同时， Twitter 等社交网络上循例热闹非凡，然而跟以前 iPhone 发布会全民欢腾场景不一样，这次发布会大家主要在冷嘲热讽。「我的 4S 又可以多陪我一年了。」「 Apple 完蛋了。」「好失望，一点诚意都没有。」「看了 iPhone 5 发布会，更坚定了我买 Galaxy S3 的决心。」「可以留着我的肾了，好高兴。」在 <a href="http://www.hotukdeals.com/">HotUKDeals</a> 上，iPhone 5 的 deal 全部被 downvote ，<a href="http://pic.webabie.com/webabie.com/iPhone-5-cold.jpg">预订贴一度接近 -1100 度</a> ，创下网站最冷记录。我本人也不例外，预期了这一代 iPhone 将无法达到分析师预测的销量， $AAPL 将会重挫。</p>
+
+<h2>心口不一的用户</h2>
+
+<p>然而事实证明，用户们在 Twitter 上的抱怨仅仅停留在口头上。九月十四号， <a href="http://www.macrumors.com/2012/09/14/iphone-5-pre-order-shipping-estimates-slip-to-two-weeks/">iPhone 5 开始接受预订的一个小时内，第一批产品就被一扫而空</a> 。 Apple 发言人对用户的反应表示「<a href="http://allthingsd.com/20120914/apple-on-iphone-5-pre-orders-weve-been-completely-blown-away/">震惊</a>」。 $AAPL 则青云直上历史第一次捅破 $700 大关。<a href="http://9to5mac.com/2012/09/17/apple-announces-iphone-5-preorders-hit-two-million-in-24-hours">预订开始的24小时之内，订单数超二百万，是 iPhone 4S 记录的两倍，平均每秒售出 23 台</a>。</p>
+
+<p>用户们实在太不像话了。</p>
+
+<h2>iPhone 5 真的很烂？</h2>
+
+<p>为什么用户对 iPhone 5 态度前后反差如此之大？这里面的因素很多，只能猜测一下。</p>
+
+<h3>期望与现实的差距</h3>
+
+<p>第一代 iPhone 翻天覆地地改变了手机产业，此后每一代 iPhone 推出，都伴随着惊喜。 Steve Jobs 每年上台一次，像一位腼腆又骄傲的魔术师，把新一代 iPhone 最神奇的一面展示给世界。用户们已经习惯了看魔术表演，如果连续看了五次精彩演出，第六场忽然变得平平无奇，喝倒彩是正常的。</p>
+
+<p>iPhone 5 的情况比这更糟糕，魔术师的表演看上去平平无奇倒还罢了，表演开始之前已经有人在你耳边东一句西一句，剧透了个底朝天，甚至连魔术原理都揭开了，再好的表演也只能味同嚼蜡。然而用户们有心理惯性：「既然每次都有惊喜，这次虽然已经<a href="http://reviews.cnet.com/8301-19512_7-20073431-233/iphone-5-rumor-roundup/">剧透到了这个程度</a>，但也还应该有什么我们不知道的东西吧？」结果自然大失所望。</p>
+
+<p>然而 iPhone 5 在发布会两天后才开始接受订单。这两天时间足以让失望的情绪平复，进而理性地审视这台新手机，考虑是否值得购买。从结果来看，尽管经济大环境恶劣， iPhone 定价也绝不算便宜，但人群依然趋之若骛，为何如此呢？</p>
+
+<h3>iPhone 5 的改良</h3>
+
+<p>是的， iPhone 5 已经没有创新，只有改良了。但改良如果足够好，也能吸引用户。</p>
+
+<ul>
+<li><p>iPhone 5 采用了<a href="http://www.anandtech.com/show/6292/iphone-5-a6-not-a15-custom-core">据猜测是由 Apple 定制并参与设计 ARM 芯片</a>，而且内存也加了一倍到 1GB . 在 Geekbench 测试中 <a href="http://browser.primatelabs.com/geekbench2/1030202">iPhone 5</a> 跑分性能与 <a href="http://browser.primatelabs.com/geekbench2/989732">HTC One X</a> 和 <a href="http://browser.primatelabs.com/geekbench2/1026099">Samsung Galaxy S3</a> 相当，纯运算部分较弱，但内存性能和带宽都大大强于后两者（credit to <a href="http://blog.est.im/post/31703069009">est</a>）， iOS 设备一般能以一半的分数达到安卓设备的同等性能，在同分的情况下可想而知。</p></li>
+<li><p>屏幕加长到 4 英寸，这个改良应是妥协的产物。在其它品牌手机屏幕动辄 4.6, 5.3 的压力下， iPhone 无法死守 3.5 不放，又要兼顾单手握持控制的便利性，再加上考虑开发者修改应用以适应新分辨率的工作量，只好只加长，不加宽。我使用 4.65 英寸屏幕的 <a href="http://www.google.com/nexus/#/galaxy">Galaxy Nexus</a> 确实不如 iPhone 4S 顺手，但屏幕宽度没有增加的情况下，浏览网页等应用场景并不能有效利用加大的空间，跟竞争对手相比 4 英寸也还是太小，妥协的产物很难达到良好的效果。这一点改良我觉得意义不大，还平白增加了开发者的工作量。</p></li>
+<li><p>新技术让显示饱和度增加了 44% . 业界色彩最精确的显示屏。这在 <a href="http://www.displaymate.com/iPad_ShootOut_1.htm">The New iPad 那块 99% sRGB 色域的神屏</a>上已经见识过了，并非什么新东西，只是确保不会被竞争对手比下去而已。</p></li>
+<li><p>4G LTE ， UK 的 LTE 刚刚起步，我暂时无法体验，这一点改良也是跟随竞争者的脚步作出的，并非业界先锋。但，在美加澳等发达地区非常非常实用，相信很多人是冲着这一点下的订单。</p></li>
+<li><p>前置摄像头换成高清，这也是早就该有的升级。后置摄像头的参数没有变化。</p></li>
+<li><p>三麦克风设计，提升语音质量。</p></li>
+<li><p>Lightening 接口和 Nano Sim ，都是为了节省机内空间。 Lightening 接口看在不分正反这个大优点上我没什么意见， Nano Sim 就有点不能理解：真的差那么小一点点的地方，值得为此换个 Sim 卡标准？虽然这事情运营商能解决，但旧 Sim 卡无法使用会对一部分用户造成不便。</p></li>
+<li><p>铝制后盖，整机更轻薄。技术男们对这种改进一般不怎么关注，但我觉得这才是 iPhone 5 最大的改良。后面一块玻璃改成铝壳，前面采用了<a href="http://news.cnet.com/8301-13579_3-57492629-37/apple-patent-could-lead-to-thinner-lighter-iphone-screens/">新的触摸屏技术</a>，让整机厚度减少到 7.6mm ，重量只剩下 112g . 这种「摸过才知道」的改进对 Geek 们没什么吸引力，对普通用户特别是女性用户的影响却不可小视。</p></li>
+</ul>
+
+
+<p><img src="http://pic.webabie.com/webabie.com/precision_side.png" title="iPhone 5 side view" alt="iPhone 5 side view" /></p>
+
+<p>Apple 从 iPhone 4 开始摈弃了工程塑料，只用金属和玻璃制做机身，牺牲了一些重量和厚度，换来用户不一样的手感和心理感觉。这实际上是一种错觉，高端的工程塑料完全可以做出不输给铝壳的耐用度，但无意识积累的日常生活经验已经在大部分人潜意识里把塑料和廉价低端产品联系在一起（塑料确实也较为便宜）。金属，玻璃，陶瓷这些材料给人的感觉更精致高级些。尤其在这个时代，<a href="https://github.com/harryf/thoughts/blob/master/mobile-killed-the-login.md">手机和人几乎一体 (you and your phone are one thing; a single organism. )</a>，这种无法量化的感觉也是用户体验中重要的一环。话说回来，当我拿到 The New iPad 的时候，还是很希望能换个塑料背壳让整机重量轻一些的。 iPhone 5 能兼顾材料，厚度，重量和电池寿命，确是工业设计的巅峰之作。</p>
+
+<p>当我列完以上几点后，回头看看，心情有些复杂。 iPhone 5 把 iPhone 4S 身上的缺陷一一补足，可以说是一台没有明显短板的手机，无论从哪个方面去看都非常优秀。但无可否认，这是一个防御型产品，只有改良，没有创新， iPhone 4 带来了当时无与伦比的 Retina Display ； iPhone 4S 的 Siri 虽然不算成功，好歹也是创新。 而在 iPhone 5 身上我们只看到修修补补 &ndash; 当然修补得很好 &ndash; 看不到真正领先于竞争对手的地方了。</p>
+
+<h2>Apple 为什么停止了创新？</h2>
+
+<p>首先 Apple 未必真的已经停下创新的步伐，但这一代的 iPhone 确实没有新意。因素应该不止一个。</p>
+
+<ul>
+<li><p>很大一部分人把这个问题归咎于 Steve Jobs 的离开。 他重新接手 Apple 的时候，<a href="http://pocketnow.com/2012/08/20/apple-most-valuable-company-in-history/">传说公司的现金流已经不足以支持三个月</a>， 15 年后的今天， Apple 市值六千五百亿美元，早已创下历史最高记录。 Steve Jobs 血液里流淌着创新的基因，他一手建立了整个 iDevice 产品线，并亲自为每一代产品把关，他的英年早逝，使得 iPhone 失去了方向。</p></li>
+<li><p>也有人认为经过前五代产品， iPhone 已经是趋近成熟，产品已经定型，留给创新的空间不多了。于此相辅相成的另一观点认为某一时间点上能应用到生产中的科技有其极限，现在的 iPhone 和其它高端智能手机已经很接近这个极限，想要继续创新，必须等待科技的发展。比如新材料的问世，电池技术的突破等。</p></li>
+</ul>
+
+
+<h2>生态系统</h2>
+
+<p>能够单纯对比手机本身的时代已经过去了，现在竞争已经上升到生态系统层面。 iPhone 的竞争对手们都对此很了解，在比较的时候，总会刻意避开这一点，因为现阶段 iOS 下的生态系统依然大幅领先，但优势能保持多久，很难说。</p>
+
+<p>Apple 是如何打造出良好的生态系统的呢？</p>
+
+<ul>
+<li><p>Apple 给开发者提供了完善，便利的全套开发环境；</p></li>
+<li><p>不仅如此， Apple 还提供了方便的销售渠道 iTunes App Store ；</p></li>
+<li><p>iOS 产品线短小统一，对开发者有利；</p></li>
+<li><p>iOS 设备一般在新品发布后很长时间才会有越狱方案出现，而且一直伴随各种问题，使得越狱率不高，盗版不会对开发者的收入冲击太严重；</p></li>
+<li><p>由手机本身的创新吸引用户，足够的用户数量产生可观的购买力，这种购买力被导向到手机应用消费上，利益驱使开发者做出优秀应用，又吸引更多的用户，打造出生态系统的良性循环。</p></li>
+</ul>
+
+
+<p>总结起来其实就两点，1. 方便；2. 有利可图。这样开发者蜂拥而至，为 iOS 平台创造出大批高质量的应用，平台用户体验也水涨船高。</p>
+
+<p>Google 收购并开源 Android 系统是一步伟大的战略，若非如此，今天的智能机市场格局将完全不同。 Android 系统进化到 <a href="http://developer.android.com/about/versions/jelly-bean.html">4.1 版本</a>，<a href="http://www.androidpolice.com/2012/09/18/ux-things-i-hate-about-android/">细节上依然问题很多</a>，但整体已经趋近于完善。撇开良莠不齐的安卓手机，鱼龙混杂的 Play Store ，光看系统的话，即使站在果粉的立场上，也必须承认 Android 系统更先进，更有趣。比如真实多任务系统；又比如分享中心。但一直以来， Android 的生态系统都不尽人意。</p>
+
+<p><img src="http://pic.webabie.com/webabie.com/jelly-bean.jpg" title="Jelly bean" alt="Jelly Bean" /></p>
+
+<p>今年六月底 Google 发布了自己贴牌的第一台 Android 平板 <a href="http://www.google.com/nexus/#/7">Nexus 7</a> . 高配低价，硬件上来说是难得的好产品。当天我就订了一台，爱不释手。但是几周前，我毫无留恋地将其卖掉了。机器本身是很好的，可惜找不到什么好应用来跑。</p>
+
+<p>其实也不是一个都找不出来， Google 本家的一套应用都很好，也有几个 iOS 移植过来的优秀应用，比如 <a href="https://play.google.com/store/apps/details?id=flipboard.app">Flipboard</a> 等，但还是太少了。 iOS 下 <a href="http://tapbots.com/software/tweetbot/">Tweetbot</a> ， <a href="http://www.omnigroup.com/products/omnifocus-iphone/">OmniFocus</a> 这种等级的应用，欠奉。更令人吃惊的是， Nexus 7 的四核心 CPU 十二核心 GPU 听着吓人，实际跑起应用来居然还是卡，这没法责备硬件机能不足，只能是应用的优化没有做到家的问题。</p>
+
+<p>操作系统再先进，硬件性能再强，最终还是要着落在应用上，因为应用是最上一层，是用户直接交流的一层。 Google 对此很清楚，也下了很大功夫。鉴于 Android 系统发布于 <a href="http://en.wikipedia.org/wiki/Apache_License">Apache 许可证</a>下， Google 无法直接控制各手机生产商的系统代码。与 Apple 的 “Absolute Control” 方针不一样。 iOS 由于软硬件一体化，所有用户体验细节都能详尽控制， Android 则软硬分开，一套软件核心要适应成千上万种硬件搭配，只能采取 “Loose Control” 的方针，成立<a href="http://en.wikipedia.org/wiki/Open_Handset_Alliance">开放手机联盟</a>，大家都遵循一些指导方针。</p>
+
+<p>虽然现阶段 Android 的生态系统落后一些，但经历了最初几年的浑沌期，整个系统正在向好的方面发展，与 iOS 的差距逐渐缩小，表现在：</p>
+
+<ul>
+<li><p>开发环境的日益完善，以及开发社区的壮大，使得 Android 开发门槛越来越低。 Android 开发优势在于不用去学习一门语法奇特的新语言 (是的我觉得 Obj-C 好奇特)，也不用购买 Mac 机器以及缴纳每年 $99 作为初期投资；</p></li>
+<li><p>Google 终于整合出一个靠谱的 <a href="https://play.google.com/store">Play Store</a> . 而且它<a href="http://www.theverge.com/2012/9/14/3335204/google-statement-acer-smartphone-launch-aliyun-android">表明了维护整个系统生态的决心</a>。</p></li>
+<li><p>Google 早就是互联网巨头了，在网络整合方面 Apple 是追赶者。在 Mountain Lion 和 iOS 6 这两个最新操作系统中表现犹多。 iCloud 刚出的时候就像一个笑话，现在的可用性已经相当强，不算完美，但非常便利，真正的无形整合。相比之下， Android 系统的云整合没有那么紧密方便，但这一块是 Android 的传统优势，很容易能做好。</p></li>
+<li><p>Android 设备价格覆盖 $50 &ndash; $600 全区间，加上优秀的操作系统，<a href="http://www.washingtonpost.com/business/technology/worldwide-market-share-for-smartphones-a-market-dominated-by-apple-and-android/2012/09/18/fa3f8f56-019b-11e2-bbf0-e33b4ee2f0e8_story.html">市占率提升得很快</a>。由于用户基数庞大，开发者逐渐被吸引，越来越多的 iOS 应用会同时或者稍晚推出 Android 的版本，生态系统的良性循环正在逐渐成型。</p></li>
+</ul>
+
+
+<p>照这样的发展速度，我预测两三年内 Android 的生态系统会赶上 iOS . 顶级 Android 手机的用户体验也会达到同期 iPhone 的水平。其实，在 iPhone 5 发布会那天晚上，我担心 iOS 生态会变成一种恶性循环，即手机缺乏创新，导致用户数量减少，开发者利润下降，离开或者不再专注于 iOS 平台，使得应用数量和质量都下滑，又进一步从负面影响用户购买决策。从第一天的订单数目来看，至少这个现象不会发生在这一代 iPhone 身上， Apple 还有时间。</p>
+
+<p><img src="http://pic.webabie.com/webabie.com/Apple-vs-Google.jpg" title="Apple vs Google" alt="Apple vs Google" /></p>
+
+<h2>Apple 还处于领先位置么？</h2>
+
+<p>从用户体验来说确实如此，但领先的距离不大了。 iPhone 的先发优势保持了这么多年，已经难能可贵，指望竞争对手一直落后是不现实的。 iPhone 5 依然会大卖，只是以前笑傲江湖，一览众山小的感觉已经消失，想要继续获得用户认可， Apple 必须使出吃奶的力气才行了。</p>
+
+<p>这对果粉和普通消费者来说，都应当是好事。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[用irc脚本自动化Seedbox]]></title>
+    <link href="http://webabie.com/seedbox-autodownload-using-irc/"/>
+    <updated>2009-09-25T00:00:00+01:00</updated>
+    <id>http://webabie.com/seedbox-autodownload-using-irc</id>
+    <content type="html"><![CDATA[<p>前文再续是书接上一回，rtorrent跑起来了就该自动化了。什么？你觉得手动也行？那你一定很闲很闲吧&hellip;&hellip;废话少说。用rss自动的方法就不提了，一是因为它太简单，二是因为它效果不好，跑TL之类的用rss还勉强，跑ScT就完蛋大吉了。BTW：ScT号俺已经搞到了，多谢那位朋友。</p>
+
+<p>其实用irc脚本自动下载是很简单的事情，首先装个irssi:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>sudo apt-get install irssi
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>然后输入screen，进入另一个终端，输入irssi进去，连服务器，进入频道这些就不用说了吧。</p>
+
+<p>下一步是找脚本，以TL的为例，在<a href="http://forums.torrentleech.org/showthread.php?t=60151">这个帖子</a>里就有。所有tracker的脚本修改方法都大同小异。TL比较麻烦要cookie，刚才装的vnc就用上了吧？嘿嘿，到vnc里面打开firefox登录TL，然后把cookie给找出来填进脚本里面即可。ScT和What.CD的脚本没那么麻烦，一个填passkey一个填密码即可。最重要的修改点在torrent存放位置，一定要确认指向rtorrent的监控目录，否则就是鸡同鸭讲。</p>
+
+<p>然后就是修改filter了，想刷全站自然也可以，不过疯狂了点，还是挑热门为上。每个站的脚本里头filter的写法都不大一样，照着样例改就是了，我的原则是宁缺勿滥，所以filter比较保守，大家根据自己实际情况定即可。</p>
+
+<p>改好后保存，然后在irssi里头输入/load /path/to/the/script 即可</p>
+
+<p>这些都做完了，就可以按 Ctrl+a, d 从screen里面退出来，然后logout了。以后想回到irssi的话，可以用screen -r切回去。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[在kimsufi服务器上安装rtorrent做seedbox的步骤]]></title>
+    <link href="http://webabie.com/install-rtorrent-on-kimsufi-as-seedbox/"/>
+    <updated>2009-09-24T00:00:00+01:00</updated>
+    <id>http://webabie.com/install-rtorrent-on-kimsufi-as-seedbox</id>
+    <content type="html"><![CDATA[<h4>为什么用kimsufi？</h4>
+
+<p>A：因为它便宜或者说性价比高。这是显而易见的一点。
+B：因为大家都用它。看到这个理由，了解PT工作原理的人应该会心一笑吧。</p>
+
+<h4>为什么用rtorrent？</h4>
+
+<p>实际上我是先尝试了wine+utorrent的，能成功跑起来，wine+ut的好处是资源占用小，功能齐全，设置方便。但也有其缺点，就是目录监视自动下载有时候会不动，而且种子启动时连peers慢。权衡之下我还是觉得rtorrent稍微靠谱些。除了原生主义外，葡头告诉我Sct这个盒子站rt的效率高，也是个重大因素，虽然我还没Sct的号。(BTW: 谁如果有邀请的话砸一个吧。)</p>
+
+<p>本文前半部分参考<a href="http://filesharingtalk.com/vb3/f-guides-and-tutorials-65/t-naqs-complete-setup-guide-linux-seedboxes-fedora-corecentosdebianubuntu-281331">这篇教程</a>，修正了不少。</p>
+
+<p>第一步：租个kimsufi服务器，方法不在本文讨论范围内，略。</p>
+
+<p>第二步：环境配置</p>
+
+<ul>
+<li><strong>租服务器的时候，选Ubuntu 8.10 english</strong>，这是我一次一次重灌系统得出的经验，debian 5, ubuntu 9.04以及centos 5.3都会出问题，只有ubuntu 8.10能顺利完成所有步骤。当然这是我功力有限导致的。但既然有一个系统能简单完成，我们就不必没有困难创造困难了。</li>
+<li>一开始root登陆，马上 passwd 换掉密码，rm .ssh/authorized_keys2 删掉这个key，SSHD需要进一步安全配置，不过现在先这样，最后再说。/etc/init.d/ssh restart 重启SSHD。SELinux和iptables缺省都没有安装，很好，我们现在不需要。</li>
+<li>更新系统软件包，运行 apt-get update 和 apt-get upgrade 。</li>
+<li>把需要的东西装好：</li>
+</ul>
+
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>apt-get install vnc4server xterm fluxbox vsftpd firefox curl
+</span><span class='line'>apt-get install xfonts-base xfonts-75dpi xfonts-100dpi
+</span><span class='line'>update-menus
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>wine不用装，因为我们不用utorrent，如果你想用utorrent就得装wine，不提。</p>
+
+<ul>
+<li>搞搞vnc，为什么我们不用wine还要搞vnc？其实是可以不用的，但有些PT站的IRC下载脚本要拿cookie，用 vnc里头运行一下浏览器可以方便地得到cookie。当然我相信用curl之类的肯定更快更好，不过我这不是不懂嘛，呵呵。而且有个远程桌面环境也不是什么坏事。</li>
+</ul>
+
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nb">cd</span>
+</span><span class='line'>mkdir .vnc
+</span><span class='line'>vi .vnc/xstartup
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>里头加一行 fluxbox 然后:wq</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>chmod +x .vnc/xstartup
+</span><span class='line'>vncserver :1 //这行就启动vnc了，设定一个连接密码。要关闭，用 vncserver -kill :1
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>如果追求安全可以用vncserver -localhost :1，然后用putty搭桥过去，不过没必要，用完关掉就是了。</p>
+
+<ul>
+<li>先试试vnc好不好用再说，到<a href="http://www.realvnc.com/cgi-bin/download.cgi">这里</a>下载个vncviewer然后填上box的ip连过去试试看，连通后右键菜单里头找firefox看能不能运行。都顺利完成之后，就先放一边吧，呆会再用它。</li>
+<li>该装rtorrent了，如果你要自己装的话可能会抓狂，不推荐，既然有现成的安装脚本就应该好好利用。我是在what.cd的论坛里面找到这个好东西的，只需这样：</li>
+</ul>
+
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nb">cd</span>
+</span><span class='line'>wget &lt;a <span class="nv">href</span><span class="o">=</span><span class="s2">&quot;http://76.76.238.18/wtorrent-installer.tar&quot;</span>&gt;http://76.76.238.18/wtorrent-installer.tar&lt;/a&gt;
+</span><span class='line'>tar xf wtorrent-installer.tar
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>按说下一步就该运行脚本了&hellip;错，先把配置文件改好再说。</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>vi wtorrent-installer/.rtorrent.rc
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>怎么改呢？我推荐这样：</p>
+
+<p>on_finished = move_complete,&hellip;&hellip;这一行注释掉。你要移动要重新做种，不好。</p>
+
+<p>min_peers这一些就酌情改改即可。</p>
+
+<p>download_rate设成7000，全速下载的时候就不能全速上传。如果你租的是kimsufi或者ovh的高配服务器，可能不用改。</p>
+
+<p>放文件的目录和自动下载的监视目录自己看着办。</p>
+
+<p>port_range我喜欢改后一点，不过随便。</p>
+
+<p>check_hash=no 一定要no，否则亏很大，下载完了hash一边再做种，渣都没得留给你了。</p>
+
+<p>加密能加就加吧。</p>
+
+<p>dht=off;peer_exchange=no，这两个没啥可说的，一定要这样设。</p>
+
+<p>别的就不用管了。:wq吧</p>
+
+<ul>
+<li>总算可以运行安装脚本了 wtorrent-installer/install.sh 这个脚本给你直接都装好开始运行，所以就不用费别的心了。访问 <a href="http://%E4%BD%A0%E7%9A%84ip/">http://%E4%BD%A0%E7%9A%84ip/</a> 去设置一下wtorrent(就是rtorrent的web前端界面)就能直接用了。注意会给你新建一个叫rt的用户。</li>
+</ul>
+
+
+<p>如若你改了配置文件要重启rtorrent，用命令 /etc/init.d/rtorrent restart</p>
+
+<p>第三步：自动化一下，否则没啥意义。</p>
+
+<p>嗯&hellip;今天不想写了，下一篇再说吧。</p>
+
+<p>P.S. 这种seedbox刷HDC一天200GB很轻松，CHD这种有2x的就更不用说了，TL之类的更是三天1T没问题。只有What.CD&hellip;对付不了。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[爆发还是灭亡 -- 新媒体浅思]]></title>
+    <link href="http://webabie.com/new-media-going-heaven-or-hell/"/>
+    <updated>2009-05-14T00:00:00+01:00</updated>
+    <id>http://webabie.com/new-media-going-heaven-or-hell</id>
+    <content type="html"><![CDATA[<p>信息过载是非常可怕的一件事情，不仅令人难以喘息，更可怕的是直接导致思考的丧失 &mdash; 我的意思是，如果想认真地从脑子里挤点东西出来的话，关掉twitter是必要条件。</p>
+
+<p>说到twitter，这个近期有着<a href="http://www.eryi.org/SearchEngines/twitter-traffic-rank.html">疯狂增长曲线</a>的著名服务，正是继博客，SNS之后新媒体的首席代表，微博客的代名词，“所有人对所有人的传播”这定义的完美注脚。只是，除了风投，twitter似乎并没有别的资金来源，而风投这东西吃不了几天。</p>
+
+<p>互联网巨鳄Amazon连续推出了Kindle 2和Kindle DX，在E-Ink产品选择已经不算少的今天，倒也难说是什么重大新闻。不过今天Amazon推出<a href="https://kindlepublishing.amazon.com/">新的测试版服务</a>却值得关注，这项服务允许博客作者提交博客到Amazon Kindle的订阅列表，以便Kindle的使用者订阅。而订费由博客作者和Amazon三七分成 &mdash; Amazon七作者三。</p>
+
+<p>尽管内容创造者的分成不可思议的低，好歹总是大于零。而且我顽固地相信在不久的将来，E-Ink阅读器绝对会普及。那么我们很容易描绘出一幅美好的蓝图，星巴克里、地铁中、公园长椅上&hellip;人手一个Kindle(或者iRiad, Sony 甚至汉王 whatever)，人人订上几个博客，而内容创造者们总算可以交上房租&hellip;&hellip;</p>
+
+<p>且慢，作为经历过经济危机，深知每一个硬币的珍贵的一代，在什么原因的驱使下，才会置互联网的免费订阅不顾，转而选择给扣住七成订费却什么也不必做的Amazon之类的运营商每月每博客2美元呢？啊，原来是脑子有毛病，怪不得&hellip;</p>
+
+<p>那位看官又要说了，这种模式在中国当然行不通，在以美国为首的西方国家(咋这么耳熟呢)，那里的人民习惯了付费获得内容，行得通。我的回答是：「我晕。」要知道美国人民虽然可爱，却不是傻子，违法的免费和合法的免费他们还是拎得清的。</p>
+
+<p>说了半天，总结出什么来了？</p>
+
+<ul>
+<li>旗帜性新媒体平台历经三代，从博客到SNS，从SNS到twitter，虽然不排除有个别吸金成功的，但总体而言，一代比一代烧钱烧得快。也许是我目光短浅，在twitter创建3年之后的今天，它可见的最佳前景仍然是被收购。</li>
+<li>大部分内容创造者从未获得与投入成比例的收入。幸运的是，大部分内容创造者也没有期望这种收入。</li>
+</ul>
+
+
+<p>新媒体口号“所有人对所有人的传播”，有三个重要关键词：第一个“所有人”；第二个“所有人”以及“对&hellip;的传播”。(还真是牛B的口号阿，一个废字都没有。)那么，第一个“所有人”指的是内容创造者，“对&hellip;的传播”则隐隐指向新媒体平台(传播媒质)。根据我们的总结，这两者都是穷鬼。所以得出结论，支撑起新媒体的三角架中，倒有两支脚是蜡造的。</p>
+
+<p>我们分别来看一下这两支脚。</p>
+
+<p>新媒体平台方面，一代比一代难。博客这种分布式的东西，虽然盈利者寥寥，投资毕竟也属少量；SNS的领军者Facebook，尽管入不敷出，总还能挂点广告；轮到twitter这里，不但要在指数形式攀升的用户量和神经质般地刷新请求下保持服务稳定，还没办法挂广告，怎一个惨字了得啊。</p>
+
+<p>以我业余的，浅薄的想法，twitter可以：</p>
+
+<ul>
+<li><p>被收购。抱大腿无疑是最好的出路，Hotmail, Blogger, Flickr等等前辈早就指了一条明路。什么？Blogger就是搞twitter这几个家伙以前搞的？嘿嘿。如今的形势下，抱Google大腿这个选择看起来不错。唯一一点坏处是，真那样的话，Google就太垄断了。</p></li>
+<li><p>开发数据分析挖掘业务。如果想自己闯的话，这条路最显而易见。因为twitter除了狂多的来自用户的信息外基本一无所有，这年头网站注册用户的邮箱列表都能卖钱，要说twitter上这些海海海&hellip;量的信息里面挖掘不出财富来鬼都不会信。只是twitter似乎不大愿意往这条路上走。</p></li>
+<li><p>退居幕后。twitter开放的API衍生出无数的周边产品，未来twitter也许可以把API的使用者分成免费和收费两类，把所有盈利的周边都搞到收费那类里面。同时twitter可以尽量弱化网页功能，慢慢退居幕后，强迫用户使用第三方前端，然后跟这些前端收钱去。</p></li>
+<li><p>推出付费用户。最不明智的做法&hellip;twitter并非没有对手。</p></li>
+</ul>
+
+
+<p>至于SNS怎么搞钱，相信开心网已经做出了示范，尽量往网游上靠，错不了。至于那样是否还能被称作“媒体”&hellip;&hellip;鱼和熊掌阿。</p>
+
+<p>内容创造者方面，实际上我们并不用过于担心。如同上面说过的，大部分内容创造者没有期望相称的回报，而是屈从于自身的表现欲。此其一；表现欲会消退，没有物质刺激不可能持久创造内容，这固然不错；但俗话说得好，长江后浪推前浪，前浪死在沙滩上。毕竟互联网最不缺的就是用户嘛，博客这样的东西，一天死掉100个，同时也会生出150个，此其二。</p>
+
+<p>不错，有热情就会有内容，物质回报的匮乏也许并不会对内容创造者产生致命打击。但有一种东西会，鉴于文章长度问题，我打算另文讨论。</p>
+
+<p>综上所述，我认为虽然支撑新媒体的三角架有两支脚不牢固，但内容创造者这支脚，应该说还是安全的，眼下的主要问题在平台上。找到一个可持续发展的模式，是新媒体平台的当务之急。twitter用户量的大爆发，乍一看是好事，只希望这不会是新媒体灭亡前最后的疯狂。</p>
+]]></content>
+  </entry>
+  
+</feed>

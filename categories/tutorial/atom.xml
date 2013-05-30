@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Tutorial | Qing Wang]]></title>
+  <link href="http://webabie.com/categories/tutorial/atom.xml" rel="self"/>
+  <link href="http://webabie.com/"/>
+  <updated>2013-05-30T14:33:50+01:00</updated>
+  <id>http://webabie.com/</id>
+  <author>
+    <name><![CDATA[Qing Wang]]></name>
+    <email><![CDATA[blacktulip@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[So I built a PC again]]></title>
+    <link href="http://webabie.com/so-i-build-a-pc-again/"/>
+    <updated>2013-05-18T10:10:00+01:00</updated>
+    <id>http://webabie.com/so-i-build-a-pc-again</id>
+    <content type="html"><![CDATA[<p>Building a PC is not that big a deal in 2013. And admittedly, it is much easier than any other type of DIY. Assembling LEGO blocks arguably has more fun, too. The reason for building a PC today, ultimately, breaks down to squeezing horse power out of a (usually limited) budget.</p>
+
+<p>Now the <a href="http://en.wikipedia.org/wiki/Windows_System_Assessment_Tool" title="Windows System Assessment Tool">WinSAT</a> is not really the most accurate benchmark in the world. But I do not know which one is anyway and this one is right there. So please put up with me.</p>
+
+<p><img src="http://farm9.staticflickr.com/8131/8747262751_c0f00eddab_o.jpg" alt="WinSAT result" /></p>
+
+<p>Doesn&rsquo;t look too shabby, does it?</p>
+
+<p>However I am going to show a fuller picture (pun intended) here.</p>
+
+<!-- more -->
+
+
+<p><img src="http://farm8.staticflickr.com/7314/8747262771_2cb373f543_c.jpg" alt="Full screenshot of the WinSAT result" /></p>
+
+<p>Well it certainly surprised me. I would not expect a virtual machine produce a result like this. The latest <a href="http://www.parallels.com/products/desktop/" title="Parallels Desktop 8">Parallels Desktop</a> probably contributed a large portion. But I was still impressed by the raw power it shown, considering the relatively small amount of money spent on it.</p>
+
+<h3>Principles</h3>
+
+<p>PC-building is all about requirements and balance. Here are a few principles I follow:</p>
+
+<ul>
+<li>Before any purchasing, think it through and list all the needs.</li>
+<li>Order the components that <em>just</em> or <em>a little bit overly</em> meet the needs. For anything better, the infamous <a href="http://en.wikipedia.org/wiki/Marginal_utility" title="Marginal Utility">marginal utility theory</a> will kick in right away.</li>
+<li>Interaction before power. (If you can have either a more powerful processor or a more comfortable keyboard, go for the keyboard.)</li>
+<li>Do not consider &ldquo;later upgrade&rdquo;. It is extremely rare. Most of the time you will just build or buy a new one.</li>
+</ul>
+
+
+<h3>My requirements</h3>
+
+<p>2 years ago I bought a Macbook Air. Needless to say, It has given me the best experience. And it still does. However, while the processor is still good enough, the 4GB on-chip memory begins to be in the way. I hesitated to migrate to <a href="http://www.vagrantup.com/" title="Vagrate">Vagrant</a> for this very reason. <a href="http://www.jetbrains.com/ruby/" title="RubyMine">RubyMine</a> is not acting its best on this nice little laptop either.</p>
+
+<p>Another major drawback is, of course, the 128GB SSD. My iTunes library and Aperture library are both larger than this number by a magnitude. Heck even my Calibre library alone will easily fill half of it. Freeing up space now becomes a weekly job which I hate.</p>
+
+<p>Lack of real graphics card is also a minor problem. I seldom play games nowadays but may still want to try out some interesting new games from time to time. FPS and RTS are not for me but at least the machine should be able to run the latest <a href="http://www.civilization.com/" title="Sid Meier's Civilization">Civilization</a> smoothly.</p>
+
+<p>So basically, my needs are outlined as such:</p>
+
+<ul>
+<li>Usage: app/web developing, casual to mid-core gaming, photo/video processing.</li>
+<li>Reasonable computing speed. General development tasks do not require a very powerful processor. But I do not want the IDEs (RubyMine, Xcode etc.) lag. Plus photo and video processing relies heavily on the processor.</li>
+<li>As large memory as it can be. Memory is crucial for a lot of things. It is certainly more important to a developer than the processor is</li>
+<li>A mid-core graphics card.</li>
+<li>OS X compatible. Obviously&hellip;</li>
+</ul>
+
+
+<p>The last need eliminated a lot of choices, which is a good thing. Many people said to me that a &ldquo;Hackintosh&rdquo; or a &ldquo;CustoMac&rdquo; can not deliver a perfect user experience like a real Mac can do. Well, I can not argue with that if the physical appearance of the machine is counted in. But other than that. I do not find any meaningful difference, really. The crucial point here is choosing the right components so that no extra effects are needed to make it work.</p>
+
+<h3>The processor</h3>
+
+<p><img src="http://farm8.staticflickr.com/7306/8747589959_7d62c4e59e_c.jpg" alt="Intel Xeon E3-1240 v2" /></p>
+
+<p>That&rsquo;s right, a Xeon. <a href="http://ark.intel.com/products/65730/">E3-1240 v2</a> is the equivalent Xeon processor to <a href="http://ark.intel.com/products/65719/">Core i7-3770</a> but does not have the integrated HD 4000 graphics processor. It is the logical choice since a separated graphics card will be used. And it is cooler (in both ways).</p>
+
+<p>I bought it from Taobao for about £145 and have someone send it to me along with many other groceries. In the UK the price will be much higher.</p>
+
+<h3>The motherboard</h3>
+
+<p><img src="http://farm9.staticflickr.com/8539/8747697439_6199951dea_c.jpg" alt="Gigabyte GA-Z77-DS3H" /></p>
+
+<p>This is the tricky component. For first time CustoMac builders, do not be clever, only choose from <a href="http://www.tonymacx86.com/351-building-customac-buyer-s-guide-may-2013.html#motherboards">this list</a>.</p>
+
+<p>My choice was the GA-Z77-DS3H because it is cheap and has 4 memory slots.</p>
+
+<h3>The memory</h3>
+
+<p>Not much to tell. In 2011 I bought some extra memory when <a href="http://webabie.com/diy-nas-for-home-use/">building the NAS</a>. Now it is of use. 4GB * 4 == 16GB</p>
+
+<p>If a Xeon processor is used, there is no point to buy 1600 memory since Xeon can not be overclocked.</p>
+
+<h3>The graphics card</h3>
+
+<p><img src="http://farm8.staticflickr.com/7284/8748878926_fc51d3d4d5_c.jpg" alt="Gigabyte NVIDIA GTX650Ti" /></p>
+
+<p>Again there were not many choices. A native support graphics card was necessary. I could not install the operating system with the integrated graphics processor first, then install the driver of the real graphics card. Because there was no integrated graphics processor.</p>
+
+<p>I followed <a href="http://www.tonymacx86.com/351-building-customac-buyer-s-guide-may-2013.html#gfx_cards">the instruction</a> and picked a GTX 650 Ti. It is a 6xx, it is quiet and power efficient, it also has a vga port. That&rsquo;s right. I have a monitor with vga port only. I do plan to retire it later. Now it is being used as a secondary monitor in my set up.</p>
+
+<h3>The HDD</h3>
+
+<p>I have 2TB * 4 Hitachi HDDs but apparently another system HDD is needed. I went for the Samsung 840 500GB. I knew the 840 Pro series is generally considered faster and of better quality. But capacity is more important to me. It came with 3 years guarantee anyway.</p>
+
+<p>I chose Samsung because they are doing a <a href="http://www.samsung.com/uk/ssdcashback/">cash back scheme</a>. It is still going on and will expire on 28th May, 2013.</p>
+
+<h3>The case and the PSU</h3>
+
+<p>Just an old normal Cooler Master case. A <a href="http://www.coolermaster-usa.com/product.php?product_id=3096">Cooler Master Silent Pro M2 620</a> was bought for the machine. It was a rushed decision. You can (and probably should) get a better PSU.</p>
+
+<h3>The monitors, keyboards, mice etc</h3>
+
+<p><img src="http://farm9.staticflickr.com/8533/8747970701_8da84a05f0_c.jpg" alt="Input devices" /></p>
+
+<p>All old stuff. Two monitors and a few input devices.</p>
+
+<h3>The bill</h3>
+
+<p>Always the most exciting part, hah.</p>
+
+<p>Paid this time:</p>
+
+<p>Processor £145 + Motherboard £70 + Graphics card £105 + Processor cooler £20 + HDD £220 + PSU £80 == £640</p>
+
+<p>Alternatively, this money can buy a <a href="http://store.apple.com/uk/browse/home/shop_mac/family/mac_mini">nice little Mac mini with Core i7, integrated HD 4000 graphics processor, 4GB memory and 1TB Winchester HDD</a>. The closest Mac mini setup (fastest processor, 16GB memory, 256GB SSD, etc.) costs a whopping £1239 and does not have a proper graphics card.</p>
+
+<p>I am quite satisfied with this outcome.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Rails on Ubuntu VPS]]></title>
+    <link href="http://webabie.com/rails-on-ubuntu-vps/"/>
+    <updated>2012-03-19T10:05:00+00:00</updated>
+    <id>http://webabie.com/rails-on-ubuntu-vps</id>
+    <content type="html"><![CDATA[<p>So now I have a KVM VPS running Ubuntu. How do I setup a rails development environment? The Linux/OSX users are no as lucky as the Windows users at this &mdash; There is no simple stupid all-in-one script/binary for us. Most of us need to go through a try-and-error process to accomplish the task. In this post I am going to do it again and try to record it so that other people (or the future me) can playback.</p>
+
+<h3>Prepare</h3>
+
+<p>That&rsquo;s the routine commands:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>update system </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>sudo apt-get update
+</span><span class='line'>sudo apt-get upgrade
+</span><span class='line'>sudo apt-get install git curl build-essential vim libcurl4-openssl-dev bison openssl libreadline6 libreadline6-dev zlib1g zlib1g-dev libssl-dev libyaml-dev libsqlite3-0 libsqlite3-dev sqlite3 libxml2-dev libxslt-dev autoconf&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<h3>ZSH</h3>
+
+<p>This step is optional. Bash is good enough. However I like the fancy zsh for its flexible custom prompt.</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>install oh-my-zsh </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>sudo apt-get install zsh
+</span><span class='line'>git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+</span><span class='line'>cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
+</span><span class='line'>chsh -s /bin/zsh
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Personally, I will change the zsh theme to &ldquo;gnzh&rdquo;. You can leave it as is or use any theme you prefer. To do this, open ~/.zshrc and alter &ldquo;ZSH_THEME&rdquo;.</p>
+
+<!-- more -->
+
+
+<h3>Install Ruby Version Manager (RVM)</h3>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>install rvm </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>bash -s stable &amp;lt; &amp;lt;<span class="o">(</span>curl -s &lt;a <span class="nv">href</span><span class="o">=</span><span class="s2">&quot;https://raw.github.com/wayneeseguin/rvm/master/binscripts/rvm-installer&quot;</span>&gt;https://raw.github.com/wayneeseguin/rvm/master/binscripts/rvm-installer&lt;/a&gt;<span class="o">)</span>
+</span><span class='line'><span class="nb">source</span> ~/.rvm/scripts/rvm
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Then open ~/.zshrc (or ~/.bashrc if you use bash) and add the following line <strong>before</strong> the line of &ldquo;ZSH_THEME&rdquo;:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>add rvm to path </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:<span class="nv">$HOME</span>/.rvm/bin
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Then add this line to the end of the file:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>startup env </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="o">[[</span> -s &amp;ldquo;<span class="nv">$HOME</span>/.rvm/scripts/rvm&amp;rdquo; <span class="o">]]</span> &amp;amp;&amp;amp; . &amp;ldquo;<span class="nv">$HOME</span>/.rvm/scripts/rvm&amp;rdquo;
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<h3>Install Ruby</h3>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>install ruby 1.9.3 </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>rvm install 1.9.3
+</span><span class='line'>rvm &amp;mdash;default use 1.9.3
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<h3>Install Rails</h3>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>install rails </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>sudo apt-get install install libbuilder-ruby
+</span><span class='line'>gem install rails
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<h3>Install Passenger with Nginx</h3>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>install passenger and nginx </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>gem install passenger
+</span><span class='line'>sudo -s
+</span><span class='line'>passenger-install-nginx-module
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+Enter to continue; choose 1 (Yes: download, compile and install Nginx for me. (recommended))
+Here the installation script thrown an error at me. It could not find &ldquo;pcre-8.12&rdquo;. Turns out this version is too old and has already been removed from the source server. I have to install it manually.
+Goto <a href="ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/">ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/</a> and download the latest version from there. At this moment it is pcre-8.30
+<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>install pcre </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>wget &lt;a <span class="nv">href</span><span class="o">=</span><span class="s2">&quot;ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/pcre-8.30.tar.gz&quot;</span>&gt;ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/pcre-8.30.tar.gz&lt;/a&gt;
+</span><span class='line'>tar zxvf pcre-8.30.tar.gz
+</span><span class='line'><span class="nb">cd </span>pcre-8.30
+</span><span class='line'>./configure
+</span><span class='line'>make
+</span><span class='line'>sudo make install
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+Now try &ldquo;sudo -s ; passenger-install-nginx-module&rdquo; again. It should work this time.</p>
+
+<p>Specify prefix directory of nginx. The default /opt/nginx is fine. Some prefer /usr/local/nginx . Not much difference.</p>
+
+<p>Note: if passenger-install-nginx-module can not be found, use the full path.</p>
+
+<p>(/home/<em>username</em>/.rvm/gems/ruby-<em>(version)</em>/gems/passenger-<em>(version)</em>/bin/passenger-install-nginx-module)</p>
+
+<h3>Nginx startup script</h3>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>install and test nginx startup script </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>sudo mkdir /opt/nginx/init.d
+</span><span class='line'>sudo wget &amp;mdash;no-check-certificate &lt;a <span class="nv">href</span><span class="o">=</span><span class="s2">&quot;http://github.com/ascarter/nginx-ubuntu-rvm/raw/master/nginx&quot;</span>&gt;http://github.com/ascarter/nginx-ubuntu-rvm/raw/master/nginx&lt;/a&gt; -O /opt/nginx/init.d/nginx
+</span><span class='line'>sudo chmod +x /opt/nginx/init.d/nginx
+</span><span class='line'>sudo ln -s /opt/nginx/init.d/nginx /etc/init.d/nginx
+</span><span class='line'>sudo ln -s /usr/local/lib/libpcre.so.1 /usr/lib/libpcre.so.1
+</span><span class='line'>sudo /etc/init.d/nginx start
+</span><span class='line'>sudo /etc/init.d/nginx status
+</span><span class='line'>sudo  /etc/init.d/nginx stop
+</span><span class='line'>sudo /usr/sbin/update-rc.d -f nginx defaults
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Note: if you installed nginx in a place other than /opt/nginx, open the script file and change the path of <em>DAEMON</em>, <em>PIDSPATH</em>, <em>NGINX_CONF_FILE</em>.</p>
+
+<h3>Install rmagick</h3>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>install imagemagick and rmagick </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>sudo apt-get remove imagemagick
+</span><span class='line'>sudo apt-get install libperl-dev gcc libjpeg62-dev libbz2-dev libtiff4-dev libwmf-dev libz-dev libpng12-dev libx11-dev libxt-dev libxext-dev libxml2-dev libfreetype6-dev liblcms1-dev libexif-dev perl libjasper-dev libltdl3-dev graphviz gs-gpl pkg-config
+</span><span class='line'>wget &lt;a <span class="nv">href</span><span class="o">=</span><span class="s2">&quot;ftp://ftp.imagemagick.org/pub/ImageMagick/ImageMagick.tar.gz&quot;</span>&gt;ftp://ftp.imagemagick.org/pub/ImageMagick/ImageMagick.tar.gz&lt;/a&gt;
+</span><span class='line'>tar zxvf ImageMagick.tar.gz
+</span><span class='line'><span class="nb">cd </span>ImageMagick-&lt;em&gt;<span class="o">(</span>version<span class="o">)</span>&lt;/em&gt;
+</span><span class='line'>./configure
+</span><span class='line'>make
+</span><span class='line'>sudo make install
+</span><span class='line'>gem install rmagick
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<h3>Test</h3>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>create a new rails app for env test </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>rails new testapp
+</span><span class='line'><span class="nb">cd </span>testapp
+</span><span class='line'>git init
+</span><span class='line'>git add .
+</span><span class='line'>git commit -a -m &amp;ldquo;Initial import&amp;rdquo;
+</span><span class='line'>bundle install
+</span><span class='line'>git add .gitignore
+</span><span class='line'>git commit -a -m &amp;ldquo;Add .gitignore&amp;rdquo;
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Edit /opt/nginx/conf/nginx.conf (or your specified path to nginx.conf)
+<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>virtual host config that needs to be added to nginx.conf </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>   server <span class="o">{</span>
+</span><span class='line'>      listen 80;
+</span><span class='line'>      server_name www.yourhost.com;
+</span><span class='line'>      root /somewhere/public;   <span class="c"># &amp;lt;&amp;mdash;&amp;ndash; be sure to point to &amp;lsquo;public&amp;rsquo;!</span>
+</span><span class='line'>      passenger_enabled on;
+</span><span class='line'>   <span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Then restart nginx, try visit the server from browser.</p>
+
+<h3>Databases</h3>
+
+<p>MySQL:
+<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>install mysql </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>sudo apt-get install mysql-client mysql-server
+</span><span class='line'>gem install mysql
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>PostgreSQL:
+<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>install postgresql </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>sudo add-apt-repository ppa:pitti/postgresql
+</span><span class='line'>sudo apt-get update
+</span><span class='line'>sudo apt-get install postgresql libpq-dev
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+]]></content>
+  </entry>
+  
+</feed>

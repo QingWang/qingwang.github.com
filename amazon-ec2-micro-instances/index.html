@@ -1,0 +1,179 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>还需要VPS么？ - Qing Wang</title>
+	<meta name="author" content="Qing Wang">
+
+	
+	<meta name="description" content="还需要VPS么？ 话说Shared hosting的时代俨然逐渐离去中，这年头爱折腾的都上VPS，贪着它有root，抗折腾，性能好等等。当然最重要的因素还是价格。Linode算是最流行的一各供应商，其VPS质量也确实过硬，是值得推崇的品牌。 不过呢，毕竟“云”才是大势所趋， &hellip;">
+	
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="http://feeds.feedburner.com/blacktulipcn" rel="alternate" title="Qing Wang" type="application/atom+xml">
+	
+	<link rel="canonical" href="http://webabie.com/amazon-ec2-micro-instances/">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>
+	<!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+</head>
+
+
+<body>
+	<div class="container">
+		<div class="left-col">
+			<div class="intrude-less">
+			<header id="header" class="inner"><nav id="main-nav"><ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+</nav>
+<!-- <nav id="sub-nav">
+	<div class="social">
+		
+		
+		
+		<a class="twitter" href="http://twitter.com/blacktulip" title="Twitter">Twitter</a>
+		
+		
+		
+		
+		
+		
+		
+		
+		<a class="rss" href="http://feeds.feedburner.com/blacktulipcn" title="RSS">RSS</a>
+		
+	</div>
+</nav> -->
+<div class="profile-container">
+  <div class="profilepic">
+    <script src="/javascripts/md5.js"></script>
+    <script type="text/javascript">
+$(function(){
+  $('.profilepic').append("<img src='http://www.gravatar.com/avatar/" + MD5("blacktulip@gmail.com") + "?s=160' alt='Profile Picture' style='width: 160px;' />");
+});
+    </script>
+  </div>
+  <hgroup>
+  <h1 class="site-title"><a href="/">Qing Wang</a></h1>
+  
+  <p class="site-subtitle">Programming Learner | Dad | Urgent in need of losing weight | Canterbury, Kent, UK | webabie.com</p>
+  
+  </hgroup>
+  
+</div>
+</header>
+			</div>
+		</div>
+		<div class="mid-col">
+			
+				
+			
+			<div class="mid-col-container">
+				<div id="content" class="article-inner"><article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+	<h1 class="title" itemprop="name">还需要VPS么？</h1>
+	<div class="entry-content" itemprop="articleBody"><p>话说Shared hosting的时代俨然逐渐离去中，这年头爱折腾的都上VPS，贪着它有root，抗折腾，性能好等等。当然最重要的因素还是价格。Linode算是最流行的一各供应商，其VPS质量也确实过硬，是值得推崇的品牌。</p>
+
+<p>不过呢，毕竟“云”才是大势所趋，互联网大鳄amazon的EC2已经推出很久了，当其时我便觉得很有取代VPS的可能性，EC2跟传统VPS相较基本全是优势，除了一点：价格。这一点足够要命了。</p>
+
+<p>amazon近期强力推出aws micro instances也许能补上这方面的问题。与standard instances相比，micro instances没有reserved cpu time，内存为613MB (好奇怪的数字)，适合那些平时用cpu很少，有时候要burst一下的应用&hellip;我们常用的大部分应用都是这样的吧？似乎连burst都不多。</p>
+
+<p>标价请参见<a href="http://aws.amazon.com/ec2/">aws页面</a>。照这个算价格，跟Linode比，假设你开一个micro instances，那么对应的是Linode 512。如果你每月流量10GB，则：</p>
+
+<p>Linode: 怎么都是20刀/月</p>
+
+<p>amazon: 按加州机房价格算，reserved instance 54刀/年，加上1p/hour，就是0.01<em>24</em>365=87.6刀/年；再加上流量的10<em>12</em>0.15/GB=18刀/年，总共是54+87.6+18=159.6/年，也就是13.3刀/月，ooops，便宜了1/3。</p>
+
+<p>简单计算可知，你的月流量要达到54.67GB的时候，两者价格相等。而Linode提供200GB的月流量，就是说如果你的流量在55GB-200GB/月之间的时候，Linode便宜，否则amazon EC2便宜。</p>
+
+<p>EC2还有几个优势：第一你可以用Windows系统，稍贵些；第二你不用的时候可以关掉，就不算你钱，当然如果你放网站就不能关了；第三换ip方便，会心一笑；第四EC2现在有新加坡机房可选，我没测试过，按常理推论从中国访问起来应该比美国机房快。</p>
+</div>
+
+</article>
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	<a class="addthis_button_tweet"></a>
+	
+	
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+
+
+<section id="comment">
+    <h1 class="title">Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
+</div>
+			</div>
+			<footer id="footer" class="inner"><p>
+  Copyright &copy; 2013 - Qing Wang -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+<p>Theme: <a href="https://github.com/qingwang/octopress-theme-yinyang">YinYang</a></p>
+</footer>
+			<script src="/javascripts/slash.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'webabiecom';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://webabie.com/amazon-ec2-micro-instances/';
+        var disqus_url = 'http://webabie.com/amazon-ec2-micro-instances/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-267274-12']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+
+
+
+
+		</div>
+	</div>
+</body>
+</html>
