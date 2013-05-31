@@ -3,11 +3,12 @@ layout: post
 title: "Linode 信用卡信息泄露的幕后故事"
 date: 2013-05-07 13:40
 comments: true
-categories: 
+categories:
 - 互联网乱弹
 tags:
 - security
 - story
+
 ---
 上个月 [Linode 被骇客入侵](https://blog.linode.com/2013/04/16/security-incident-update/)导致所有信用卡信息泄露，我也未能幸免地中招去换了卡。今天在 HN 看到[侵入者所发布的幕后故事](http://straylig.ht/zines/HTP5/0x02_Linode.txt)，觉得挺有意思，就转过来跟大家分享一下。
 

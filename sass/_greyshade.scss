@@ -99,11 +99,21 @@ body {
 			padding: 0px 70px 0px 40px;
 			#content {
 				width: 60%;
+        .featured {
+          max-width: 100%;
+          height: auto;
+        }
 				article {
 					border-top: none;
 					.title {
 						margin-left: 0px;
 					}
+          .post-date {
+            text-align: right;
+            margin-top: -34px;
+            color: #9FB4CC;
+            font-size: 0.9em;
+          }
 					.entry-content {
 						margin-left: 0px;
 						.gist .gist-file .gist-data {
