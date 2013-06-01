@@ -73,7 +73,7 @@ twitter_user: blacktulip
 twitter_tweet_button: true
 
 # Google +1
-google_plus_one: false
+google_plus_one: true
 google_plus_one_size: medium
 
 # Google Plus Profile
@@ -97,4 +97,7 @@ disqus_show_comment_count: false
 google_analytics_tracking_id: UA-267274-12
 
 # Facebook Like
-facebook_like: false
+facebook_like: true
+
+# AddThis
+addthis_profile_id: ra-51a9117d388d8223
