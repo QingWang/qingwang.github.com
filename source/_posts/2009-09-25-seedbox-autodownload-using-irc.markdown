@@ -10,7 +10,7 @@ tags:
 - private tracker
 - rtorrent
 - seedbox
-published: true
+published: false
 comments: true
 ---
 前文再续是书接上一回，rtorrent跑起来了就该自动化了。什么？你觉得手动也行？那你一定很闲很闲吧......废话少说。用rss自动的方法就不提了，一是因为它太简单，二是因为它效果不好，跑TL之类的用rss还勉强，跑ScT就完蛋大吉了。BTW：ScT号俺已经搞到了，多谢那位朋友。
