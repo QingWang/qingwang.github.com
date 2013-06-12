@@ -7,7 +7,7 @@
 	<meta name="author" content="Qing Wang">
 
 	
-	<meta name="description" content="用irc脚本自动化Seedbox 前文再续是书接上一回，rtorrent跑起来了就该自动化了。什么？你觉得手动也行？那你一定很闲很闲吧&hellip;&hellip;废话少说。用rss自动的方法就不提了，一是因为它太简单，二是因为它效果不好，跑TL之类的用rss还勉强，跑ScT就完蛋大吉了。 &hellip;">
+	<meta name="description" content="爆发还是灭亡 &#8211; 新媒体浅思 信息过载是非常可怕的一件事情，不仅令人难以喘息，更可怕的是直接导致思考的丧失 &mdash; 我的意思是，如果想认真地从脑子里挤点东西出来的话，关掉twitter是必要条件。 说到twitter，这个近期有着疯狂增长曲线的著名服务，正是继博客， &hellip;">
 	
 
   <!-- http://t.co/dKP3o1e -->
@@ -86,159 +86,6 @@ $(function(){
 			<div class="mid-col-container">
 				<div id="content" class="article-inner">
 <div itemscope itemtype="http://schema.org/Blog">
-
-
-    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-	<h1 class="title" itemprop="name"><a href="/seedbox-autodownload-using-irc/" itemprop="url">用irc脚本自动化Seedbox</a></h1>
-	<div class="entry-content" itemprop="articleBody">
-		<p>前文再续是书接上一回，rtorrent跑起来了就该自动化了。什么？你觉得手动也行？那你一定很闲很闲吧&hellip;&hellip;废话少说。用rss自动的方法就不提了，一是因为它太简单，二是因为它效果不好，跑TL之类的用rss还勉强，跑ScT就完蛋大吉了。BTW：ScT号俺已经搞到了，多谢那位朋友。</p>
-
-<p>其实用irc脚本自动下载是很简单的事情，首先装个irssi:</p>
-
-<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>sudo apt-get install irssi
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>然后输入screen，进入另一个终端，输入irssi进去，连服务器，进入频道这些就不用说了吧。</p>
-
-<p>下一步是找脚本，以TL的为例，在<a href="http://forums.torrentleech.org/showthread.php?t=60151">这个帖子</a>里就有。所有tracker的脚本修改方法都大同小异。TL比较麻烦要cookie，刚才装的vnc就用上了吧？嘿嘿，到vnc里面打开firefox登录TL，然后把cookie给找出来填进脚本里面即可。ScT和What.CD的脚本没那么麻烦，一个填passkey一个填密码即可。最重要的修改点在torrent存放位置，一定要确认指向rtorrent的监控目录，否则就是鸡同鸭讲。</p>
-
-<p>然后就是修改filter了，想刷全站自然也可以，不过疯狂了点，还是挑热门为上。每个站的脚本里头filter的写法都不大一样，照着样例改就是了，我的原则是宁缺勿滥，所以filter比较保守，大家根据自己实际情况定即可。</p>
-
-<p>改好后保存，然后在irssi里头输入/load /path/to/the/script 即可</p>
-
-<p>这些都做完了，就可以按 Ctrl+a, d 从screen里面退出来，然后logout了。以后想回到irssi的话，可以用screen -r切回去。</p>
-
-		
-		
-	</div>
-
-</article>
-
-
-    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-	<h1 class="title" itemprop="name"><a href="/install-rtorrent-on-kimsufi-as-seedbox/" itemprop="url">在kimsufi服务器上安装rtorrent做seedbox的步骤</a></h1>
-	<div class="entry-content" itemprop="articleBody">
-		<h4>为什么用kimsufi？</h4>
-
-<p>A：因为它便宜或者说性价比高。这是显而易见的一点。
-B：因为大家都用它。看到这个理由，了解PT工作原理的人应该会心一笑吧。</p>
-
-<h4>为什么用rtorrent？</h4>
-
-<p>实际上我是先尝试了wine+utorrent的，能成功跑起来，wine+ut的好处是资源占用小，功能齐全，设置方便。但也有其缺点，就是目录监视自动下载有时候会不动，而且种子启动时连peers慢。权衡之下我还是觉得rtorrent稍微靠谱些。除了原生主义外，葡头告诉我Sct这个盒子站rt的效率高，也是个重大因素，虽然我还没Sct的号。(BTW: 谁如果有邀请的话砸一个吧。)</p>
-
-<p>本文前半部分参考<a href="http://filesharingtalk.com/vb3/f-guides-and-tutorials-65/t-naqs-complete-setup-guide-linux-seedboxes-fedora-corecentosdebianubuntu-281331">这篇教程</a>，修正了不少。</p>
-
-<p>第一步：租个kimsufi服务器，方法不在本文讨论范围内，略。</p>
-
-<p>第二步：环境配置</p>
-
-<ul>
-<li><strong>租服务器的时候，选Ubuntu 8.10 english</strong>，这是我一次一次重灌系统得出的经验，debian 5, ubuntu 9.04以及centos 5.3都会出问题，只有ubuntu 8.10能顺利完成所有步骤。当然这是我功力有限导致的。但既然有一个系统能简单完成，我们就不必没有困难创造困难了。</li>
-<li>一开始root登陆，马上 passwd 换掉密码，rm .ssh/authorized_keys2 删掉这个key，SSHD需要进一步安全配置，不过现在先这样，最后再说。/etc/init.d/ssh restart 重启SSHD。SELinux和iptables缺省都没有安装，很好，我们现在不需要。</li>
-<li>更新系统软件包，运行 apt-get update 和 apt-get upgrade 。</li>
-<li>把需要的东西装好：</li>
-</ul>
-
-
-<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>apt-get install vnc4server xterm fluxbox vsftpd firefox curl
-</span><span class='line'>apt-get install xfonts-base xfonts-75dpi xfonts-100dpi
-</span><span class='line'>update-menus
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>wine不用装，因为我们不用utorrent，如果你想用utorrent就得装wine，不提。</p>
-
-<ul>
-<li>搞搞vnc，为什么我们不用wine还要搞vnc？其实是可以不用的，但有些PT站的IRC下载脚本要拿cookie，用 vnc里头运行一下浏览器可以方便地得到cookie。当然我相信用curl之类的肯定更快更好，不过我这不是不懂嘛，呵呵。而且有个远程桌面环境也不是什么坏事。</li>
-</ul>
-
-
-<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nb">cd</span>
-</span><span class='line'>mkdir .vnc
-</span><span class='line'>vi .vnc/xstartup
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>里头加一行 fluxbox 然后:wq</p>
-
-<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>chmod +x .vnc/xstartup
-</span><span class='line'>vncserver :1 //这行就启动vnc了，设定一个连接密码。要关闭，用 vncserver -kill :1
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>如果追求安全可以用vncserver -localhost :1，然后用putty搭桥过去，不过没必要，用完关掉就是了。</p>
-
-<ul>
-<li>先试试vnc好不好用再说，到<a href="http://www.realvnc.com/cgi-bin/download.cgi">这里</a>下载个vncviewer然后填上box的ip连过去试试看，连通后右键菜单里头找firefox看能不能运行。都顺利完成之后，就先放一边吧，呆会再用它。</li>
-<li>该装rtorrent了，如果你要自己装的话可能会抓狂，不推荐，既然有现成的安装脚本就应该好好利用。我是在what.cd的论坛里面找到这个好东西的，只需这样：</li>
-</ul>
-
-
-<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nb">cd</span>
-</span><span class='line'>wget http://76.76.238.18/wtorrent-installer.tar
-</span><span class='line'>tar xf wtorrent-installer.tar
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>按说下一步就该运行脚本了&hellip;错，先把配置文件改好再说。</p>
-
-<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>vi wtorrent-installer/.rtorrent.rc
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>怎么改呢？我推荐这样：</p>
-
-<p>on_finished = move_complete,&hellip;&hellip;这一行注释掉。你要移动要重新做种，不好。</p>
-
-<p>min_peers这一些就酌情改改即可。</p>
-
-<p>download_rate设成7000，全速下载的时候就不能全速上传。如果你租的是kimsufi或者ovh的高配服务器，可能不用改。</p>
-
-<p>放文件的目录和自动下载的监视目录自己看着办。</p>
-
-<p>port_range我喜欢改后一点，不过随便。</p>
-
-<p>check_hash=no 一定要no，否则亏很大，下载完了hash一边再做种，渣都没得留给你了。</p>
-
-<p>加密能加就加吧。</p>
-
-<p>dht=off;peer_exchange=no，这两个没啥可说的，一定要这样设。</p>
-
-<p>别的就不用管了。:wq吧</p>
-
-<ul>
-<li>总算可以运行安装脚本了 wtorrent-installer/install.sh 这个脚本给你直接都装好开始运行，所以就不用费别的心了。访问 <a href="http://%E4%BD%A0%E7%9A%84ip/">http://%E4%BD%A0%E7%9A%84ip/</a> 去设置一下wtorrent(就是rtorrent的web前端界面)就能直接用了。注意会给你新建一个叫rt的用户。</li>
-</ul>
-
-
-<p>如若你改了配置文件要重启rtorrent，用命令 /etc/init.d/rtorrent restart</p>
-
-<p>第三步：自动化一下，否则没啥意义。</p>
-
-<p>嗯&hellip;今天不想写了，下一篇再说吧。</p>
-
-<p>P.S. 这种seedbox刷HDC一天200GB很轻松，CHD这种有2x的就更不用说了，TL之类的更是三天1T没问题。只有What.CD&hellip;对付不了。</p>
-
-		
-		
-	</div>
-
-</article>
 
 
     <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
@@ -539,6 +386,73 @@ B：因为大家都用它。看到这个理由，了解PT工作原理的人应�
 
 </article>
 
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<h1 class="title" itemprop="name"><a href="/10-popular-blog-platforms-besides-wordpress/" itemprop="url">WordPress之外10大博客平台</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<p>在今天WordPress毫无疑问是世界上最流行的博客平台，然而互联网上优秀的博客平台程序绝不止这一个。其实在WordPress流行起来之前，Movable Type一直占据着第一博客平台的位置。开源化的兴起，才使得其市场份额日趋下降。 easywordpress.com整理了<a href="http://www.easywordpress.com/labs/top-10-non-wordpress-blogging-platforms/">10个WordPress之外的流行博客程序</a>，我看了一下，发现熟面孔很多。原文的介绍没什么意思，我把这10个程序一一列出来，自己码了些字，嫌我写得糟糕得就去看原文吧。不过我事先警告你，原文更无聊。</p>
+
+<ol>
+<li><a href="http://www.textpattern.com/">TextPattern</a> TextPattern官网介绍把自己定义为CMS，但它实际上是一个很优秀的博客平台，用户数量仅次于WordPress(当然可能差得比较远)。 TextPattern运行在PHP+MySQL下，开源免费，功能齐全，与WordPress的差距大概在于WordPress有一个超强的社区支持吧。</li>
+<li><a href="http://www.movabletype.org/">Movable Type</a> MT是极好极好的博客平台，它由Perl语言编写，生成真正的静态页面，所以在访问速度上有很大的先天优势。MT开源不久，在插件，模板等方面无法与WordPress相比，希望有一天能迎头赶上。我曾经使用MT很长一段时间，但后来还是转向了WordPress，主要就是为了WordPress的模板啊，也许哪一天又会回转。(为啥把它排第二呢？见鬼了真是。) MT支持多种数据库，支持一平台多博客。</li>
+<li><a href="http://www.drupal.org/">Drupal</a> 又是一个CMS平台，难道老外分不清blog和CMS？不过Drupal能做博客倒也是事实。用Drupal可以很方便的把一些元素集中在一个网站里面，比如多人协作，论坛，新闻组，相册等等。但用一个CMS做博客我总觉得有点大材小用了。</li>
+<li><a href="http://b2evolution.net/">b2Evolution</a> 原文的作者恐怕也未必知道，b2Evolution和WordPress是两兄弟，一个妈生的。话说当年有个叫<a href="http://cafelog.com/">b2</a>的系统，有人在它的基础上继续开发单blog平台，就是今天的WordPress；而有人在其基础上向多blog平台发展，就是我们看到的b2Evolution。 b2Evolution也是运行在PHP+MySQL下。</li>
+<li><a href="http://www.s9y.org/">Serendipity</a> 好，我承认这个没见过，据介绍这是个比较高级的东东，主要是很Flexiable，从新手到老手都能适应，还能用bbcode或者wiki的格式编辑。想体验新鲜玩意儿的大概可以试试。 这个东西也是PHP写的，支持MySQL和PostgreSQL。</li>
+<li><a href="http://lifetype.net/">LifeType</a> 这个我熟，这个我熟，我从它的前身plog就开始玩儿了，还用它架过一个站试图做BSP，哈哈。plog当时的毛病是效率实在太差，换成LifeType以后我倒没怎么折腾过了，希望它的代码和效率是狠狠的优化过，否则意思不大。这个产品主要是搭多人博客系统用的。</li>
+<li><a href="http://www.flatpress.org/home/">Flatpress</a> 装过一次，没什么意思，都不明白为啥会上榜。</li>
+<li><a href="http://expressionengine.com/">ExpressionEngine</a> 把大名鼎鼎的EE放在第八不知道是什么居心。这也是个全能型的平台，毛病很少，唯一难办的就是要钱。现在个人使用免费了，不过给你的是个缺胳膊少腿的版本。如果你实在有钱没地方花就买它吧。或者捐给我更好 :&ndash;)</li>
+<li><a href="http://www.blosxom.com/">Blosxom</a></li>
+<li> <a href="http://nucleuscms.org/">Nucleus</a> 有人听说过么？我怀疑是作者用来凑数的。</li>
+</ol>
+
+
+<p>其实国产的博客程序有几个是很不错的，<a href="http://www.sablog.net/">Sablog-X</a>的卖点是安全性和高效性。高效性大家都会弄，不过安全性一般来说是比较麻烦的。本程序的作者是搞网络安全出身的，所以在这方面可能会比较有心得。功能上就普通一些了。<a href="http://bbs.pjhome.net/">PJBlog</a>和<a href="http://www.bo-blog.com/">BOBlog</a>前两年好像流行过一阵子，可惜这俩都半年多没更新过了，谁爱用谁用去吧，我是不敢用。对了，还有<a href="http://www.rainbowsoft.org/">Z-Blog</a>，用asp平台的话恐怕这个是最好的选择了。不信问<a href="http://williamlong.info/">williamlong</a>去。</p>
+
+<p>我本人来说，还是喜欢WordPress和Movable Type，所谓倚天屠龙是也。网贝用的是WordPress，如果我要开第二个blog，一定会用Movable Type来折腾，只是不知什么时候了。</p>
+
+		
+		
+	</div>
+
+</article>
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<h1 class="title" itemprop="name"><a href="/whom-are-you-blogging-for/" itemprop="url">你的博客写给谁看</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<p>这个题目没完全写对，我想问的其实是：“你的博客写给什么看”。您可能会说这太有意思了，除了“大活人”难道还能有别的什么答案么？</p>
+
+<p>当然是有的&hellip;</p>
+
+<p>大家应该已经知道我在说什么，我见到不少的博客作者，他们的文章是写给搜索引擎机器人看的。有时一篇文章的唯一目的，就是把某个关键词在搜索引擎里的排名提升几位。</p>
+
+<p>这种写作目的对于作者而言倒也无可厚非，毕竟是自己的博客嘛，想怎么写就怎么写，想写给什么看就写给什么看。不过对于读者(确切地说是大活人读者)而言嘛&hellip;这不大好说。得罪人阿，呵呵。</p>
+
+<p>这种类型的博客文章有以下特点：话题总是最火的，关键词要加粗的，链接一般成堆的，文字倒是自己的，价值却是欠奉的。</p>
+
+<ul>
+<li>话题总是最火的。最新最火的话题，才能保证大的搜索基数。所以这类博客通常都会追着最新的话题走。每天关注百度指数、谷歌热榜、艳照新闻&hellip;但是问题出来了，每天最新的话题往往不是一个领域内的阿。所以这类博客的整体主题通常是很缥缈的，常常有跟博客的大标题完全不相干的，很突兀的文章出现。</li>
+<li>关键词要加粗的。据说搜索引擎对加粗的文字赋予了较高权重，所以当你看到一篇文章把某个关键词全部加粗的时候，千万不要惊奇，人家把这个词加粗并非为了让你能更快抓住重点，而是在跟机器人眉来眼去。对了，凡是能用“它”之类的代词的地方，一般人家是不会用的，影响关键词密度，嘿嘿。至于影不影响文章的可读性，没有关系，反正也不是写给大活人看的。</li>
+<li>链接一般成堆的。据所有的SEO研究者说，链接是戏弄搜索引擎的最佳手段。所以这些文章的很多词语，短句，长句&hellip;都是加了链接的，不管有没有必要。我不记得在哪里看到说，某博客上有十来篇帖子是专门用来推文章的，想让哪篇文章排名靠前，就把那十几篇的链接都改指到那一篇上。好的站内链接当然是必要的，不过这种硬推式的链接，戏弄了搜索引擎的同时，说不定也会让个把大活人读者犯晕乎吧？</li>
+<li>文字倒是自己的。值得赞赏阿！这些博客作者其实是很勤奋的，决不随便复制粘贴别人的文章。这当然是搜索引擎机器人能在一定程度上判断抄袭行为，而对原创内容比较喜欢的缘故。可惜机器人就是机器人，连26个字母的组合都不能读懂内容，何况我天朝的方块字乎？所以只需把别人的内容用自己的话复述一遍就可以了，这个简单。小学低年级的时候语文老师经常带同学做这个练习。</li>
+<li>价值却是欠奉的。用关键词拼凑的文章有多少价值可言我就不多嘴了。其实刚开始我不知SEO为何物的时候，会觉得很奇怪，咦，为什么这个博客里面会有一篇这样的文章呢？咦，为什么那个博客里面全都是读了跟没读一样的文章呢？亲爱的读者们，如果您有时也跟我有相同的感觉，要么是您水平不够没看懂，要么就恭喜您，中奖了，您找到了一个写个机器人看的博客。</li>
+</ul>
+
+
+<p>码了这么些字，其实我没有任何批判SEO(搜索引擎优化)的意思。SEO我也做，包括安装插件，内文加链接等，尽量不让它拖后腿。不过至今我还是很固执地坚持一条原则：我的博客是写给大活人看的，必须能够至少给一部分真正的读者带来价值。在此基础上，再来谈SEO。</p>
+
+<p>这两天我的博客访问量下降不少，通过Google analytic分析了一下，是来自百度的一个关键词没有了。大家也许想不到为网贝带来最大访问量的文章是哪一篇，现在我揭开谜底，是「又一个打字练习网站」(链接我就不做了，免得有贼喊捉贼之嫌)，用百度搜索“打字练习”的时候一度排第五，现在嘛不知道掉哪里去了，百度的排名经常抽风。按道理这时候我应该再写一篇或几篇“打字练习”的相关文章，然后链过去尝试把它“顶起来”。这想法我是有过的，不过始终没有实施，为了排名而发文章，有第一篇，就会有第二篇，我还是过不了自己这关。</p>
+
+<p>有人可能会笑我傻，不知变通。没办法，我的网络价值观已经成形了。很不幸在浑浑噩噩的阶段，没能游荡到站长站之类的地方去接收先进价值观学习，现在木已成舟，就这样了。看来我完全不适合乎互联网创业，尤其是中国互联网。等哪天我想写的时候，再说说我的落后价值观的形成过程吧。</p>
+
+<p>对了，如果你还不知道怎样SEO的话，以上说的五点中，前四点都可以做参考，不过我本意不是要教你这个&hellip;&hellip;</p>
+
+		
+		
+	</div>
+
+</article>
+
 </div>
 <nav id="pagenavi">
     
@@ -548,7 +462,8 @@ B：因为大家都用它。看到这个理由，了解PT工作原理的人应�
         <a href="/blog/page/4/" class="next">Next</a>
     
     <div class="center"><a href="/blog/archives">Blog Archives</a></div>
-</nav></div>
+</nav>
+</div>
 			</div>
 			<footer id="footer" class="inner"><p>
   版权所有 &copy; 2013 - blacktulip -

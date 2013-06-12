@@ -4,7 +4,7 @@
   <title><![CDATA[Category: 互联网乱弹 | blacktulip]]></title>
   <link href="http://webabie.com/categories/hu-lian-wang-luan-dan/atom.xml" rel="self"/>
   <link href="http://webabie.com/"/>
-  <updated>2013-06-01T15:57:35+01:00</updated>
+  <updated>2013-06-12T13:16:59+01:00</updated>
   <id>http://webabie.com/</id>
   <author>
     <name><![CDATA[Qing Wang]]></name>
@@ -173,147 +173,6 @@
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[用irc脚本自动化Seedbox]]></title>
-    <link href="http://webabie.com/seedbox-autodownload-using-irc/"/>
-    <updated>2009-09-25T00:00:00+01:00</updated>
-    <id>http://webabie.com/seedbox-autodownload-using-irc</id>
-    <content type="html"><![CDATA[<p>前文再续是书接上一回，rtorrent跑起来了就该自动化了。什么？你觉得手动也行？那你一定很闲很闲吧&hellip;&hellip;废话少说。用rss自动的方法就不提了，一是因为它太简单，二是因为它效果不好，跑TL之类的用rss还勉强，跑ScT就完蛋大吉了。BTW：ScT号俺已经搞到了，多谢那位朋友。</p>
-
-<p>其实用irc脚本自动下载是很简单的事情，首先装个irssi:</p>
-
-<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>sudo apt-get install irssi
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
-
-<p>然后输入screen，进入另一个终端，输入irssi进去，连服务器，进入频道这些就不用说了吧。</p>
-
-<p>下一步是找脚本，以TL的为例，在<a href="http://forums.torrentleech.org/showthread.php?t=60151">这个帖子</a>里就有。所有tracker的脚本修改方法都大同小异。TL比较麻烦要cookie，刚才装的vnc就用上了吧？嘿嘿，到vnc里面打开firefox登录TL，然后把cookie给找出来填进脚本里面即可。ScT和What.CD的脚本没那么麻烦，一个填passkey一个填密码即可。最重要的修改点在torrent存放位置，一定要确认指向rtorrent的监控目录，否则就是鸡同鸭讲。</p>
-
-<p>然后就是修改filter了，想刷全站自然也可以，不过疯狂了点，还是挑热门为上。每个站的脚本里头filter的写法都不大一样，照着样例改就是了，我的原则是宁缺勿滥，所以filter比较保守，大家根据自己实际情况定即可。</p>
-
-<p>改好后保存，然后在irssi里头输入/load /path/to/the/script 即可</p>
-
-<p>这些都做完了，就可以按 Ctrl+a, d 从screen里面退出来，然后logout了。以后想回到irssi的话，可以用screen -r切回去。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[在kimsufi服务器上安装rtorrent做seedbox的步骤]]></title>
-    <link href="http://webabie.com/install-rtorrent-on-kimsufi-as-seedbox/"/>
-    <updated>2009-09-24T00:00:00+01:00</updated>
-    <id>http://webabie.com/install-rtorrent-on-kimsufi-as-seedbox</id>
-    <content type="html"><![CDATA[<h4>为什么用kimsufi？</h4>
-
-<p>A：因为它便宜或者说性价比高。这是显而易见的一点。
-B：因为大家都用它。看到这个理由，了解PT工作原理的人应该会心一笑吧。</p>
-
-<h4>为什么用rtorrent？</h4>
-
-<p>实际上我是先尝试了wine+utorrent的，能成功跑起来，wine+ut的好处是资源占用小，功能齐全，设置方便。但也有其缺点，就是目录监视自动下载有时候会不动，而且种子启动时连peers慢。权衡之下我还是觉得rtorrent稍微靠谱些。除了原生主义外，葡头告诉我Sct这个盒子站rt的效率高，也是个重大因素，虽然我还没Sct的号。(BTW: 谁如果有邀请的话砸一个吧。)</p>
-
-<p>本文前半部分参考<a href="http://filesharingtalk.com/vb3/f-guides-and-tutorials-65/t-naqs-complete-setup-guide-linux-seedboxes-fedora-corecentosdebianubuntu-281331">这篇教程</a>，修正了不少。</p>
-
-<p>第一步：租个kimsufi服务器，方法不在本文讨论范围内，略。</p>
-
-<p>第二步：环境配置</p>
-
-<ul>
-<li><strong>租服务器的时候，选Ubuntu 8.10 english</strong>，这是我一次一次重灌系统得出的经验，debian 5, ubuntu 9.04以及centos 5.3都会出问题，只有ubuntu 8.10能顺利完成所有步骤。当然这是我功力有限导致的。但既然有一个系统能简单完成，我们就不必没有困难创造困难了。</li>
-<li>一开始root登陆，马上 passwd 换掉密码，rm .ssh/authorized_keys2 删掉这个key，SSHD需要进一步安全配置，不过现在先这样，最后再说。/etc/init.d/ssh restart 重启SSHD。SELinux和iptables缺省都没有安装，很好，我们现在不需要。</li>
-<li>更新系统软件包，运行 apt-get update 和 apt-get upgrade 。</li>
-<li>把需要的东西装好：</li>
-</ul>
-
-
-<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>apt-get install vnc4server xterm fluxbox vsftpd firefox curl
-</span><span class='line'>apt-get install xfonts-base xfonts-75dpi xfonts-100dpi
-</span><span class='line'>update-menus
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
-
-<p>wine不用装，因为我们不用utorrent，如果你想用utorrent就得装wine，不提。</p>
-
-<ul>
-<li>搞搞vnc，为什么我们不用wine还要搞vnc？其实是可以不用的，但有些PT站的IRC下载脚本要拿cookie，用 vnc里头运行一下浏览器可以方便地得到cookie。当然我相信用curl之类的肯定更快更好，不过我这不是不懂嘛，呵呵。而且有个远程桌面环境也不是什么坏事。</li>
-</ul>
-
-
-<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nb">cd</span>
-</span><span class='line'>mkdir .vnc
-</span><span class='line'>vi .vnc/xstartup
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
-
-<p>里头加一行 fluxbox 然后:wq</p>
-
-<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>chmod +x .vnc/xstartup
-</span><span class='line'>vncserver :1 //这行就启动vnc了，设定一个连接密码。要关闭，用 vncserver -kill :1
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
-
-<p>如果追求安全可以用vncserver -localhost :1，然后用putty搭桥过去，不过没必要，用完关掉就是了。</p>
-
-<ul>
-<li>先试试vnc好不好用再说，到<a href="http://www.realvnc.com/cgi-bin/download.cgi">这里</a>下载个vncviewer然后填上box的ip连过去试试看，连通后右键菜单里头找firefox看能不能运行。都顺利完成之后，就先放一边吧，呆会再用它。</li>
-<li>该装rtorrent了，如果你要自己装的话可能会抓狂，不推荐，既然有现成的安装脚本就应该好好利用。我是在what.cd的论坛里面找到这个好东西的，只需这样：</li>
-</ul>
-
-
-<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nb">cd</span>
-</span><span class='line'>wget &lt;a <span class="nv">href</span><span class="o">=</span><span class="s2">&quot;http://76.76.238.18/wtorrent-installer.tar&quot;</span>&gt;http://76.76.238.18/wtorrent-installer.tar&lt;/a&gt;
-</span><span class='line'>tar xf wtorrent-installer.tar
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
-
-<p>按说下一步就该运行脚本了&hellip;错，先把配置文件改好再说。</p>
-
-<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>vi wtorrent-installer/.rtorrent.rc
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
-
-<p>怎么改呢？我推荐这样：</p>
-
-<p>on_finished = move_complete,&hellip;&hellip;这一行注释掉。你要移动要重新做种，不好。</p>
-
-<p>min_peers这一些就酌情改改即可。</p>
-
-<p>download_rate设成7000，全速下载的时候就不能全速上传。如果你租的是kimsufi或者ovh的高配服务器，可能不用改。</p>
-
-<p>放文件的目录和自动下载的监视目录自己看着办。</p>
-
-<p>port_range我喜欢改后一点，不过随便。</p>
-
-<p>check_hash=no 一定要no，否则亏很大，下载完了hash一边再做种，渣都没得留给你了。</p>
-
-<p>加密能加就加吧。</p>
-
-<p>dht=off;peer_exchange=no，这两个没啥可说的，一定要这样设。</p>
-
-<p>别的就不用管了。:wq吧</p>
-
-<ul>
-<li>总算可以运行安装脚本了 wtorrent-installer/install.sh 这个脚本给你直接都装好开始运行，所以就不用费别的心了。访问 <a href="http://%E4%BD%A0%E7%9A%84ip/">http://%E4%BD%A0%E7%9A%84ip/</a> 去设置一下wtorrent(就是rtorrent的web前端界面)就能直接用了。注意会给你新建一个叫rt的用户。</li>
-</ul>
-
-
-<p>如若你改了配置文件要重启rtorrent，用命令 /etc/init.d/rtorrent restart</p>
-
-<p>第三步：自动化一下，否则没啥意义。</p>
-
-<p>嗯&hellip;今天不想写了，下一篇再说吧。</p>
-
-<p>P.S. 这种seedbox刷HDC一天200GB很轻松，CHD这种有2x的就更不用说了，TL之类的更是三天1T没问题。只有What.CD&hellip;对付不了。</p>
-]]></content>
-  </entry>
-  
-  <entry>
     <title type="html"><![CDATA[爆发还是灭亡 -- 新媒体浅思]]></title>
     <link href="http://webabie.com/new-media-going-heaven-or-hell/"/>
     <updated>2009-05-14T00:00:00+01:00</updated>
@@ -361,6 +220,77 @@ B：因为大家都用它。看到这个理由，了解PT工作原理的人应�
 <p>不错，有热情就会有内容，物质回报的匮乏也许并不会对内容创造者产生致命打击。但有一种东西会，鉴于文章长度问题，我打算另文讨论。</p>
 
 <p>综上所述，我认为虽然支撑新媒体的三角架有两支脚不牢固，但内容创造者这支脚，应该说还是安全的，眼下的主要问题在平台上。找到一个可持续发展的模式，是新媒体平台的当务之急。twitter用户量的大爆发，乍一看是好事，只希望这不会是新媒体灭亡前最后的疯狂。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[你被耍流氓了么？]]></title>
+    <link href="http://webabie.com/xiaonei-bully-terms/"/>
+    <updated>2009-03-12T00:00:00+00:00</updated>
+    <id>http://webabie.com/xiaonei-bully-terms</id>
+    <content type="html"><![CDATA[<p>据我估计，你肯定是被耍过流氓的。没有关系，以后注意别再被耍就是了。</p>
+
+<p>这么说是有依据的，首先请参考Unreal的“<a href="http://solour.com/2009/03/10/do-you-want-reg-xiaonei/">你还敢注册校内吗？</a>”。其主要内容是让大家看清楚校内网的注册服务条款，并且指出了其不合理之处。请注意这一段：</p>
+
+<blockquote><p>十七、知识产权
+用户同意千橡公司对其创作并上传的作品在全世界范围内享有免费的、永久性的、不可撤消的、独家的和完全的许可和再许可权利，以使用、复制、出版、发行、以原有或其他形式进行改编、转载、翻译、传播、表演和展示此等内容（整体或部分）。此许可和再许可权利包括但不限于此作品的著作权、邻接权及获得利益等权利。用户同时承诺，不就上述作品以及上述作品的改编作品对任何第三方进行任何形式的许可使用。对于经用户本人创作并上传到校内的文本、图片、图形、音频和/ 或视频等资料的商标和/或其它财产权利归属于千橡公司，未经千橡公司同意，用户保证不以任何形式直接或间接发布、播放、出于播放或发布目的而改编或再发行，或者用于其他任何商业目的。同时保证不许可任何第三方从事上述行为。</p></blockquote>
+
+<p>一言以蔽之，你写了篇文章发到校内网上，这篇文章就不算是你的了，你没有权力去处理，只有校内网有权，而且可以任意处理，它可以拿去卖钱，而且不用分给你；你拍了张照片发到校内网上，这照片就算是校内网的了；你做了段视频…;你写了段程序……而且你还不能把这些作品另做它用。比方我在校内网写了很多好文章，然后我想集成册出版，对不起，不行。这些文章不是你的而是千橡公司的，它可以告你。</p>
+
+<p>你说txxd怎么有这种事情，我什么时候说过把版权让给千橡公司了？啊哦，就在你注册校内网帐号的时候呗。你读了校内网的注册服务条款么？100个人有100个不读吧？不读你就吃亏，你就要被耍流氓，你说你没这习惯，那能怪谁啊？</p>
+
+<p>不过说句老实话，我也没有阅读服务条款的习惯。比方Chrome的条款其实也是有点问题的，当然远比不上千橡的流氓程度。而<a href="http://solour.com/2009/03/11/things-about-xiaonei/">校内网对Unreal的处理</a>也非常不负众望地又展示了一次流氓风范。</p>
+
+<p>嗯，那么，在这个流氓满地走，陷阱多如狗的中文互联网环境里，我们应该怎样做才能尽量避免被耍流氓呢？</p>
+
+<ul>
+<li>如果你看重自己的版权，就开独立博客，加入版权标示。当然这只是个姿态，虽然照样有人偷，毕竟理论上是非法的，总比在法理上都拱手让人强。</li>
+<li>安装程序或注册网站时仔细阅读服务条款。这其实是一个基本的常识，只是在中国很少有人有这种习惯。那么，开始养成吧。</li>
+<li>把流氓的行为公示出来。这样也许会让流氓有所收敛，比方你可以转载这篇文章或者Unreal的原文，当然最好还是自己原创一篇檄文之类的东西。</li>
+<li>……期待你能补充。</li>
+</ul>
+
+
+<p>最后，校内网的帐号我已经删除了，你呢？</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[标签和搜索]]></title>
+    <link href="http://webabie.com/tag-and-search/"/>
+    <updated>2008-08-25T00:00:00+01:00</updated>
+    <id>http://webabie.com/tag-and-search</id>
+    <content type="html"><![CDATA[<p>标签(tag)的历史远比互联网，甚至比计算机都要悠久得多得多，刚有畜牧业的时候古人就知道在牲口身上打tag了。在Web 2.0时代，标签的含义并没有多大的变化，还是很实在的标签的意思。不过对于这个古老的事物，似乎还是有很多人不大习惯，不知道该怎样最大限度发挥标签的作用。</p>
+
+<p>虽然在技术层面上，互联网与tag密不可分 &mdash; HTML就是一种基于标签的语言。但是在应用层面上，标签进入用户视线的时间不算太长。打个比方，在电子邮件系统中，对邮件进行分类的方式一直是用folder(文件夹)。这是从本地计算机文件管理中沿袭下来的机制。不可否认这是一种非常直观易用的方式，也不需要任何的学习成本 &mdash; 电脑上的本地文件就是使用这种方式管理的。几乎所有的电子邮件系统都使用这种方式，所以Gmail用户提出“<a href="http://googlesystem.blogspot.com/2008/04/so-when-do-we-get-folders-in-gmail.html">So When Do We Get Folders in Gmail?</a>”这种问题也不算太奇怪。</p>
+
+<p>Gmail在流行的电邮系统中率先引入了标签概念，当然它不叫tag而叫label，同义词。这个label实际上是可以当folder用的，而且我相信绝大部分Gmail用户都在把label当folder用 &mdash; 其实我也是。</p>
+
+<p>实际上这是错误的用法，标签不应该当文件夹用。否则直接用文件夹就行了，多余地搞个标签系统出来干什么呢？</p>
+
+<p>首先要搞清楚标签和文件夹的区别在什么地方，最直观的区别就是一条信息只能在一个文件夹里，而同样一条信息可以打上很多个标签。没错，但这是只是表面上的区别。有很多人都会问：打那么多个标签干什么？太乱了，标签一多我自己都找不到东西了。</p>
+
+<p>说得很对，标签多了，我们一眼看去确实乱七八糟，但标签和文件夹的本质区别就在这里 &mdash; <strong>文件夹是给我们自己看的，而标签不是给我们看的，它实在是给搜索引擎看的。</strong>所以，标签和文件夹尽管能以非常相似的方式使用，但在骨子里是完全不同的两个系统。</p>
+
+<p>如果排除直接用内文关键字搜索信息这种无视管理方式的做法，在这种两种系统中寻找信息的流程分别为：</p>
+
+<ul>
+<li><p>在文件夹系统中寻找信息的方式：肉眼寻找相关文件夹 &ndash;> 打开文件夹 &ndash;> 在文件夹内肉眼寻找信息</p></li>
+<li><p>在标签系统中寻找信息的方式：输入相关标签搜索 –> 在结果中肉眼寻找信息</p></li>
+</ul>
+
+
+<p>这两个流程并无优劣之分，只是各有适应范畴。如果信息的类别稀少，条理鲜明，总数也不多，使用文件夹方式当然效率很高；但如果信息类别庞杂，条理混乱，而且还是海量，那标签系统恐怕会远远胜出。</p>
+
+<p>在电子邮件系统中，其实两者都可用，因为大部分电邮用户的邮件分类都不会太多，使用内文搜索也基本可以替代标签搜索。标签系统在别的应用中会取得较明显的效果。打个比方，网络书签和网摘，就不应该使用文件夹系统，因为对这两种应用而言，大部分用户收藏的信息符合“类别庞杂，条理混乱，数量众多”这个条件。如果让我用文件夹管理Delicious里面的信息，估计我会疯掉的。</p>
+
+<p>在网摘服务中，Evernote已经率先摈弃了文件夹，完全转成标签+搜索的形式，这无疑是一种进步。可惜其搜索还不完善有待改进。国产佳软网文快捕则依然沿用文件夹形式。</p>
+
+<p>最后说说文件夹系统和标签系统的一些使用心得。</p>
+
+<p>文件夹系统，由于一般使用肉眼寻找信息，所以分类数和每个分类中的信息条数应当平衡，而且越少越好。应当把文件夹排列出清晰的次序，设计出高效的子分类树。</p>
+
+<p>标签系统，由于大量依靠搜索寻找信息，所以给搜索引擎看的资料越详尽越好。标签不需要控制数量，每条信息的标签应尽可能多，杂乱的问题不需考虑，标签不是给人看的。但要注意的是，同义标签应尽量统一。</p>
 ]]></content>
   </entry>
   
