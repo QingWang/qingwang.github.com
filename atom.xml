@@ -4,7 +4,7 @@
   <title><![CDATA[blacktulip]]></title>
   <link href="http://webabie.com/atom.xml" rel="self"/>
   <link href="http://webabie.com/"/>
-  <updated>2013-07-09T18:37:47+01:00</updated>
+  <updated>2013-07-09T20:27:53+01:00</updated>
   <id>http://webabie.com/</id>
   <author>
     <name><![CDATA[Qing Wang]]></name>
@@ -18,7 +18,11 @@
     <link href="http://webabie.com/view-source-on-ruby-methods/"/>
     <updated>2013-07-09T18:32:00+01:00</updated>
     <id>http://webabie.com/view-source-on-ruby-methods</id>
-    <content type="html"><![CDATA[<p><a href="http://pragmaticstudio.com/blog/2013/2/13/view-source-ruby-methods">原文</a></p>
+    <content type="html"><![CDATA[<p>Update: 经 <a href="http://twitter.com/night_song">@night_song</a> 指出， <a href="http://pryrepl.org/">pry</a> 中可以用 <code>show-method</code> 直接实现本文所述的功能。用 pry 替代 rails console 的方法很多，可以参考 <a href="http://www.dotnetguy.co.uk/post/2011/08/23/replace-the-rails-console-with-pry/">这里</a> 和 <a href="https://github.com/rweng/pry-rails">这里</a></p>
+
+<hr />
+
+<p><a href="http://pragmaticstudio.com/blog/2013/2/13/view-source-ruby-methods">原文</a></p>
 
 <p>我(原作者)经常要去读 Rails 的源码，但是有时定位某个 method 在源码里的位置不是那么容易。比方说想看看 Rails 4 里面新的 <code>update</code> 跟原来的 <code>update_attributes</code> 有什么不一样，于是我查找 <code>def update</code> ，跳出来 50 个结果，分布在 37 个文件里面。显然我们要找的是 <code>ActiveRecord</code> 里面的哪个，但是不好找啊。实在是应该有办法直接跳到我们想找的那个 method 源码。</p>
 
