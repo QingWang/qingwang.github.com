@@ -4,7 +4,7 @@
   <title><![CDATA[blacktulip]]></title>
   <link href="http://webabie.com/atom.xml" rel="self"/>
   <link href="http://webabie.com/"/>
-  <updated>2013-06-12T13:16:59+01:00</updated>
+  <updated>2013-07-09T18:37:47+01:00</updated>
   <id>http://webabie.com/</id>
   <author>
     <name><![CDATA[Qing Wang]]></name>
@@ -12,6 +12,102 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[在 Rails 源代码中快速定位 method]]></title>
+    <link href="http://webabie.com/view-source-on-ruby-methods/"/>
+    <updated>2013-07-09T18:32:00+01:00</updated>
+    <id>http://webabie.com/view-source-on-ruby-methods</id>
+    <content type="html"><![CDATA[<p><a href="http://pragmaticstudio.com/blog/2013/2/13/view-source-ruby-methods">原文</a></p>
+
+<p>我(原作者)经常要去读 Rails 的源码，但是有时定位某个 method 在源码里的位置不是那么容易。比方说想看看 Rails 4 里面新的 <code>update</code> 跟原来的 <code>update_attributes</code> 有什么不一样，于是我查找 <code>def update</code> ，跳出来 50 个结果，分布在 37 个文件里面。显然我们要找的是 <code>ActiveRecord</code> 里面的哪个，但是不好找啊。实在是应该有办法直接跳到我们想找的那个 method 源码。</p>
+
+<p>还真有。</p>
+
+<!-- more -->
+
+
+<p>假设我们有个叫 <code>Person</code> 的 model ，可以用下面的指令创建一个 object :</p>
+
+<pre><code>person = Person.new
+</code></pre>
+
+<p>在 Rails 4 里面，我们可以使用 <code>update</code> :</p>
+
+<pre><code>person.update(name: "Fred")
+</code></pre>
+
+<p>现在我们只是对这个 <code>update</code> method 感兴趣，于是首先想办法把它给抓出来:</p>
+
+<pre><code>method = person.method(:update)
+=&gt; #&lt;Method: Person(ActiveRecord::Persistence)#update&gt;
+</code></pre>
+
+<p>现在 <code>method</code> 就是一个代表了 <code>update</code> 这个 method 的 object .</p>
+
+<p>高潮来了： Ruby 有这么个 method &hellip;</p>
+
+<pre><code>location = method.source_location
+</code></pre>
+
+<p><code>source_location</code> 返回这个 caller 所在的源文件名及其定义所在的行数。</p>
+
+<p>如果要直接打开源文件的话，用以下方法：</p>
+
+<pre><code>`subl #{location[0]}:#{location[1]}`     # Sublime Text
+`mate #{location[0]} -l #{location[1]}`  # TextMate
+`mvim #{location[0]} +#{location[1]}`    # MacVim
+</code></pre>
+
+<p>然后把以上的内容组合一下，就得到一个 method ，可以放到 <code>.irbrc</code> 文件里面:</p>
+
+<pre><code>def source_for(object, method)
+  location = object.method(method).source_location
+  `subl #{location[0]}:#{location[1]}` if location # 改成自己喜欢的编辑器
+  location
+end
+</code></pre>
+
+<p>这样在 irb 里面就可以用</p>
+
+<pre><code>source_for(Person.new, :update)
+</code></pre>
+
+<p>这样的格式来查看源码了。</p>
+
+<p>class method 可以这样查看:</p>
+
+<pre><code>source_for(Person, :update)
+</code></pre>
+
+<p>再进一步，如果想查看在 modules 里面定义的 instance methods ，比方说 Rails helper methods ，能不能用</p>
+
+<pre><code>source_for(ApplicationHelper, :some_helper)
+</code></pre>
+
+<p>来查看呢？</p>
+
+<p>答案是不行的，因为 module 不能被 instantiated (实例化)。</p>
+
+<p>不过我们可以修改一下 <code>source_for</code>:</p>
+
+<pre><code>def source_for(object, method_sym)
+  if object.respond_to?(method_sym, true)
+    method = object.method(method_sym)
+  elsif object.is_a?(Module)
+    method = object.instance_method(method_sym)
+  end
+  location = method.source_location
+  `subl #{location[0]}:#{location[1]}` if location
+  location
+rescue
+  nil
+end
+</code></pre>
+
+<p>这样就行了。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Linode 信用卡信息泄露的幕后故事]]></title>
@@ -1415,31 +1511,6 @@ puts method(:square).class
 <p>注：Provisional License是发给学习驾驶中的新手的驾驶执照，在通过路考后方能换成Full License(正式驾照)。Provisional License的持有者上路时必须在车身上贴上醒目的“L”标志，而且副驾驶座位上必须有一名21岁以上，持有同类正式驾照超过三年的人陪同，否则也是违法的…</p>
 
 <p>注2：不加油不知油价高…听说国内的油价刚刚又涨了一点，又有人要开骂，我说还是不必了吧。这鬼地方一升油可是1.17胖子，也就是13人刀，以一升油跑八迈算，只要跑上个一万两三千迈，油钱就能把这辆车再买一遍了。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[不推荐 -- PhotonVPS]]></title>
-    <link href="http://webabie.com/photonvps-not-recommended/"/>
-    <updated>2009-12-13T00:00:00+00:00</updated>
-    <id>http://webabie.com/photonvps-not-recommended</id>
-    <content type="html"><![CDATA[<p>半年前我购买了PhotonVPS的Bean 1 VPS，原因是价格便宜，据评测性能也不错。购买后主要用于建立SSH通道。</p>
-
-<p>购买初期，VPS的表现尚可。然而随着时间的推移，VPS的反应越来越慢，在12月已经达到了输入一个字符要等一秒的地步。同时登录服务器时经常出现tty错误，每次都需要开ticket解决。最后一次居然把我的root密码搞丢了。</p>
-
-<p>有鉴于此，我只能向大家不推荐PhotonVPS这家VPS供应商。</p>
-
-<p>由此可验证，基于OpenVZ技术的VPS，由于可以轻易超售，其性能完全取决于主机商的良心，不靠谱。选择VPS的时候还是基于XEN技术的比较稳定。</p>
-
-<p>现在我的SSH通道已经迁移到XEN VPS上。鉴于PhotonVPS给我留下的恶劣印象，自然不是他们家的。</p>
-
-<p>我推荐的XEN VPS供应商为以下两家：</p>
-
-<p>如果应用对性能及带宽要求较高，可以考虑Linode，他们家口碑极好，在多次VPS性能测试中都名列前茅，而且有美国4个机房加欧洲1个机房可选。</p>
-
-<p>如果自己普通玩玩，Prgmr是个好去处，尽管性能上有所欠缺，提供的带宽也不如Linode，但价格优势明显，服务器也十分稳定。</p>
-
-<p>嗯，最后加一句，如果是面向欧洲区的应用，那租VPS不如直接租Dedi，有很便宜的供应商。</p>
 ]]></content>
   </entry>
   

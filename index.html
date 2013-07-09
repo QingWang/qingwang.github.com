@@ -7,7 +7,7 @@
 	<meta name="author" content="Qing Wang">
 
 	
-	<meta name="description" content="Linode 信用卡信息泄露的幕后故事 上个月 Linode 被骇客入侵导致所有信用卡信息泄露，我也未能幸免地中招去换了卡。今天在 HN 看到侵入者所发布的幕后故事，觉得挺有意思，就转过来跟大家分享一下。 我对骇客界的术语完全不懂，以下转译基于 HN 上的一条评论，掺杂一些我自己的理解。 HTP &hellip;">
+	<meta name="description" content="在 Rails 源代码中快速定位 Method 原文 我(原作者)经常要去读 Rails 的源码，但是有时定位某个 method 在源码里的位置不是那么容易。比方说想看看 Rails 4 里面新的 update 跟原来的 update_attributes 有什么不一样，于是我查找 def &hellip;">
 	
 
   <!-- http://t.co/dKP3o1e -->
@@ -86,6 +86,23 @@ $(function(){
 			<div class="mid-col-container">
 				<div id="content" class="article-inner">
 <div itemscope itemtype="http://schema.org/Blog">
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<h1 class="title" itemprop="name"><a href="/view-source-on-ruby-methods/" itemprop="url">在 Rails 源代码中快速定位 Method</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<p><a href="http://pragmaticstudio.com/blog/2013/2/13/view-source-ruby-methods">原文</a></p>
+
+<p>我(原作者)经常要去读 Rails 的源码，但是有时定位某个 method 在源码里的位置不是那么容易。比方说想看看 Rails 4 里面新的 <code>update</code> 跟原来的 <code>update_attributes</code> 有什么不一样，于是我查找 <code>def update</code> ，跳出来 50 个结果，分布在 37 个文件里面。显然我们要找的是 <code>ActiveRecord</code> 里面的哪个，但是不好找啊。实在是应该有办法直接跳到我们想找的那个 method 源码。</p>
+
+<p>还真有。</p>
+
+
+		
+		<a href="/view-source-on-ruby-methods/" class="more-link">继续阅读</a>
+	</div>
+
+</article>
 
 
     <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
@@ -278,21 +295,6 @@ puts array.inspect
 
 		
 		<a href="/the-foundation-of-western-civilization-8-of-47/" class="more-link">继续阅读</a>
-	</div>
-
-</article>
-
-
-    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-	<h1 class="title" itemprop="name"><a href="/the-foundation-of-western-civilization-7-of-47/" itemprop="url">西方文明之根(7/47) — 黑暗和古风时代</a></h1>
-	<div class="entry-content" itemprop="articleBody">
-		<p>上一期我们了解了一些传说与真实相间的，希腊文明的初始，让我们顺着时间线往下走。迈锡尼文明之后，公元前1,200年到公元前550年这段时期，将是这一期的主要内容。这段时期又可以分成两部分： <a href="http://en.wikipedia.org/wiki/Greek_Dark_Ages">黑暗时代(Dark ages)</a> 和 <a href="http://en.wikipedia.org/wiki/Archaic_Greece">古风时代(Archaic period)</a> 。</p>
-
-<p>荣耀的古希腊文明，在发展的路途中并非一帆风顺，而是进进退退，或者用时髦的词语来说，螺旋上升的。在公元前1,200到公元前1,100年间，亦即著名的 <a href="http://en.wikipedia.org/wiki/Trojan_War">特洛伊之战(Trojan War)</a> 战后，有显著的证据表明，迈锡尼文明的许多属地开始负发展，表现在出土的建筑物的损毁程度上。可能是天灾，也可能是人祸。更有可能是迈锡尼文明在内外交困下其实已经徒有其表了，特洛伊之战只是文明崩塌的导火索。毕竟月满则亏，盛极必衰，也是很自然的现象。不过有一点反常的是，迈锡尼文明从未被传承下来。其他许多的文明都有过低谷期甚至接近完全毁灭，如希伯来，古中华等，但总会有传承不绝，而迈锡尼文明就这样自然地消失了。今天迈锡尼城遗址还在，如同一座幽灵城般，游人只能从残存的石块中想象当年阿伽门农的英姿，海伦的倾城绝色了。</p>
-
-
-		
-		<a href="/the-foundation-of-western-civilization-7-of-47/" class="more-link">继续阅读</a>
 	</div>
 
 </article>
