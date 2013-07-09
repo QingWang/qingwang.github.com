@@ -8,6 +8,10 @@ categories:
 
 ---
 
+Update: 经 [@night_song](http://twitter.com/night_song) 指出， [pry](http://pryrepl.org/) 中可以用 `show-method` 直接实现本文所述的功能。用 pry 替代 rails console 的方法很多，可以参考 [这里](http://www.dotnetguy.co.uk/post/2011/08/23/replace-the-rails-console-with-pry/) 和 [这里](https://github.com/rweng/pry-rails)
+
+--------------------
+
 [原文](http://pragmaticstudio.com/blog/2013/2/13/view-source-ruby-methods)
 
 我(原作者)经常要去读 Rails 的源码，但是有时定位某个 method 在源码里的位置不是那么容易。比方说想看看 Rails 4 里面新的 `update` 跟原来的 `update_attributes` 有什么不一样，于是我查找 `def update` ，跳出来 50 个结果，分布在 37 个文件里面。显然我们要找的是 `ActiveRecord` 里面的哪个，但是不好找啊。实在是应该有办法直接跳到我们想找的那个 method 源码。
